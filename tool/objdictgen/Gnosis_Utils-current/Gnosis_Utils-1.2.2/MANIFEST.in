@@ -1,0 +1,18 @@
+recursive-include gnosis/doc *
+recursive-include gnosis/xml/pickle/doc *
+recursive-include gnosis/util *
+recursive-include gnosis/xml/objectify/doc *
+include gnosis/xml/pickle/PyObject.dtd
+include gnosis/README
+include gnosis/xml/objectify/test/*
+
+# lot of misc files here, so just do '*'
+include gnosis/anon/*
+
+# ditto for relax
+include gnosis/xml/relax/*
+
+# yep, include MANIFEST itself (see Makefile)
+include MANIFEST
+
+

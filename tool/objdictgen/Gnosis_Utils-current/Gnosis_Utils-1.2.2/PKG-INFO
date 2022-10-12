@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Gnosis_Utils
+Version: 1.2.2
+Summary: Modules and Utilities for XML Documents and Other Miscellany
+Home-page: http://gnosis.cx/download/
+Author: Gnosis Software
+Author-email: mertz@gnosis.cx
+License: Public Domain
+Description: Include modules:	xml.pickle, xml.objectify, indexer, xml.indexer, xml.validity, gnosis.anon, multimethods, magic, and friends.
+Platform: Any

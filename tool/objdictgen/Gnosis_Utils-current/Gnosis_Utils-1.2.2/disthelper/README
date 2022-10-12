@@ -1,0 +1,81 @@
+
+'disthelper' is a collection of scripts and modules that
+are generally useful for building/maintaining a setup.py.
+
+To use it in your own distribution, simply copy the entire
+'disthelper' tree into the toplevel of your tree, as has
+been done here.
+
+Useful things:
+
+    find_python.py:
+        Enumerate available Python installations on
+        the current machine.
+
+    treeops:
+        Modules that make it easy to write tree-crawling
+        utilities.
+
+    # The following are all tree-crawling utilities that
+    # take the same set of options (-r, -R, -x ...).
+    # Use -h for help on each.
+    
+    scripts/indentcheck.py:
+        Checks consistency of tab/space usage for
+        an entire tree of files. Use -v to show
+        lines where errors occurred.
+
+    scripts/comptree.py:
+        Byte-compile an entire tree of files.
+
+    scripts/difftree.py:
+        Portable replacement for 'diff -r', on
+        two directories.
+       
+    scripts/porttext.py:
+        Convert a tree of files to "portable" text
+        format (\n).
+
+    scripts/plattext.py:
+        Convert a tree of files to platform-specific
+        text format (\n,\r\n, whatever the machine
+        running the script uses.)
+
+    scripts/rmfind.py
+        Portable replacement for simple uses of
+        "rm `find ..`". e.g. instead of:
+              rm `find . -name "*.pyc"`
+
+        Use:
+              rmfind.py -r -x pyc .
+        Or:
+              rmfind.py -R "*.pyc" .
+
+     *
+     * Please use some caution when using the next two
+     * scripts. Running an untab/tab or tab/untab cycle
+     * may result in blocks of code being shifted left/right,
+     * since it will normalize the code to a fixed indent
+     * width (user-specified; defaults to 4).
+     *
+     * Although the resulting code should still run identically,
+     * there is a chance it will be wrong.
+     * 
+     * Please backup your source files before running these.
+     *
+
+     scripts/untabtree.py
+        Convert tabs to spaces for a tree of files.
+
+            | Will refuse to touch a file if indentcheck
+            | fails on it.
+
+     scripts/tabtree.py
+        Convert spaces to tabs for a tree of files.
+
+            | Will refuse to touch a file if indentcheck
+            | fails on it.
+
+------------
+
+Any problems, please email: frankm@hiwaay.net

@@ -1,0 +1,14 @@
+
+- (1.3.x) Change XMLPicklingError, etc. to real Exceptions
+
+- (1.3.x) add xmlcoder module for better coding of Unicode/binary
+
+- (1.3.x) add missing parts of PEP 307 to xml.pickle
+
+- automated regression tests
+
+- packaging support (.deb, .rpm, win32.exe, etc.)
+   - merge debian/ from Magnus
+   - check for .rpms at python.org by Sean Reifschneider
+
+- add 'install-scripts' keyword to setup.py for installing programs

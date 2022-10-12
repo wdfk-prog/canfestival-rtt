@@ -1,0 +1,39 @@
+
+* Maintainers checklist *
+
+Before doing a final 'setup.py makedist':
+
+1. Run:
+     $ python disthelper/scripts/indentcheck.py .
+
+   If any files are reported as having mixed tabs/spaces,
+   fix them (rerun indentcheck.py with -v for details).
+
+2. Run:
+     $ python disthelper/scripts/test/mega_tabber_test.py
+ 
+   After it finishes, make sure that ttt/diff.disthelper
+   and ttt/diff.gnosis are zero bytes. (It will tell you.)
+
+   If not, look in the diffs - there are probably some
+   files that have inconsistent space-indents (i.e. 2/3/4
+   spaces, in the same file). The first occurrance will
+   throw off the rest of the file, so you usually only
+   have to change one or two places.
+
+   Keep running until the diffs are zero bytes.
+   You have to do a `rm -rf ttt` between runs.
+
+   When all is good, 'rm -rf ttt'
+
+   [Note that mega_tabber_test.py does NOT change
+    any source files. That's the point - to run
+    the test on a copy, and fix problems by hand.]
+
+3. Ensure that gnosis/version.py is bumped.
+
+4. python setup.py makedist
+
+-------
+
+-fpm
