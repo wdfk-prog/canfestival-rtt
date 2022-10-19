@@ -353,8 +353,7 @@ Mapping = {
 
     0x60C1 : {"name" : "Interpolation data record", "struct" : array, "need" : False, "values" :
                 [{"name" : "number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
-                 {"name" : "Parameter1 of ip function", "type" : 0x04, "access" : 'rw', "pdo" : True},
-                 {"name" : "Parameter2 of ip function", "type" : 0x04, "access" : 'rw', "pdo" : True}]},
+                 {"name" : "Parameter1 of ip function", "type" : 0x04, "access" : 'rw', "pdo" : True}]},
     
     0x60C2 : {"name" : "Interpolation time period", "struct" : array, "need" : False, "values" :
                 [{"name" : "number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
