@@ -10,31 +10,50 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __CANOPEN_CALLBACK_H
-#define __CANOPEN_CALLBACK_H
+#ifndef __MOTOR_CONTROL_H
+#define __MOTOR_CONTROL_H
 /* Includes ------------------------------------------------------------------*/
-#include "data.h"
+#include "canfestival.h"
 /* Exported types ------------------------------------------------------------*/
-
+/*
+ * INTEGER8地图变量结构体
+*/
+typedef struct
+{
+  INTEGER8 *map_val; //变量地址
+  UNS16 index;   //变量索引
+}Map_Val_INTEGER8;
+/*
+ * UNS16地图变量结构体
+*/
+typedef struct
+{
+  UNS16 *map_val; //变量地址
+  UNS16 index;   //变量索引
+}Map_Val_UNS16;
+/*
+ * UNS32地图变量结构体
+*/
+typedef struct
+{
+  UNS32 *map_val; //变量地址
+  UNS16 index;   //变量索引
+}Map_Val_UNS32;
+/*
+ * INTEGER32地图变量结构体
+*/
+typedef struct
+{
+  INTEGER32 *map_val; //变量地址
+  UNS16 index;   //变量索引
+}Map_Val_INTEGER32;
 /* Exported constants --------------------------------------------------------*/
 
 /* Exported macro ------------------------------------------------------------*/
 
 /* Exported variables ---------------------------------------------------------*/
-
+extern Map_Val_UNS16 Controlword_Node[];
+extern Map_Val_INTEGER8 Modes_of_operation_Node[];
 /* Exported functions prototypes ---------------------------------------------*/
-extern void master402_heartbeatError(CO_Data* d, UNS8 heartbeatID);
-extern void master402_initialisation(CO_Data* d);
-extern void master402_preOperational(CO_Data* d);
-extern void master402_operational(CO_Data* d);
-extern void master402_stopped(CO_Data* d);
-
-extern void master402_post_sync(CO_Data* d);
-extern void master402_post_TPDO(CO_Data* d);
-extern void master402_storeODSubIndex(CO_Data* d, UNS16 wIndex, UNS8 bSubindex);
-extern void master402_post_emcy(CO_Data* d, UNS8 nodeID, UNS16 errCode, UNS8 errReg, const UNS8 errSpec[5]);
-
-extern void master402_fix_config_err(CO_Data *d,UNS8 nodeId);
-#endif /* __CANOPEN_CALLBACK_H */
-
-
+ 
+#endif /* __MOTOR_CONTROL_H */

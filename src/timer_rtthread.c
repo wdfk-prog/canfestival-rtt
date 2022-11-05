@@ -16,6 +16,7 @@
 #include <stdbool.h>
 #include <rtthread.h>
 #include <rtdevice.h>
+#include <main.h>
 #include "canfestival.h"
 #include "timer.h"
 #include "timers_driver.h"
@@ -23,12 +24,20 @@
 //#define DBG_LVL DBG_LOG
 //#include <rtdbg.h>
 /* Private typedef -----------------------------------------------------------*/
-
+struct stm32_hwtimer
+{
+    rt_hwtimer_t time_device;
+    TIM_HandleTypeDef    tim_handle;
+    IRQn_Type tim_irqn;
+    char *name;
+};
 /* Private define ------------------------------------------------------------*/
 /* 线程配置 */
 #define THREAD_PRIORITY      CANFESTIVAL_TIMER_THREAD_PRIO//线程优先级
 #define THREAD_TIMESLICE     20//线程时间片
 #define THREAD_STACK_SIZE    2048//栈大小
+
+//#define IRQ_PRIORITY  0
 /* Private macro -------------------------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
@@ -148,7 +157,12 @@ void initTimer(void)
   mode = HWTIMER_MODE_ONESHOT;
   err = rt_device_control(canfstvl_timer_dev, HWTIMER_CTRL_MODE_SET, &mode);
 	rt_device_read(canfstvl_timer_dev, 0, &last_timer_val, sizeof(last_timer_val));
-
+#ifdef IRQ_PRIORITY
+    struct stm32_hwtimer *tim_device = RT_NULL;
+    tim_device = rt_container_of(canfstvl_timer_dev, struct stm32_hwtimer, time_device);
+    
+    HAL_NVIC_SetPriority(tim_device->tim_irqn,IRQ_PRIORITY, 0);
+#endif
 	tid = rt_thread_create("cf_timer",
                            canopen_timer_thread_entry, RT_NULL,
                            THREAD_STACK_SIZE, THREAD_PRIORITY, THREAD_TIMESLICE);

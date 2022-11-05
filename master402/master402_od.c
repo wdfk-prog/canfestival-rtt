@@ -6,18 +6,31 @@
 /**************************************************************************/
 /* Declaration of mapped variables                                        */
 /**************************************************************************/
-UNS16 Alarm_code = 0x0;		/* Mapped at index 0x2001, subindex 0x00 */
+UNS16 NODE3_Controlword_6040 = 0x0;		/* Mapped at index 0x2001, subindex 0x00 */
+UNS16 NODE3_Statusword_6041 = 0x0;		/* Mapped at index 0x2002, subindex 0x00 */
+INTEGER8 NODE3_Modes_of_operation_6060 = 0x0;		/* Mapped at index 0x2003, subindex 0x00 */
+INTEGER32 NODE3_Position_actual_value_6064 = 0x0;		/* Mapped at index 0x2004, subindex 0x00 */
+INTEGER32 NODE3_Velocity_actual_value_0x606C = 0x0;		/* Mapped at index 0x2005, subindex 0x00 */
+INTEGER32 NODE3_Target_position_607A = 0x0;		/* Mapped at index 0x2006, subindex 0x00 */
+INTEGER32 NODE3_Target_velocity_60FF = 0x0;		/* Mapped at index 0x2007, subindex 0x00 */
 UNS16 S_move = 0x0;		/* Mapped at index 0x2124, subindex 0x00 */
+INTEGER32 pos_cmd1 = 0x0;		/* Mapped at index 0x2F00, subindex 0x00 */
+INTEGER16 pos_cmd2 = 0x0;		/* Mapped at index 0x2F01, subindex 0x00 */
 UNS16 Controlword = 0x0;		/* Mapped at index 0x6040, subindex 0x00 */
 UNS16 Statusword = 0x0;		/* Mapped at index 0x6041, subindex 0x00 */
 INTEGER8 Modes_of_operation = 0x0;		/* Mapped at index 0x6060, subindex 0x00 */
 INTEGER32 Position_actual_value = 0x0;		/* Mapped at index 0x6064, subindex 0x00 */
 INTEGER32 Velocity_actual_value = 0x0;		/* Mapped at index 0x606C, subindex 0x00 */
 INTEGER32 Target_position = 0x0;		/* Mapped at index 0x607A, subindex 0x00 */
+INTEGER32 Home_offset = 0x0;		/* Mapped at index 0x607C, subindex 0x00 */
 UNS32 Profile_velocity = 0x0;		/* Mapped at index 0x6081, subindex 0x00 */
-UNS32 Interpolation_data_record_Pos_Cmd = 0x0;		/* Mapped at index 0x60C1, subindex 0x01 */
+INTEGER8 Homing_method = 0x0;		/* Mapped at index 0x6098, subindex 0x00 */
+UNS32 Homing_speeds_Speed_for_switch_search = 0x0;		/* Mapped at index 0x6099, subindex 0x01 */
+UNS32 Homing_speeds_Speed_for_zero_search = 0x0;		/* Mapped at index 0x6099, subindex 0x02 */
+INTEGER32 Interpolation_data_record_Parameter1_of_ip_function = 0x0;		/* Mapped at index 0x60C1, subindex 0x01 */
 UNS8 Interpolation_time_period_Interpolation_time_units = 0x0;		/* Mapped at index 0x60C2, subindex 0x01 */
-UNS8 Interpolation_time_period_Interpolation_time_index = 0x0;		/* Mapped at index 0x60C2, subindex 0x02 */
+INTEGER8 Interpolation_time_period_Interpolation_time_index = 0x0;		/* Mapped at index 0x60C2, subindex 0x02 */
+INTEGER32 Target_velocity = 0x0;		/* Mapped at index 0x60FF, subindex 0x00 */
 
 /**************************************************************************/
 /* Declaration of value range types                                       */
@@ -45,7 +58,7 @@ UNS8 master402_bDeviceNodeId = 0x00;
 
 const UNS8 master402_iam_a_slave = 0;
 
-TIMER_HANDLE master402_heartBeatTimers[1] = {TIMER_NONE};
+TIMER_HANDLE master402_heartBeatTimers[2] = {TIMER_NONE,TIMER_NONE};
 
 /*
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -69,7 +82,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RO, uint8, sizeof (UNS8), (void*)&master402_obj1001, NULL }
                      };
 
-/* index 0x1003 :   Pre-defined Error Field. */
+/* index 0x1003 :   Pre-defined Error Field */
                     UNS8 master402_highestSubIndex_obj1003 = 0; /* number of subindex - 1*/
                     UNS32 master402_obj1003[] = 
                     {
@@ -109,15 +122,17 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      };
 
 /* index 0x1016 :   Consumer Heartbeat Time. */
-                    UNS8 master402_highestSubIndex_obj1016 = 1; /* number of subindex - 1*/
+                    UNS8 master402_highestSubIndex_obj1016 = 2; /* number of subindex - 1*/
                     UNS32 master402_obj1016[] = 
                     {
+                      0x0,	/* 0 */
                       0x0	/* 0 */
                     };
                     subindex master402_Index1016[] = 
                      {
                        { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1016, NULL },
-                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1016[0], NULL }
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1016[0], NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1016[1], NULL }
                      };
 
 /* index 0x1017 :   Producer Heartbeat Time. */
@@ -131,7 +146,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     UNS8 master402_highestSubIndex_obj1018 = 4; /* number of subindex - 1*/
                     UNS32 master402_obj1018_Vendor_ID = 0x12345678;	/* 305419896 */
                     UNS32 master402_obj1018_Product_Code = 0x6030;	/* 24624 */
-                    UNS32 master402_obj1018_Revision_Number = 0x11;	/* 17 */
+                    UNS32 master402_obj1018_Revision_Number = 0x12;	/* 18 */
                     UNS32 master402_obj1018_Serial_Number = 0x1;	/* 1 */
                     subindex master402_Index1018[] = 
                      {
@@ -164,6 +179,19 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RW, uint32, sizeof (UNS32), (void*)&master402_obj1280_COB_ID_Client_to_Server_Transmit_SDO, NULL },
                        { RW, uint32, sizeof (UNS32), (void*)&master402_obj1280_COB_ID_Server_to_Client_Receive_SDO, NULL },
                        { RW, uint8, sizeof (UNS8), (void*)&master402_obj1280_Node_ID_of_the_SDO_Server, NULL }
+                     };
+
+/* index 0x1281 :   Client SDO 2 Parameter. */
+                    UNS8 master402_highestSubIndex_obj1281 = 3; /* number of subindex - 1*/
+                    UNS32 master402_obj1281_COB_ID_Client_to_Server_Transmit_SDO = 0x603;	/* 1539 */
+                    UNS32 master402_obj1281_COB_ID_Server_to_Client_Receive_SDO = 0x583;	/* 1411 */
+                    UNS8 master402_obj1281_Node_ID_of_the_SDO_Server = 0x3;	/* 3 */
+                    subindex master402_Index1281[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1281, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1281_COB_ID_Client_to_Server_Transmit_SDO, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1281_COB_ID_Server_to_Client_Receive_SDO, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1281_Node_ID_of_the_SDO_Server, NULL }
                      };
 
 /* index 0x1400 :   Receive PDO 1 Parameter. */
@@ -204,12 +232,50 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RW, uint8, sizeof (UNS8), (void*)&master402_obj1401_SYNC_start_value, NULL }
                      };
 
+/* index 0x1402 :   Receive PDO 3 Parameter. */
+                    UNS8 master402_highestSubIndex_obj1402 = 6; /* number of subindex - 1*/
+                    UNS32 master402_obj1402_COB_ID_used_by_PDO = 0x183;	/* 387 */
+                    UNS8 master402_obj1402_Transmission_Type = 0x1;	/* 1 */
+                    UNS16 master402_obj1402_Inhibit_Time = 0x0;	/* 0 */
+                    UNS8 master402_obj1402_Compatibility_Entry = 0x0;	/* 0 */
+                    UNS16 master402_obj1402_Event_Timer = 0x0;	/* 0 */
+                    UNS8 master402_obj1402_SYNC_start_value = 0x0;	/* 0 */
+                    subindex master402_Index1402[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1402, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1402_COB_ID_used_by_PDO, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1402_Transmission_Type, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1402_Inhibit_Time, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1402_Compatibility_Entry, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1402_Event_Timer, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1402_SYNC_start_value, NULL }
+                     };
+
+/* index 0x1403 :   Receive PDO 4 Parameter. */
+                    UNS8 master402_highestSubIndex_obj1403 = 6; /* number of subindex - 1*/
+                    UNS32 master402_obj1403_COB_ID_used_by_PDO = 0x283;	/* 643 */
+                    UNS8 master402_obj1403_Transmission_Type = 0x1;	/* 1 */
+                    UNS16 master402_obj1403_Inhibit_Time = 0x0;	/* 0 */
+                    UNS8 master402_obj1403_Compatibility_Entry = 0x0;	/* 0 */
+                    UNS16 master402_obj1403_Event_Timer = 0x0;	/* 0 */
+                    UNS8 master402_obj1403_SYNC_start_value = 0x0;	/* 0 */
+                    subindex master402_Index1403[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1403, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1403_COB_ID_used_by_PDO, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1403_Transmission_Type, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1403_Inhibit_Time, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1403_Compatibility_Entry, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1403_Event_Timer, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1403_SYNC_start_value, NULL }
+                     };
+
 /* index 0x1600 :   Receive PDO 1 Mapping. */
                     UNS8 master402_highestSubIndex_obj1600 = 2; /* number of subindex - 1*/
                     UNS32 master402_obj1600[] = 
                     {
-                      0x60410010,	/* 1614872592 */
-                      0x60640020	/* 1617166368 */
+                      0x60640020,	/* 1617166368 */
+                      0x606C0020	/* 1617690656 */
                     };
                     subindex master402_Index1600[] = 
                      {
@@ -219,17 +285,41 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      };
 
 /* index 0x1601 :   Receive PDO 2 Mapping. */
-                    UNS8 master402_highestSubIndex_obj1601 = 2; /* number of subindex - 1*/
+                    UNS8 master402_highestSubIndex_obj1601 = 1; /* number of subindex - 1*/
                     UNS32 master402_obj1601[] = 
                     {
-                      0x606C0020,	/* 1617690656 */
-                      0x20010010	/* 536936464 */
+                      0x60410010	/* 1614872592 */
                     };
                     subindex master402_Index1601[] = 
                      {
                        { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1601, NULL },
-                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1601[0], NULL },
-                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1601[1], NULL }
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1601[0], NULL }
+                     };
+
+/* index 0x1602 :   Receive PDO 3 Mapping. */
+                    UNS8 master402_highestSubIndex_obj1602 = 2; /* number of subindex - 1*/
+                    UNS32 master402_obj1602[] = 
+                    {
+                      0x20040020,	/* 537133088 */
+                      0x20050020	/* 537198624 */
+                    };
+                    subindex master402_Index1602[] = 
+                     {
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1602, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1602[0], NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1602[1], NULL }
+                     };
+
+/* index 0x1603 :   Receive PDO 4 Mapping. */
+                    UNS8 master402_highestSubIndex_obj1603 = 1; /* number of subindex - 1*/
+                    UNS32 master402_obj1603[] = 
+                    {
+                      0x20020010	/* 537002000 */
+                    };
+                    subindex master402_Index1603[] = 
+                     {
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1603, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1603[0], NULL }
                      };
 
 /* index 0x1800 :   Transmit PDO 1 Parameter. */
@@ -270,16 +360,54 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RW, uint8, sizeof (UNS8), (void*)&master402_obj1801_SYNC_start_value, NULL }
                      };
 
+/* index 0x1802 :   Transmit PDO 3 Parameter. */
+                    UNS8 master402_highestSubIndex_obj1802 = 6; /* number of subindex - 1*/
+                    UNS32 master402_obj1802_COB_ID_used_by_PDO = 0x203;	/* 515 */
+                    UNS8 master402_obj1802_Transmission_Type = 0x1;	/* 1 */
+                    UNS16 master402_obj1802_Inhibit_Time = 0x0;	/* 0 */
+                    UNS8 master402_obj1802_Compatibility_Entry = 0x0;	/* 0 */
+                    UNS16 master402_obj1802_Event_Timer = 0x0;	/* 0 */
+                    UNS8 master402_obj1802_SYNC_start_value = 0x0;	/* 0 */
+                    subindex master402_Index1802[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1802, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1802_COB_ID_used_by_PDO, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1802_Transmission_Type, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1802_Inhibit_Time, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1802_Compatibility_Entry, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1802_Event_Timer, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1802_SYNC_start_value, NULL }
+                     };
+
+/* index 0x1803 :   Transmit PDO 4 Parameter. */
+                    UNS8 master402_highestSubIndex_obj1803 = 6; /* number of subindex - 1*/
+                    UNS32 master402_obj1803_COB_ID_used_by_PDO = 0x303;	/* 771 */
+                    UNS8 master402_obj1803_Transmission_Type = 0x1;	/* 1 */
+                    UNS16 master402_obj1803_Inhibit_Time = 0x0;	/* 0 */
+                    UNS8 master402_obj1803_Compatibility_Entry = 0x0;	/* 0 */
+                    UNS16 master402_obj1803_Event_Timer = 0x0;	/* 0 */
+                    UNS8 master402_obj1803_SYNC_start_value = 0x0;	/* 0 */
+                    subindex master402_Index1803[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1803, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1803_COB_ID_used_by_PDO, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1803_Transmission_Type, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1803_Inhibit_Time, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1803_Compatibility_Entry, NULL },
+                       { RW, uint16, sizeof (UNS16), (void*)&master402_obj1803_Event_Timer, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_obj1803_SYNC_start_value, NULL }
+                     };
+
 /* index 0x1A00 :   Transmit PDO 1 Mapping. */
                     UNS8 master402_highestSubIndex_obj1A00 = 2; /* number of subindex - 1*/
                     UNS32 master402_obj1A00[] = 
                     {
-                      0x60400010,	/* 1614807056 */
-                      0x60600008	/* 1616904200 */
+                      0x607A0020,	/* 1618608160 */
+                      0x60FF0020	/* 1627324448 */
                     };
                     subindex master402_Index1A00[] = 
                      {
-                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1A00, NULL },
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1A00, NULL },
                        { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A00[0], NULL },
                        { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A00[1], NULL }
                      };
@@ -288,8 +416,8 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     UNS8 master402_highestSubIndex_obj1A01 = 2; /* number of subindex - 1*/
                     UNS32 master402_obj1A01[] = 
                     {
-                      0x607A0020,	/* 1618608160 */
-                      0x60810020	/* 1619066912 */
+                      0x2F000020,	/* 788529184 */
+                      0x2F010010	/* 788594704 */
                     };
                     subindex master402_Index1A01[] = 
                      {
@@ -298,16 +426,90 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A01[1], NULL }
                      };
 
-/* index 0x2001 :   Mapped variable Alarm_code */
+/* index 0x1A02 :   Transmit PDO 3 Mapping. */
+                    UNS8 master402_highestSubIndex_obj1A02 = 2; /* number of subindex - 1*/
+                    UNS32 master402_obj1A02[] = 
+                    {
+                      0x20060020,	/* 537264160 */
+                      0x20070020	/* 537329696 */
+                    };
+                    subindex master402_Index1A02[] = 
+                     {
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1A02, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A02[0], NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A02[1], NULL }
+                     };
+
+/* index 0x1A03 :   Transmit PDO 4 Mapping. */
+                    UNS8 master402_highestSubIndex_obj1A03 = 1; /* number of subindex - 1*/
+                    UNS32 master402_obj1A03[] = 
+                    {
+                      0x60C10120	/* 1623261472 */
+                    };
+                    subindex master402_Index1A03[] = 
+                     {
+                       { RW, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj1A03, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&master402_obj1A03[0], NULL }
+                     };
+
+/* index 0x2001 :   Mapped variable NODE3_Controlword_6040 */
                     subindex master402_Index2001[] = 
                      {
-                       { RO, uint16, sizeof (UNS16), (void*)&Alarm_code, NULL }
+                       { RW, uint16, sizeof (UNS16), (void*)&NODE3_Controlword_6040, NULL }
+                     };
+
+/* index 0x2002 :   Mapped variable NODE3_Statusword_6041 */
+                    subindex master402_Index2002[] = 
+                     {
+                       { RW, uint16, sizeof (UNS16), (void*)&NODE3_Statusword_6041, NULL }
+                     };
+
+/* index 0x2003 :   Mapped variable NODE3_Modes_of_operation_6060 */
+                    subindex master402_Index2003[] = 
+                     {
+                       { RW, int8, sizeof (INTEGER8), (void*)&NODE3_Modes_of_operation_6060, NULL }
+                     };
+
+/* index 0x2004 :   Mapped variable NODE3_Position_actual_value_6064 */
+                    subindex master402_Index2004[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&NODE3_Position_actual_value_6064, NULL }
+                     };
+
+/* index 0x2005 :   Mapped variable NODE3_Velocity_actual_value_0x606C */
+                    subindex master402_Index2005[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&NODE3_Velocity_actual_value_0x606C, NULL }
+                     };
+
+/* index 0x2006 :   Mapped variable NODE3_Target_position_607A */
+                    subindex master402_Index2006[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&NODE3_Target_position_607A, NULL }
+                     };
+
+/* index 0x2007 :   Mapped variable NODE3_Target_velocity_60FF */
+                    subindex master402_Index2007[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&NODE3_Target_velocity_60FF, NULL }
                      };
 
 /* index 0x2124 :   Mapped variable S_move */
                     subindex master402_Index2124[] = 
                      {
                        { RW, uint16, sizeof (UNS16), (void*)&S_move, NULL }
+                     };
+
+/* index 0x2F00 :   Mapped variable pos_cmd1 */
+                    subindex master402_Index2F00[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&pos_cmd1, NULL }
+                     };
+
+/* index 0x2F01 :   Mapped variable pos_cmd2 */
+                    subindex master402_Index2F01[] = 
+                     {
+                       { RW, int16, sizeof (INTEGER16), (void*)&pos_cmd2, NULL }
                      };
 
 /* index 0x6040 :   Mapped variable Controlword */
@@ -346,10 +548,31 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                        { RW, int32, sizeof (INTEGER32), (void*)&Target_position, NULL }
                      };
 
+/* index 0x607C :   Mapped variable Home offset */
+                    subindex master402_Index607C[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&Home_offset, NULL }
+                     };
+
 /* index 0x6081 :   Mapped variable Profile velocity */
                     subindex master402_Index6081[] = 
                      {
                        { RW, uint32, sizeof (UNS32), (void*)&Profile_velocity, NULL }
+                     };
+
+/* index 0x6098 :   Mapped variable Homing method */
+                    subindex master402_Index6098[] = 
+                     {
+                       { RW, int8, sizeof (INTEGER8), (void*)&Homing_method, NULL }
+                     };
+
+/* index 0x6099 :   Mapped variable Homing speeds */
+                    UNS8 master402_highestSubIndex_obj6099 = 2; /* number of subindex - 1*/
+                    subindex master402_Index6099[] = 
+                     {
+                       { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj6099, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&Homing_speeds_Speed_for_switch_search, NULL },
+                       { RW, uint32, sizeof (UNS32), (void*)&Homing_speeds_Speed_for_zero_search, NULL }
                      };
 
 /* index 0x60C1 :   Mapped variable Interpolation data record */
@@ -357,7 +580,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     subindex master402_Index60C1[] = 
                      {
                        { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj60C1, NULL },
-                       { RW, uint32, sizeof (UNS32), (void*)&Interpolation_data_record_Pos_Cmd, NULL }
+                       { RW, int32, sizeof (INTEGER32), (void*)&Interpolation_data_record_Parameter1_of_ip_function, NULL }
                      };
 
 /* index 0x60C2 :   Mapped variable Interpolation time period */
@@ -366,7 +589,13 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      {
                        { RO, uint8, sizeof (UNS8), (void*)&master402_highestSubIndex_obj60C2, NULL },
                        { RW, uint8, sizeof (UNS8), (void*)&Interpolation_time_period_Interpolation_time_units, NULL },
-                       { RW, uint8, sizeof (UNS8), (void*)&Interpolation_time_period_Interpolation_time_index, NULL }
+                       { RW, int8, sizeof (INTEGER8), (void*)&Interpolation_time_period_Interpolation_time_index, NULL }
+                     };
+
+/* index 0x60FF :   Mapped variable Target velocity */
+                    subindex master402_Index60FF[] = 
+                     {
+                       { RW, int32, sizeof (INTEGER32), (void*)&Target_velocity, NULL }
                      };
 
 /**************************************************************************/
@@ -377,7 +606,6 @@ const indextable master402_objdict[] =
 {
   { (subindex*)master402_Index1000,sizeof(master402_Index1000)/sizeof(master402_Index1000[0]), 0x1000},
   { (subindex*)master402_Index1001,sizeof(master402_Index1001)/sizeof(master402_Index1001[0]), 0x1001},
-  { (subindex*)master402_Index1003,sizeof(master402_Index1003)/sizeof(master402_Index1003[0]), 0x1003},
   { (subindex*)master402_Index1005,sizeof(master402_Index1005)/sizeof(master402_Index1005[0]), 0x1005},
   { (subindex*)master402_Index1006,sizeof(master402_Index1006)/sizeof(master402_Index1006[0]), 0x1006},
   { (subindex*)master402_Index1014,sizeof(master402_Index1014)/sizeof(master402_Index1014[0]), 0x1014},
@@ -386,25 +614,46 @@ const indextable master402_objdict[] =
   { (subindex*)master402_Index1018,sizeof(master402_Index1018)/sizeof(master402_Index1018[0]), 0x1018},
   { (subindex*)master402_Index1200,sizeof(master402_Index1200)/sizeof(master402_Index1200[0]), 0x1200},
   { (subindex*)master402_Index1280,sizeof(master402_Index1280)/sizeof(master402_Index1280[0]), 0x1280},
+  { (subindex*)master402_Index1281,sizeof(master402_Index1281)/sizeof(master402_Index1281[0]), 0x1281},
   { (subindex*)master402_Index1400,sizeof(master402_Index1400)/sizeof(master402_Index1400[0]), 0x1400},
   { (subindex*)master402_Index1401,sizeof(master402_Index1401)/sizeof(master402_Index1401[0]), 0x1401},
+  { (subindex*)master402_Index1402,sizeof(master402_Index1402)/sizeof(master402_Index1402[0]), 0x1402},
+  { (subindex*)master402_Index1403,sizeof(master402_Index1403)/sizeof(master402_Index1403[0]), 0x1403},
   { (subindex*)master402_Index1600,sizeof(master402_Index1600)/sizeof(master402_Index1600[0]), 0x1600},
   { (subindex*)master402_Index1601,sizeof(master402_Index1601)/sizeof(master402_Index1601[0]), 0x1601},
+  { (subindex*)master402_Index1602,sizeof(master402_Index1602)/sizeof(master402_Index1602[0]), 0x1602},
+  { (subindex*)master402_Index1603,sizeof(master402_Index1603)/sizeof(master402_Index1603[0]), 0x1603},
   { (subindex*)master402_Index1800,sizeof(master402_Index1800)/sizeof(master402_Index1800[0]), 0x1800},
   { (subindex*)master402_Index1801,sizeof(master402_Index1801)/sizeof(master402_Index1801[0]), 0x1801},
+  { (subindex*)master402_Index1802,sizeof(master402_Index1802)/sizeof(master402_Index1802[0]), 0x1802},
+  { (subindex*)master402_Index1803,sizeof(master402_Index1803)/sizeof(master402_Index1803[0]), 0x1803},
   { (subindex*)master402_Index1A00,sizeof(master402_Index1A00)/sizeof(master402_Index1A00[0]), 0x1A00},
   { (subindex*)master402_Index1A01,sizeof(master402_Index1A01)/sizeof(master402_Index1A01[0]), 0x1A01},
+  { (subindex*)master402_Index1A02,sizeof(master402_Index1A02)/sizeof(master402_Index1A02[0]), 0x1A02},
+  { (subindex*)master402_Index1A03,sizeof(master402_Index1A03)/sizeof(master402_Index1A03[0]), 0x1A03},
   { (subindex*)master402_Index2001,sizeof(master402_Index2001)/sizeof(master402_Index2001[0]), 0x2001},
+  { (subindex*)master402_Index2002,sizeof(master402_Index2002)/sizeof(master402_Index2002[0]), 0x2002},
+  { (subindex*)master402_Index2003,sizeof(master402_Index2003)/sizeof(master402_Index2003[0]), 0x2003},
+  { (subindex*)master402_Index2004,sizeof(master402_Index2004)/sizeof(master402_Index2004[0]), 0x2004},
+  { (subindex*)master402_Index2005,sizeof(master402_Index2005)/sizeof(master402_Index2005[0]), 0x2005},
+  { (subindex*)master402_Index2006,sizeof(master402_Index2006)/sizeof(master402_Index2006[0]), 0x2006},
+  { (subindex*)master402_Index2007,sizeof(master402_Index2007)/sizeof(master402_Index2007[0]), 0x2007},
   { (subindex*)master402_Index2124,sizeof(master402_Index2124)/sizeof(master402_Index2124[0]), 0x2124},
+  { (subindex*)master402_Index2F00,sizeof(master402_Index2F00)/sizeof(master402_Index2F00[0]), 0x2F00},
+  { (subindex*)master402_Index2F01,sizeof(master402_Index2F01)/sizeof(master402_Index2F01[0]), 0x2F01},
   { (subindex*)master402_Index6040,sizeof(master402_Index6040)/sizeof(master402_Index6040[0]), 0x6040},
   { (subindex*)master402_Index6041,sizeof(master402_Index6041)/sizeof(master402_Index6041[0]), 0x6041},
   { (subindex*)master402_Index6060,sizeof(master402_Index6060)/sizeof(master402_Index6060[0]), 0x6060},
   { (subindex*)master402_Index6064,sizeof(master402_Index6064)/sizeof(master402_Index6064[0]), 0x6064},
   { (subindex*)master402_Index606C,sizeof(master402_Index606C)/sizeof(master402_Index606C[0]), 0x606C},
   { (subindex*)master402_Index607A,sizeof(master402_Index607A)/sizeof(master402_Index607A[0]), 0x607A},
+  { (subindex*)master402_Index607C,sizeof(master402_Index607C)/sizeof(master402_Index607C[0]), 0x607C},
   { (subindex*)master402_Index6081,sizeof(master402_Index6081)/sizeof(master402_Index6081[0]), 0x6081},
+  { (subindex*)master402_Index6098,sizeof(master402_Index6098)/sizeof(master402_Index6098[0]), 0x6098},
+  { (subindex*)master402_Index6099,sizeof(master402_Index6099)/sizeof(master402_Index6099[0]), 0x6099},
   { (subindex*)master402_Index60C1,sizeof(master402_Index60C1)/sizeof(master402_Index60C1[0]), 0x60C1},
   { (subindex*)master402_Index60C2,sizeof(master402_Index60C2)/sizeof(master402_Index60C2[0]), 0x60C2},
+  { (subindex*)master402_Index60FF,sizeof(master402_Index60FF)/sizeof(master402_Index60FF[0]), 0x60FF},
 };
 
 const indextable * master402_scanIndexOD (CO_Data *d, UNS16 wIndex, UNS32 * errorCode)
@@ -414,34 +663,54 @@ const indextable * master402_scanIndexOD (CO_Data *d, UNS16 wIndex, UNS32 * erro
 	switch(wIndex){
 		case 0x1000: i = 0;break;
 		case 0x1001: i = 1;break;
-		case 0x1003: i = 2;break;
-		case 0x1005: i = 3;break;
-		case 0x1006: i = 4;break;
-		case 0x1014: i = 5;break;
-		case 0x1016: i = 6;break;
-		case 0x1017: i = 7;break;
-		case 0x1018: i = 8;break;
-		case 0x1200: i = 9;break;
-		case 0x1280: i = 10;break;
+		case 0x1005: i = 2;break;
+		case 0x1006: i = 3;break;
+		case 0x1014: i = 4;break;
+		case 0x1016: i = 5;break;
+		case 0x1017: i = 6;break;
+		case 0x1018: i = 7;break;
+		case 0x1200: i = 8;break;
+		case 0x1280: i = 9;break;
+		case 0x1281: i = 10;break;
 		case 0x1400: i = 11;break;
 		case 0x1401: i = 12;break;
-		case 0x1600: i = 13;break;
-		case 0x1601: i = 14;break;
-		case 0x1800: i = 15;break;
-		case 0x1801: i = 16;break;
-		case 0x1A00: i = 17;break;
-		case 0x1A01: i = 18;break;
-		case 0x2001: i = 19;break;
-		case 0x2124: i = 20;break;
-		case 0x6040: i = 21;break;
-		case 0x6041: i = 22;break;
-		case 0x6060: i = 23;break;
-		case 0x6064: i = 24;break;
-		case 0x606C: i = 25;break;
-		case 0x607A: i = 26;break;
-		case 0x6081: i = 27;break;
-		case 0x60C1: i = 28;break;
-		case 0x60C2: i = 29;break;
+		case 0x1402: i = 13;break;
+		case 0x1403: i = 14;break;
+		case 0x1600: i = 15;break;
+		case 0x1601: i = 16;break;
+		case 0x1602: i = 17;break;
+		case 0x1603: i = 18;break;
+		case 0x1800: i = 19;break;
+		case 0x1801: i = 20;break;
+		case 0x1802: i = 21;break;
+		case 0x1803: i = 22;break;
+		case 0x1A00: i = 23;break;
+		case 0x1A01: i = 24;break;
+		case 0x1A02: i = 25;break;
+		case 0x1A03: i = 26;break;
+		case 0x2001: i = 27;break;
+		case 0x2002: i = 28;break;
+		case 0x2003: i = 29;break;
+		case 0x2004: i = 30;break;
+		case 0x2005: i = 31;break;
+		case 0x2006: i = 32;break;
+		case 0x2007: i = 33;break;
+		case 0x2124: i = 34;break;
+		case 0x2F00: i = 35;break;
+		case 0x2F01: i = 36;break;
+		case 0x6040: i = 37;break;
+		case 0x6041: i = 38;break;
+		case 0x6060: i = 39;break;
+		case 0x6064: i = 40;break;
+		case 0x606C: i = 41;break;
+		case 0x607A: i = 42;break;
+		case 0x607C: i = 43;break;
+		case 0x6081: i = 44;break;
+		case 0x6098: i = 45;break;
+		case 0x6099: i = 46;break;
+		case 0x60C1: i = 47;break;
+		case 0x60C2: i = 48;break;
+		case 0x60FF: i = 49;break;
 		default:
 			*errorCode = OD_NO_SUCH_OBJECT;
 			return NULL;
@@ -455,24 +724,24 @@ const indextable * master402_scanIndexOD (CO_Data *d, UNS16 wIndex, UNS32 * erro
  * Even if no pdoTransmit are defined, at least one entry is computed
  * for compilations issues.
  */
-s_PDO_status master402_PDO_status[2] = {s_PDO_status_Initializer,s_PDO_status_Initializer};
+s_PDO_status master402_PDO_status[4] = {s_PDO_status_Initializer,s_PDO_status_Initializer,s_PDO_status_Initializer,s_PDO_status_Initializer};
 
 const quick_index master402_firstIndex = {
-  9, /* SDO_SVR */
-  10, /* SDO_CLT */
+  8, /* SDO_SVR */
+  9, /* SDO_CLT */
   11, /* PDO_RCV */
-  13, /* PDO_RCV_MAP */
-  15, /* PDO_TRS */
-  17 /* PDO_TRS_MAP */
+  15, /* PDO_RCV_MAP */
+  19, /* PDO_TRS */
+  23 /* PDO_TRS_MAP */
 };
 
 const quick_index master402_lastIndex = {
-  9, /* SDO_SVR */
+  8, /* SDO_SVR */
   10, /* SDO_CLT */
-  12, /* PDO_RCV */
-  14, /* PDO_RCV_MAP */
-  16, /* PDO_TRS */
-  18 /* PDO_TRS_MAP */
+  14, /* PDO_RCV */
+  18, /* PDO_RCV_MAP */
+  22, /* PDO_TRS */
+  26 /* PDO_TRS_MAP */
 };
 
 const UNS16 master402_ObjdictSize = sizeof(master402_objdict)/sizeof(master402_objdict[0]); 

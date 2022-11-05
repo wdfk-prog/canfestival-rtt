@@ -24,7 +24,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define __can_driver_h__
 
 #include "applicfg.h"
-#include "can.h"
+#include "canoepn_can.h"
 
 /**
  * @brief The CAN board configuration

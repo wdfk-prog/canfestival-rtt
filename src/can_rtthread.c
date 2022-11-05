@@ -34,8 +34,9 @@ static struct can_app_struct can_data =
     CANFESTIVAL_CAN_DEVICE_NAME
 };
 /* Private define ------------------------------------------------------------*/
-#define MAX_MUTEX_WAIT_TIME 5000  //互斥量等待时间
-#define MAX_SEM_WAIT_TIME   5000  //信号量等待时间，can接收超时时间
+#define MAX_MUTEX_WAIT_TIME 5000      //互斥量等待时间
+#define MAX_SEM_WAIT_TIME   5000      //信号量等待时间，can接收超时时间
+#define CAN_BAUD            CAN1MBaud //CAN总线波特率
 /* 线程配置 */
 #define THREAD_PRIORITY      CANFESTIVAL_RECV_THREAD_PRIO//线程优先级
 #define THREAD_TIMESLICE     20//线程时间片
@@ -122,7 +123,7 @@ unsigned char canSend(CAN_PORT notused, Message *m)
     }
 		if(++canSend_err_cnt >= (5*5000 / PRODUCER_HEARTBEAT_TIME)) 
     {
-		    setState(od_data, Stopped);
+      setState(od_data, Stopped);
 		}
 	  return 0xFF;
 	}
@@ -148,6 +149,13 @@ void canopen_recv_thread_entry(void* parameter)
   if( err != RT_EOK) 
   {
       LOG_E("canfestival open device %s failed, err = %d", canpara->name, err);
+      return;
+  }
+  /* 设置 CAN 通信的波特率*/
+  err = rt_device_control(candev, RT_CAN_CMD_SET_BAUD, (void *)CAN_BAUD);
+  if( err != RT_EOK) 
+  {
+      LOG_E("canfestival set baud failed, err = %d", err);
       return;
   }
   err = rt_device_set_rx_indicate(candev, can1ind);

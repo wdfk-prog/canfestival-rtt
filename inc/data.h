@@ -34,7 +34,7 @@ typedef struct struct_CO_Data CO_Data;
 
 #include "applicfg.h"
 #include "def.h"
-#include "can.h"
+#include "canoepn_can.h"
 #include "objdictdef.h"
 #include "objacces.h"
 #include "sdo.h"

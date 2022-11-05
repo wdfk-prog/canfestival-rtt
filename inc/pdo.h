@@ -32,7 +32,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <applicfg.h>
 #include <def.h>
 
-#include "can.h"
+#include "canoepn_can.h"
 
 typedef struct struct_s_PDO_status s_PDO_status;
 

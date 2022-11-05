@@ -1,7 +1,6 @@
 This is a package for RT-Thread operating system.
 
-Forked from the gbcwbz ：https://github.com/gbcwbz/canfestival-rtt
-
+Forked from the CanFestival-3 project https://bitbucket.org/Mongo/canfestival-3-asc
 
 # CanFestival
 
@@ -11,21 +10,12 @@ Forked from the gbcwbz ：https://github.com/gbcwbz/canfestival-rtt
  RT-Thread 的 CAN 驱动和 hwtimer 驱动，从而可以运行于所有提供了这两个驱动的平台。
 同时提供了 CANopen 的一些示例，力图做到开箱即用。
 
-**在此基础上，个人使用做了些功能与优化**
-
-**1.增加MSH命令与节点掉线断电处理程序**
-
-**2.添加字典工具，并对字典工具中DS402协议进行了添加与配置**
-
-**3.增加思维导图**
-
-**4.仅在SMT32F429IGT6芯片测试运行，RTT版本4.1.0+。低于该版本，STM32的can驱动bug未修复**
 ### 1.1 目录结构
 
 | 名称 | 说明 |
 | ---- | ---- |
 | docs  | 文档目录 |
-| master402 | 例子目录，Master402 为 DS402 主站示例，用于控制伺服电机|
+| examples | 例子目录，Master402 为 DS402 主站示例，用于控制伺服电机|
 | inc  | 头文件目录 |
 | src  | 源代码目录 |
 
@@ -69,5 +59,5 @@ RT-Thread online packages
 
 ## 5、联系方式 & 感谢
 
-* 维护：wdfk-prog
-* 主页：https://github.com/wdfk-prog/canfestival-rtt
+* 维护：gbcwbz
+* 主页：https://github.com/gbcwbz/canfestival-rtt
