@@ -12,6 +12,10 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __AGV_CANOPEN_H__
 #define __AGV_CANOPEN_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 /* Includes ------------------------------------------------------------------*/
 #include "master402_od.h"
 /* Exported types ------------------------------------------------------------*/
@@ -48,4 +52,9 @@ extern UNS8 Write_SLAVE_Modes_of_operation(UNS8 nodeId,INTEGER8 mode);
 extern UNS8 Write_SLAVE_profile_position_speed_set(UNS8 nodeId,UNS32 speed);
 extern UNS8 Write_SLAVE_Interpolation_time_period(UNS8 nodeId);
 extern UNS8 Write_SLAVE_Homing_set(UNS8 nodeId,UNS32 offset,UNS8 method,float switch_speed,float zero_speed);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* __AGV_CANOPEN_H__ */

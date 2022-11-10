@@ -12,6 +12,10 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MOTOR_CONTROL_H
 #define __MOTOR_CONTROL_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 /* Includes ------------------------------------------------------------------*/
 #include "canfestival.h"
 /* Exported types ------------------------------------------------------------*/
@@ -56,4 +60,8 @@ extern Map_Val_UNS16 Controlword_Node[];
 extern Map_Val_INTEGER8 Modes_of_operation_Node[];
 /* Exported functions prototypes ---------------------------------------------*/
  
+#ifdef __cplusplus
+}
+#endif
+
 #endif /* __MOTOR_CONTROL_H */

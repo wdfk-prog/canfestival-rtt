@@ -237,6 +237,31 @@ void master402_post_emcy(CO_Data* d, UNS8 nodeID, UNS16 errCode, UNS8 errReg, co
 }
 /*******************************ERROR FIX CODE*****************************************************************/
 /**
+  * @brief  主站恢复操作状态.
+  * @param  None.
+  * @retval None.
+  * @note   重新开始生产者心跳
+*/
+void master_resume_start(CO_Data *d,UNS8 nodeId)
+{
+  if(getState(d) == Stopped)//can通信异常，发送失败多次，进入停止状态
+  {
+    //Stop状态时会删除生产者心跳定时器
+    if (*d->ProducerHeartBeatTime)//恢复到OP状态时检查是否有生产者心跳时间
+    {
+      TIMEVAL time = *d->ProducerHeartBeatTime;
+      extern void ProducerHeartbeatAlarm(CO_Data* d, UNS32 id);
+      //设置生产者时间定时器，并设置定时回调
+      LOG_W("Restart the producer heartbeat");
+      d->ProducerHeartBeatTimer = SetAlarm(d, 0, &ProducerHeartbeatAlarm, MS_TO_TIMEVAL(time), MS_TO_TIMEVAL(time));
+    }
+    LOG_W("The master station enters the operation state from the stop state");
+    setState(d, Operational);//转入Operational状态
+  }
+  masterSendNMTstateChange(d,nodeId,NMT_Start_Node);
+}
+
+/**
   * @brief  修复节点NMT异常
   * @param  None.
   * @retval None.
@@ -265,21 +290,7 @@ static void master402_fix_node_Disconnected(void* parameter)
 			}
 			else if(now == Pre_operational)
 			{
-        if(getState(OD_Data) == Stopped)//can通信异常，发送失败多次，进入停止状态
-        {
-          //Stop状态时会删除生产者心跳定时器
-          if (*OD_Data->ProducerHeartBeatTime)//恢复到OP状态时检查是否有生产者心跳时间
-          {
-            TIMEVAL time = *OD_Data->ProducerHeartBeatTime;
-            extern void ProducerHeartbeatAlarm(CO_Data* d, UNS32 id);
-            //设置生产者时间定时器，并设置定时回调
-            LOG_W("Restart the producer heartbeat");
-            OD_Data->ProducerHeartBeatTimer = SetAlarm(OD_Data, 0, &ProducerHeartbeatAlarm, MS_TO_TIMEVAL(time), MS_TO_TIMEVAL(time));
-          }
-          LOG_W("The master station enters the operation state from the stop state");
-          setState(OD_Data, Operational);//转入Operational状态
-        }
-				masterSendNMTstateChange(OD_Data,heartbeatID,NMT_Start_Node);
+        master_resume_start(OD_Data,heartbeatID);
 				LOG_I("nodeID:%d,Determines that the line is restored and switches the slave machine to operation mode, deleting the current thread",heartbeatID);
         node[heartbeatID - 2].lock = 0;
 				return;//退出线程

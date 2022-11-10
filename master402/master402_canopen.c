@@ -35,6 +35,7 @@
 typedef struct 
 {
   uint8_t nodeID;
+  char name[RT_NAME_MAX];
 	uint8_t state;
 	uint8_t try_cnt;
   uint8_t err_code;
@@ -63,8 +64,8 @@ CO_Data *OD_Data = &master402_Data;
 static s_BOARD agv_board  = {CANFESTIVAL_CAN_DEVICE_NAME,"1M"};//没用,兼容CANFESTIVAL
 static node_config_state node_conf[MAX_NODE_COUNT - 2] = 
 {
-  {SERVO_NODEID_1,},
-  {SERVO_NODEID_2,},
+  {SERVO_NODEID_1,"walk",},
+  {SERVO_NODEID_2,"turn",},
 };//配置状态
 /* Private function prototypes -----------------------------------------------*/
 static void config_node_param(uint8_t nodeId, node_config_state *conf);
@@ -109,7 +110,7 @@ static int canopen_init(void)
 	
 	return 0;
 }
-INIT_APP_EXPORT(canopen_init);
+//INIT_APP_EXPORT(canopen_init);
 /**
   * @brief  None
   * @param  None
@@ -132,43 +133,45 @@ void printf_state(e_nodeState state)
   switch(state)
   {
     case Initialisation:
-      rt_kprintf("nodeID state is Initialisation\n");
+      rt_kprintf("Initialisation");
       break;
     case Stopped:
-      rt_kprintf("nodeID state is Stopped\n");
+      rt_kprintf("Stopped");
       break;
     case Operational:
-      rt_kprintf("nodeID state is Operational\n");
+      rt_kprintf("Operational");
       break;
     case Pre_operational:
-      rt_kprintf("nodeID state is Pre_operational\n");
+      rt_kprintf("Pre_operational");
       break;
     case Disconnected:
-      rt_kprintf("nodeID state is Disconnected\n");
+      rt_kprintf("Disconnected");
       break;   
     case Unknown_state:
-      rt_kprintf("nodeID state is Unknown_state\n");
+      rt_kprintf("Unknown_state");
       break;
     default:
-      rt_kprintf("nodeID state is %d\n",state);
+      rt_kprintf("%d",state);
       break;
   }
 }
 /**
-  * @brief  MSH控制canopen主站nmt状态
+  * @brief  查询或控制nmt状态
   * @param  None
   * @retval None
   * @note   None
 */
 static void cmd_canopen_nmt(uint8_t argc, char **argv) 
 {
-#define NMT_CMD_GET                     0
-#define NMT_CMD_SLAVE_SET               1
-#define NMT_CMD_PRE                     3
+#define NMT_CMD_LIST                    0
+#define NMT_CMD_GET                     1
+#define NMT_CMD_SLAVE_SET               2
+#define NMT_CMD_PRE                     NMT_CMD_SLAVE_SET+2
   size_t i = 0;
 
   const char* help_info[] =
     {
+        [NMT_CMD_LIST]           = "canopen_nmt list                        - Print all node NMT.",
         [NMT_CMD_GET]            = "canopen_nmt get [nodeID]                - Get nodeID state.",
         [NMT_CMD_SLAVE_SET]      = "canopen_nmt s   [operational] <nodeID>  - Slvae  NMT set start/stop/pre/rn/rc.",
         [NMT_CMD_SLAVE_SET+1]    = "                                        - rn:Reset_Node rc:Reset_Comunication.",
@@ -187,8 +190,25 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
     else
     {
         const char *operator = argv[1];
-        uint32_t addr, size;
-        if (!strcmp(operator, "get"))
+        if (!strcmp(operator, "list"))//打印所有节点NMT状态
+        {
+          const char *item_title = "NMT";
+          int maxlen = RT_NAME_MAX;    
+
+          rt_kprintf("%-*.*s nodeID  status\n",maxlen,maxlen,item_title);
+          rt_kprintf("-------- ------  -------\n");
+          rt_kprintf("%-*.*s 0X%02X    ",maxlen,maxlen,"master",CONTROLLER_NODEID);
+          printf_state(getState(OD_Data));
+          rt_kprintf("\n");
+
+          for(UNS8 i = 0; i < MAX_NODE_COUNT - 2; i++)
+          {
+              rt_kprintf("%-*.*s 0X%02X    ",maxlen,maxlen,node_conf[i].name,node_conf[i].nodeID);
+              printf_state(getNodeState(OD_Data,i+ 2));
+              rt_kprintf("\n");
+          }
+        }
+        else if (!strcmp(operator, "get"))//查询节点NMT
         {
           if(argc <= 2) 
           {
@@ -199,15 +219,19 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
           if(nodeid == CONTROLLER_NODEID)
           {
             rt_kprintf("Master NodeID:%2X  ",CONTROLLER_NODEID);
-            printf_state(getState(OD_Data));            
+            rt_kprintf("nodeID state is ");
+            printf_state(getState(OD_Data));     
+            rt_kprintf("\r\n");       
           }
           else
           {
             rt_kprintf("Slave  NodeID:%2X  ",nodeid);
+            rt_kprintf("nodeID state is ");
             printf_state(getNodeState(OD_Data,nodeid));
+            rt_kprintf("\n");
           }
         }
-        else if (!strcmp(operator, "s"))
+        else if (!strcmp(operator, "s"))//从机设置NMT
         {
           uint8_t nodeID = 2;
           UNS8    cs = 0X00; 
@@ -252,7 +276,7 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
           }
           masterSendNMTstateChange(OD_Data,nodeID,cs);
         }
-        else if (!strcmp(operator, "m"))
+        else if (!strcmp(operator, "m"))//主机设置NMT
         {
           const char *operator = argv[2];
           if(argc <= 2) 
@@ -432,6 +456,7 @@ static void config_single_node(void *parameter)
 */
 static void slaveBootupHdl(CO_Data* d, UNS8 nodeId)
 {
+  master_resume_start(d,nodeId);//是否需要恢复操作模式
 	rt_thread_t tid;
   LOG_I("Node %d has gone online",nodeId);
   //判断信号量是否初始化
@@ -444,7 +469,7 @@ static void slaveBootupHdl(CO_Data* d, UNS8 nodeId)
   {
     LOG_I("After the MCU is powered on, node %d is powered on",nodeId);
   }
-	tid = rt_thread_create("co_cfg", config_single_node, (void *)(int)nodeId, 1024, 12 + nodeId, 2);
+	tid = rt_thread_create("co_cfg", config_single_node, (void *)(int)nodeId, 2048, 12 + nodeId, 2);
 	if(tid == RT_NULL)
 	{
 		LOG_E("canopen config thread start failed!");
