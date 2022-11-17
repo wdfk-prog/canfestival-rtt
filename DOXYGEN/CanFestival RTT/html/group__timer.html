@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: Timer Management</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__timer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Timer Management</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga11c2616d78f06ed9144ef662f757b128"><td class="memItemLeft" align="right" valign="top"><a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga11c2616d78f06ed9144ef662f757b128">SetAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> id, <a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a> callback, <a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a> value, <a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a> period)</td></tr>
+<tr class="memdesc:ga11c2616d78f06ed9144ef662f757b128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an alarm to execute a callback function when expired.  <a href="group__timer.html#ga11c2616d78f06ed9144ef662f757b128">更多...</a><br /></td></tr>
+<tr class="separator:ga11c2616d78f06ed9144ef662f757b128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga991b3cfaac2f201b14d5530f75985c21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga991b3cfaac2f201b14d5530f75985c21">DelAlarm</a> (<a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> handle)</td></tr>
+<tr class="memdesc:ga991b3cfaac2f201b14d5530f75985c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an alarm before expiring.  <a href="group__timer.html#ga991b3cfaac2f201b14d5530f75985c21">更多...</a><br /></td></tr>
+<tr class="separator:ga991b3cfaac2f201b14d5530f75985c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8d05dee70f04b5c5190ab00e84da106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gab8d05dee70f04b5c5190ab00e84da106">setTimer</a> (<a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a> value)</td></tr>
+<tr class="memdesc:gab8d05dee70f04b5c5190ab00e84da106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a timerfor a given time.  <a href="group__timer.html#gab8d05dee70f04b5c5190ab00e84da106">更多...</a><br /></td></tr>
+<tr class="separator:gab8d05dee70f04b5c5190ab00e84da106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dccc204d52176bd547ab34d6858f5ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga4dccc204d52176bd547ab34d6858f5ba">getElapsedTime</a> (void)</td></tr>
+<tr class="memdesc:ga4dccc204d52176bd547ab34d6858f5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time elapsed since latest timer occurence.  <a href="group__timer.html#ga4dccc204d52176bd547ab34d6858f5ba">更多...</a><br /></td></tr>
+<tr class="separator:ga4dccc204d52176bd547ab34d6858f5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7fee43b8a44cf8b7036853593044037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gad7fee43b8a44cf8b7036853593044037">EnterMutex</a> (void)</td></tr>
+<tr class="memdesc:gad7fee43b8a44cf8b7036853593044037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquire mutex  <a href="group__timer.html#gad7fee43b8a44cf8b7036853593044037">更多...</a><br /></td></tr>
+<tr class="separator:gad7fee43b8a44cf8b7036853593044037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73d9a4eb941fb20cf6b597840510394b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga73d9a4eb941fb20cf6b597840510394b">LeaveMutex</a> (void)</td></tr>
+<tr class="memdesc:ga73d9a4eb941fb20cf6b597840510394b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release mutex  <a href="group__timer.html#ga73d9a4eb941fb20cf6b597840510394b">更多...</a><br /></td></tr>
+<tr class="separator:ga73d9a4eb941fb20cf6b597840510394b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5499adb17edb227885abaccd47631df4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga5499adb17edb227885abaccd47631df4">TimerInit</a> (void)</td></tr>
+<tr class="memdesc:ga5499adb17edb227885abaccd47631df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Timer  <a href="group__timer.html#ga5499adb17edb227885abaccd47631df4">更多...</a><br /></td></tr>
+<tr class="separator:ga5499adb17edb227885abaccd47631df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaaeecb582dd63b86cd3a6d0d1c778ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gaaaeecb582dd63b86cd3a6d0d1c778ec5">TimerCleanup</a> (void)</td></tr>
+<tr class="memdesc:gaaaeecb582dd63b86cd3a6d0d1c778ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleanup Timer <br  />
+  <a href="group__timer.html#gaaaeecb582dd63b86cd3a6d0d1c778ec5">更多...</a><br /></td></tr>
+<tr class="separator:gaaaeecb582dd63b86cd3a6d0d1c778ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae860b50d4fca892db5127b5e7e9a586e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gae860b50d4fca892db5127b5e7e9a586e">StartTimerLoop</a> (<a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a> Callback)</td></tr>
+<tr class="memdesc:gae860b50d4fca892db5127b5e7e9a586e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the timer task  <a href="group__timer.html#gae860b50d4fca892db5127b5e7e9a586e">更多...</a><br /></td></tr>
+<tr class="separator:gae860b50d4fca892db5127b5e7e9a586e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9efbe085fdb4d1153a866354a7a23c0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga9efbe085fdb4d1153a866354a7a23c0f">StopTimerLoop</a> (<a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a> Callback)</td></tr>
+<tr class="memdesc:ga9efbe085fdb4d1153a866354a7a23c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the timer task  <a href="group__timer.html#ga9efbe085fdb4d1153a866354a7a23c0f">更多...</a><br /></td></tr>
+<tr class="separator:ga9efbe085fdb4d1153a866354a7a23c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">函数说明</h2>
+<a id="ga991b3cfaac2f201b14d5530f75985c21" name="ga991b3cfaac2f201b14d5530f75985c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga991b3cfaac2f201b14d5530f75985c21">&#9670;&#160;</a></span>DelAlarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> DelAlarm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="canopen__timer_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/canopen_timer.h</a>&gt;</code></p>
+
+<p>Delete an alarm before expiring. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>A timer handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The timer handle</dd></dl>
+<p>--&mdash; Use this to remove an alarm -&mdash;</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="canopen__timer_8c_source.html">canopen_timer.c</a> 第 <a class="el" href="canopen__timer_8c_source.html#l00103">103</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gad7fee43b8a44cf8b7036853593044037" name="gad7fee43b8a44cf8b7036853593044037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7fee43b8a44cf8b7036853593044037">&#9670;&#160;</a></span>EnterMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnterMutex </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Acquire mutex </p>
+<p >Acquire mutex</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="can__rtthread_8c_source.html">can_rtthread.c</a> 第 <a class="el" href="can__rtthread_8c_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga4dccc204d52176bd547ab34d6858f5ba" name="ga4dccc204d52176bd547ab34d6858f5ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dccc204d52176bd547ab34d6858f5ba">&#9670;&#160;</a></span>getElapsedTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a> getElapsedTime </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="canopen__timer_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/canopen_timer.h</a>&gt;</code></p>
+
+<p>Get the time elapsed since latest timer occurence. </p>
+<dl class="section return"><dt>返回</dt><dd>time elapsed since latest timer occurence</dd></dl>
+<p>Get the time elapsed since latest timer occurence.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga73d9a4eb941fb20cf6b597840510394b" name="ga73d9a4eb941fb20cf6b597840510394b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73d9a4eb941fb20cf6b597840510394b">&#9670;&#160;</a></span>LeaveMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LeaveMutex </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Release mutex </p>
+<p >Release mutex</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="can__rtthread_8c_source.html">can_rtthread.c</a> 第 <a class="el" href="can__rtthread_8c_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga11c2616d78f06ed9144ef662f757b128" name="ga11c2616d78f06ed9144ef662f757b128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11c2616d78f06ed9144ef662f757b128">&#9670;&#160;</a></span>SetAlarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> SetAlarm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="canopen__timer_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/canopen_timer.h</a>&gt;</code></p>
+
+<p>Set an alarm to execute a callback function when expired. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">id</td><td>The alarm Id </td></tr>
+    <tr><td class="paramname">callback</td><td>A callback function </td></tr>
+    <tr><td class="paramname">value</td><td>Call the callback function at current time + value </td></tr>
+    <tr><td class="paramname">period</td><td>Call periodically the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>handle The timer handle</dd></dl>
+<p>----&mdash; Use this to declare a new alarm ---&mdash;</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">callback</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">period</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="canopen__timer_8c_source.html">canopen_timer.c</a> 第 <a class="el" href="canopen__timer_8c_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gab8d05dee70f04b5c5190ab00e84da106" name="gab8d05dee70f04b5c5190ab00e84da106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8d05dee70f04b5c5190ab00e84da106">&#9670;&#160;</a></span>setTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTimer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="canopen__timer_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/canopen_timer.h</a>&gt;</code></p>
+
+<p>Set a timerfor a given time. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The time value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set a timerfor a given time.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None </dd></dl>
+<p >Avoid invalid 0 timeout. See here for detailed reference: <a href="https://club.rt-thread.org/ask/question/11194.html">https://club.rt-thread.org/ask/question/11194.html</a> .</p>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gae860b50d4fca892db5127b5e7e9a586e" name="gae860b50d4fca892db5127b5e7e9a586e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae860b50d4fca892db5127b5e7e9a586e">&#9670;&#160;</a></span>StartTimerLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StartTimerLoop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Start the timer task </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Callback</td><td>A callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00178">178</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga9efbe085fdb4d1153a866354a7a23c0f" name="ga9efbe085fdb4d1153a866354a7a23c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9efbe085fdb4d1153a866354a7a23c0f">&#9670;&#160;</a></span>StopTimerLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StopTimerLoop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Stop the timer task </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Callback</td><td>A callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaaaeecb582dd63b86cd3a6d0d1c778ec5" name="gaaaeecb582dd63b86cd3a6d0d1c778ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaaeecb582dd63b86cd3a6d0d1c778ec5">&#9670;&#160;</a></span>TimerCleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerCleanup </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Cleanup Timer <br  />
+ </p>
+
+</div>
+</div>
+<a id="ga5499adb17edb227885abaccd47631df4" name="ga5499adb17edb227885abaccd47631df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5499adb17edb227885abaccd47631df4">&#9670;&#160;</a></span>TimerInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="timers__driver_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/timers_driver.h</a>&gt;</code></p>
+
+<p>Initialize Timer </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

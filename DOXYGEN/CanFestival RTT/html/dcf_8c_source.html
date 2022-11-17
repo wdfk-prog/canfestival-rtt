@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/dcf.c 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dcf_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dcf.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dcf_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  This file is part of CanFestival, a library implementing CanOpen</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Stack.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  Copyright (C): Edouard TISSERANT and Francis DUPIN</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  See COPYING file for copyrights details.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"></span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  License along with this library; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  USA</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="data_8h.html">data.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="sysdep_8h.html">sysdep.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="dcf_8h.html">dcf.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structdcf__entry__t.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">   42</a></span>    <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> <a class="code hl_variable" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">Index</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">   43</a></span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">Subindex</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">   44</a></span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> <a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structdcf__entry__t.html#a4b6bedef392e9a580b32396ec1eb0f0e">   45</a></span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *<a class="code hl_variable" href="structdcf__entry__t.html#a4b6bedef392e9a580b32396ec1eb0f0e">Data</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="structdcf__entry__t.html">dcf_entry_t</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="dcf_8c.html#a3757a3e28e9edcd2f0ad7b10bd1af2c9">SaveNode</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">static</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a767cadd84becf5578a54266800de8591">read_consise_dcf_next_entry</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">static</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">write_consise_dcf_next_entry</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a095c0778a05e5a8ad9ef61320c230d14">init_consise_dcf</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d,<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define inline _inline</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif  </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="dcf_8c.html#a2212f6eeb534fd5ea0322bbc9b031f95">   59</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="dcf_8c.html#a2212f6eeb534fd5ea0322bbc9b031f95">start_node</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">/* Ask slave node to go in operational mode */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">masterSendNMTstateChange</a> (d, nodeId, <a class="code hl_define" href="def_8h.html#a9654207fdc32413aa792c8a2dc9d414f">NMT_Start_Node</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[nodeId] = <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0">Connecting</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="dcf_8h.html#addc1160de45c279455e612a3766b333a">   71</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#addc1160de45c279455e612a3766b333a">check_and_start_node</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{   </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> != <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">/* Set the first SDO client as available */</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a54c8b00eb21cfb538b55daecfd691506">firstIndex</a>-&gt;<a class="code hl_variable" href="structs__quick__index.html#ad6d91dbbe05d5018f7b54900bee9b045">SDO_CLT</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        *(<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*) d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a140179b8d59e98354df1ec47df5437fd">objdict</a>[d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a54c8b00eb21cfb538b55daecfd691506">firstIndex</a>-&gt;<a class="code hl_variable" href="structs__quick__index.html#ad6d91dbbe05d5018f7b54900bee9b045">SDO_CLT</a>].<a class="code hl_variable" href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">pSubindex</a>[3].<a class="code hl_variable" href="structtd__subindex.html#a1340107ddcd152cd0c21a01e5b05885f">pObject</a> = 0;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> 3;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span>((<a class="code hl_function" href="dcf_8c.html#a095c0778a05e5a8ad9ef61320c230d14">init_consise_dcf</a>(d, nodeId) == 0) || (<a class="code hl_function" href="dcf_8c.html#a767cadd84becf5578a54266800de8591">read_consise_dcf_next_entry</a>(d, nodeId) == 0)){</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_function" href="dcf_8c.html#a2212f6eeb534fd5ea0322bbc9b031f95">start_node</a>(d, nodeId);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#af73a19d3f318509d97f057ad0cf45fc7">DCF_STATUS_READ_CHECK</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">   94</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">start_and_seek_node</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId){</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>   <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>   <span class="keywordflow">if</span>(nodeId)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>       <a class="code hl_function" href="dcf_8c.html#a2212f6eeb534fd5ea0322bbc9b031f95">start_node</a>(d,nodeId);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>   <span class="keywordflow">for</span>(<a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a> = 0 ; <a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>&lt;<a class="code hl_define" href="config_8h.html#a89f774dfdb67cc1f78c7e7d457a16fdc">NMT_MAX_NODE_ID</a> ; <a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>++){</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>       <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[<a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>] != <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5">Initialisation</a>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>           <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>       <span class="keywordflow">if</span>(<a class="code hl_function" href="dcf_8c.html#addc1160de45c279455e612a3766b333a">check_and_start_node</a>(d, <a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>) == 2)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>           <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>   }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>   d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">  113</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">CheckSDOAndContinue</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> abortCode = 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> buf[4], match = 0, <a class="code hl_variable" href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> size=4;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> == <a class="code hl_define" href="dcf_8h.html#af73a19d3f318509d97f057ad0cf45fc7">DCF_STATUS_READ_CHECK</a>){</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a> (d, nodeId, buf, &amp;size, &amp;abortCode) != <a class="code hl_define" href="def_8h.html#a7d9dad1485ed532424092d21b1e22ad2">SDO_FINISHED</a>)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordflow">goto</span> dcferror;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="comment">/* Check if data received match the DCF */</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span>(size == d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aff7fcd05f481989aae864fb5871a5750">dcf_size</a>){</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            match = 1;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">while</span>(size--)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="keywordflow">if</span>(buf[size] != d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a78a84d0cdfd07a1edbb1b9d744caab04">dcf_data</a>[size])</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    match = 0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span>(match) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="dcf_8c.html#a767cadd84becf5578a54266800de8591">read_consise_dcf_next_entry</a>(d, nodeId) == 0){</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <a class="code hl_function" href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">start_and_seek_node</a>(d, nodeId);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">else</span> { <span class="comment">/* Data received does not match : start rewriting all */</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            <span class="keywordflow">if</span>((<a class="code hl_function" href="dcf_8c.html#a095c0778a05e5a8ad9ef61320c230d14">init_consise_dcf</a>(d, nodeId) == 0) || (<a class="code hl_function" href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">write_consise_dcf_next_entry</a>(d, nodeId) == 0))</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                <span class="keywordflow">goto</span> dcferror;                </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a6a42cee0ae575f380af8b88654930539">DCF_STATUS_WRITE</a>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> == <a class="code hl_define" href="dcf_8h.html#a6a42cee0ae575f380af8b88654930539">DCF_STATUS_WRITE</a>){</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a> (d, nodeId, &amp;abortCode) != <a class="code hl_define" href="def_8h.html#a7d9dad1485ed532424092d21b1e22ad2">SDO_FINISHED</a>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">goto</span> dcferror;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">write_consise_dcf_next_entry</a>(d, nodeId) == 0){</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#ifdef DCF_SAVE_NODE</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_function" href="dcf_8c.html#a3757a3e28e9edcd2f0ad7b10bd1af2c9">SaveNode</a>(d, nodeId);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a5b5de1ea592855720702a1f7f4deb449">DCF_STATUS_SAVED</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#else </span><span class="comment">//DCF_SAVE_NODE</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>           <a class="code hl_function" href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">start_and_seek_node</a>(d,nodeId);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#endif </span><span class="comment">//DCF_SAVE_NODE</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> == <a class="code hl_define" href="dcf_8h.html#a5b5de1ea592855720702a1f7f4deb449">DCF_STATUS_SAVED</a>){</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a> (d, nodeId, &amp;abortCode) != <a class="code hl_define" href="def_8h.html#a7d9dad1485ed532424092d21b1e22ad2">SDO_FINISHED</a>)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">goto</span> dcferror;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <a class="code hl_function" href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">masterSendNMTstateChange</a> (d, nodeId, <a class="code hl_define" href="def_8h.html#ab349b5574a1ea67ff0ef76b9f9b6319e">NMT_Reset_Node</a>);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[nodeId] = <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>dcferror:</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x1A01, <span class="stringliteral">&quot;SDO error in consise DCF&quot;</span>, abortCode);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x2A02, <span class="stringliteral">&quot;slave node : &quot;</span>, nodeId);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_function" href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">resetClientSDOLineFromNodeId</a>(d, nodeId);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[nodeId] = <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_function" href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">start_and_seek_node</a>(d,0);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="dcf_8h.html#a095c0778a05e5a8ad9ef61320c230d14">  177</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a095c0778a05e5a8ad9ef61320c230d14">init_consise_dcf</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d,<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>{</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">/* Fetch DCF OD entry */</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> errorCode;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>* dcf;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a> = (*d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#ab69d8f5a622bdb913850f5f506cab38b">scanIndexOD</a>)(d, 0x1F22, &amp;errorCode);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="comment">/* If DCF entry do not exist... Nothing to do.*/</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">if</span> (errorCode != <a class="code hl_define" href="def_8h.html#acb82b94eb8e368e8c347b2273b6e514e">OD_SUCCESSFUL</a>) <span class="keywordflow">goto</span> DCF_finish;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="comment">/* Fix DCF table overflow */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">if</span>(nodeId &gt; d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae91a50d00603ee3973f1e7b2febef883">bSubCount</a>) <span class="keywordflow">goto</span> DCF_finish;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">/* If DCF empty... Nothing to do */</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">if</span>(! d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">pSubindex</a>[nodeId].<a class="code hl_variable" href="structtd__subindex.html#a61cbcc187eddb1ac3cf51548bbfb1dfa">size</a>) <span class="keywordflow">goto</span> DCF_finish;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">//dcf = *(UNS8**)d-&gt;dcf_odentry-&gt;pSubindex[nodeId].pObject;</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    dcf = (<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*)d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">pSubindex</a>[nodeId].<a class="code hl_variable" href="structtd__subindex.html#a1340107ddcd152cd0c21a01e5b05885f">pObject</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a> = dcf + 4;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a9a1b2531584377fe0009aa8aa0c4f3c1">dcf_entries_count</a> = 0;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">dcf_status</a> = <a class="code hl_define" href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    DCF_finish:</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="dcf_8c.html#aab41ca2d83fb127699e589e26e984801">  199</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#aab41ca2d83fb127699e589e26e984801">get_next_DCF_data</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_struct" href="structdcf__entry__t.html">dcf_entry_t</a> *dcf_entry, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>* dcfend;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> nb_entries;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> szData;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>* dcf;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keywordflow">if</span>(!d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>     <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordflow">if</span>(nodeId &gt; d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae91a50d00603ee3973f1e7b2febef883">bSubCount</a>)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>     <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  szData = d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">pSubindex</a>[nodeId].<a class="code hl_variable" href="structtd__subindex.html#a61cbcc187eddb1ac3cf51548bbfb1dfa">size</a>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="comment">//dcf = *(UNS8**)d-&gt;dcf_odentry-&gt;pSubindex[nodeId].pObject;</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  dcf = (<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*)d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">dcf_odentry</a>-&gt;<a class="code hl_variable" href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">pSubindex</a>[nodeId].<a class="code hl_variable" href="structtd__subindex.html#a1340107ddcd152cd0c21a01e5b05885f">pObject</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  nb_entries = <a class="code hl_define" href="sysdep_8h.html#a24e48010face63118a10d3131d3aff62">UNS32_LE</a>(*((<a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>*)dcf));</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  dcfend = dcf + szData;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordflow">if</span>((<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*)d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a> + 7 &lt; (<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*)dcfend &amp;&amp; d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a9a1b2531584377fe0009aa8aa0c4f3c1">dcf_entries_count</a> &lt; nb_entries){</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">/* DCF data may not be 32/16b aligned, </span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">    * we cannot directly dereference d-&gt;dcf_cursor </span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">    * as UNS16 or UNS32 </span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">    * Do it byte per byte taking care on endianess*/</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#ifdef CANOPEN_BIG_ENDIAN</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">Index</a> = *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++) &lt;&lt; 8 | </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                       *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_define" href="applicfg_8h.html#a9623eafeaa0b30344525b18d685b8c31">memcpy</a>(&amp;dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">Index</a>, d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>,2);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>+=2;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">Subindex</a> = *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#ifdef CANOPEN_BIG_ENDIAN</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a> = *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++) &lt;&lt; 24 | </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                      *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++) &lt;&lt; 16 | </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                      *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++) &lt;&lt; 8 | </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                      *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>++);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_define" href="applicfg_8h.html#a9623eafeaa0b30344525b18d685b8c31">memcpy</a>(&amp;dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a>, d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>,4);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>+=4;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a78a84d0cdfd07a1edbb1b9d744caab04">dcf_data</a> = dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a4b6bedef392e9a580b32396ec1eb0f0e">Data</a> = d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aff7fcd05f481989aae864fb5871a5750">dcf_size</a> = dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">dcf_cursor</a> += dcf_entry-&gt;<a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a9a1b2531584377fe0009aa8aa0c4f3c1">dcf_entries_count</a>++;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">  245</a></span><span class="keyword">static</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">write_consise_dcf_next_entry</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>{</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> Ret;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <a class="code hl_struct" href="structdcf__entry__t.html">dcf_entry_t</a> dcf_entry;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="dcf_8c.html#aab41ca2d83fb127699e589e26e984801">get_next_DCF_data</a>(d, &amp;dcf_entry, nodeId))</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    Ret = <a class="code hl_function" href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">writeNetworkDictCallBackAI</a>(d, <span class="comment">/* CO_Data* d*/</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    nodeId, <span class="comment">/* UNS8 nodeId*/</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">Index</a>, <span class="comment">/* UNS16 index*/</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">Subindex</a>, <span class="comment">/* UNS8 subindex*/</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    (<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>)dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">Size</a>, <span class="comment">/* UNS8 count*/</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    0, <span class="comment">/* UNS8 dataType*/</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#a4b6bedef392e9a580b32396ec1eb0f0e">Data</a>,<span class="comment">/* void *data*/</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    <a class="code hl_function" href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">CheckSDOAndContinue</a>,<span class="comment">/* Callback*/</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    0,   <span class="comment">/* no endianize*/</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    0); <span class="comment">/* no block mode */</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">if</span>(Ret) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x1A02,<span class="stringliteral">&quot;Error writeNetworkDictCallBackAI&quot;</span>,Ret);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>}</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="dcf_8c.html#a767cadd84becf5578a54266800de8591">  267</a></span><span class="keyword">static</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="dcf_8c.html#a767cadd84becf5578a54266800de8591">read_consise_dcf_next_entry</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>{</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> Ret;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <a class="code hl_struct" href="structdcf__entry__t.html">dcf_entry_t</a> dcf_entry;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordflow">if</span>(!<a class="code hl_function" href="dcf_8c.html#aab41ca2d83fb127699e589e26e984801">get_next_DCF_data</a>(d, &amp;dcf_entry, nodeId))</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    Ret = <a class="code hl_function" href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">readNetworkDictCallbackAI</a>(d, <span class="comment">/* CO_Data* d*/</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                   nodeId, <span class="comment">/* UNS8 nodeId*/</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                   dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">Index</a>, <span class="comment">/* UNS16 index*/</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                   dcf_entry.<a class="code hl_variable" href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">Subindex</a>, <span class="comment">/* UNS8 subindex*/</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                   0, <span class="comment">/* UNS8 dataType*/</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                   <a class="code hl_function" href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">CheckSDOAndContinue</a>,<span class="comment">/* Callback*/</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                   0); <span class="comment">/* no block mode */</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">if</span>(Ret) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x1A03,<span class="stringliteral">&quot;Error readNetworkDictCallbackAI&quot;</span>,Ret);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno"><a class="line" href="dcf_8c.html#a3757a3e28e9edcd2f0ad7b10bd1af2c9">  286</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="dcf_8c.html#a3757a3e28e9edcd2f0ad7b10bd1af2c9">SaveNode</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>{</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> Ret;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> data=0x65766173;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    Ret = <a class="code hl_function" href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">writeNetworkDictCallBackAI</a>(d, <span class="comment">/* CO_Data* d*/</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                    nodeId, <span class="comment">/* UNS8 nodeId*/</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    0x1010, <span class="comment">/* UNS16 index*/</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                    1, <span class="comment">/* UNS8 subindex*/</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                    4, <span class="comment">/* UNS8 count*/</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                    0, <span class="comment">/* UNS8 dataType*/</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    (<span class="keywordtype">void</span> *)&amp;data,<span class="comment">/* void *data*/</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                    <a class="code hl_function" href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">CheckSDOAndContinue</a>,<span class="comment">/* Callback*/</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                    0,   <span class="comment">/* no endianize*/</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                    0); <span class="comment">/* no block mode */</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordflow">if</span>(Ret) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x1A04,<span class="stringliteral">&quot;Error writeNetworkDictCallBackAI&quot;</span>,Ret);</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>}</div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5528eeccf214bfe021532622d78c6a96"><div class="ttname"><a href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a></div><div class="ttdeci">#define UNS16</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00043">applicfg.h:43</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5f4e5133c4c3113931684d3aba518bba"><div class="ttname"><a href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a></div><div class="ttdeci">#define MSG_WAR(num, str, val)</div><div class="ttdoc">Definition of MSG_WAR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00082">applicfg.h:82</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a889a782714194ae2f780002d25d6e0be"><div class="ttname"><a href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a></div><div class="ttdeci">#define UNS32</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00044">applicfg.h:44</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a9623eafeaa0b30344525b18d685b8c31"><div class="ttname"><a href="applicfg_8h.html#a9623eafeaa0b30344525b18d685b8c31">memcpy</a></div><div class="ttdeci">#define memcpy(dst, src, count)</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00029">applicfg.h:29</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a99178e2619db849578b20df5aa241844"><div class="ttname"><a href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a></div><div class="ttdeci">#define MSG_ERR(num, str, val)</div><div class="ttdoc">Definition of MSG_ERR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00072">applicfg.h:72</a></div></div>
+<div class="ttc" id="acanopen__callback_8c_html_a3925f91c6c7522d495315146b1d0da1c"><div class="ttname"><a href="canopen__callback_8c.html#a3925f91c6c7522d495315146b1d0da1c">node</a></div><div class="ttdeci">static Fix_Typedef node[MAX_NODE_COUNT - 2]</div><div class="ttdef"><b>Definition:</b> <a href="canopen__callback_8c_source.html#l00062">canopen_callback.c:62</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a89f774dfdb67cc1f78c7e7d457a16fdc"><div class="ttname"><a href="config_8h.html#a89f774dfdb67cc1f78c7e7d457a16fdc">NMT_MAX_NODE_ID</a></div><div class="ttdeci">#define NMT_MAX_NODE_ID</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00034">config.h:34</a></div></div>
+<div class="ttc" id="adata_8h_html"><div class="ttname"><a href="data_8h.html">data.h</a></div></div>
+<div class="ttc" id="adcf_8c_html_a030d780d48bec13bd56374f0c4be26b6"><div class="ttname"><a href="dcf_8c.html#a030d780d48bec13bd56374f0c4be26b6">CheckSDOAndContinue</a></div><div class="ttdeci">static void CheckSDOAndContinue(CO_Data *d, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00113">dcf.c:113</a></div></div>
+<div class="ttc" id="adcf_8c_html_a095c0778a05e5a8ad9ef61320c230d14"><div class="ttname"><a href="dcf_8c.html#a095c0778a05e5a8ad9ef61320c230d14">init_consise_dcf</a></div><div class="ttdeci">UNS8 init_consise_dcf(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Init the consise dcf in CO_Data for nodeId</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00177">dcf.c:177</a></div></div>
+<div class="ttc" id="adcf_8c_html_a2212f6eeb534fd5ea0322bbc9b031f95"><div class="ttname"><a href="dcf_8c.html#a2212f6eeb534fd5ea0322bbc9b031f95">start_node</a></div><div class="ttdeci">void start_node(CO_Data *d, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00059">dcf.c:59</a></div></div>
+<div class="ttc" id="adcf_8c_html_a3757a3e28e9edcd2f0ad7b10bd1af2c9"><div class="ttname"><a href="dcf_8c.html#a3757a3e28e9edcd2f0ad7b10bd1af2c9">SaveNode</a></div><div class="ttdeci">void SaveNode(CO_Data *d, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00286">dcf.c:286</a></div></div>
+<div class="ttc" id="adcf_8c_html_a73e4e3d9c98dd84c9a3945baf53ee9d8"><div class="ttname"><a href="dcf_8c.html#a73e4e3d9c98dd84c9a3945baf53ee9d8">write_consise_dcf_next_entry</a></div><div class="ttdeci">static UNS8 write_consise_dcf_next_entry(CO_Data *d, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00245">dcf.c:245</a></div></div>
+<div class="ttc" id="adcf_8c_html_a767cadd84becf5578a54266800de8591"><div class="ttname"><a href="dcf_8c.html#a767cadd84becf5578a54266800de8591">read_consise_dcf_next_entry</a></div><div class="ttdeci">static UNS8 read_consise_dcf_next_entry(CO_Data *d, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00267">dcf.c:267</a></div></div>
+<div class="ttc" id="adcf_8c_html_a9a41cc64318dd51f45e5f0c08f7b0cc8"><div class="ttname"><a href="dcf_8c.html#a9a41cc64318dd51f45e5f0c08f7b0cc8">start_and_seek_node</a></div><div class="ttdeci">void start_and_seek_node(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Start the nodeId slave and look for other nodes waiting to be started If nodeId is 0 the start node i...</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00094">dcf.c:94</a></div></div>
+<div class="ttc" id="adcf_8c_html_aab41ca2d83fb127699e589e26e984801"><div class="ttname"><a href="dcf_8c.html#aab41ca2d83fb127699e589e26e984801">get_next_DCF_data</a></div><div class="ttdeci">UNS8 get_next_DCF_data(CO_Data *d, dcf_entry_t *dcf_entry, UNS8 nodeId)</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00199">dcf.c:199</a></div></div>
+<div class="ttc" id="adcf_8c_html_addc1160de45c279455e612a3766b333a"><div class="ttname"><a href="dcf_8c.html#addc1160de45c279455e612a3766b333a">check_and_start_node</a></div><div class="ttdeci">UNS8 check_and_start_node(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Function to be called from post_SlaveBootup</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00071">dcf.c:71</a></div></div>
+<div class="ttc" id="adcf_8h_html"><div class="ttname"><a href="dcf_8h.html">dcf.h</a></div></div>
+<div class="ttc" id="adcf_8h_html_a5b5de1ea592855720702a1f7f4deb449"><div class="ttname"><a href="dcf_8h.html#a5b5de1ea592855720702a1f7f4deb449">DCF_STATUS_SAVED</a></div><div class="ttdeci">#define DCF_STATUS_SAVED</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8h_source.html#l00027">dcf.h:27</a></div></div>
+<div class="ttc" id="adcf_8h_html_a6a42cee0ae575f380af8b88654930539"><div class="ttname"><a href="dcf_8h.html#a6a42cee0ae575f380af8b88654930539">DCF_STATUS_WRITE</a></div><div class="ttdeci">#define DCF_STATUS_WRITE</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8h_source.html#l00026">dcf.h:26</a></div></div>
+<div class="ttc" id="adcf_8h_html_a732f0a540b74353af78885600338a56b"><div class="ttname"><a href="dcf_8h.html#a732f0a540b74353af78885600338a56b">DCF_STATUS_INIT</a></div><div class="ttdeci">#define DCF_STATUS_INIT</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8h_source.html#l00024">dcf.h:24</a></div></div>
+<div class="ttc" id="adcf_8h_html_af73a19d3f318509d97f057ad0cf45fc7"><div class="ttname"><a href="dcf_8h.html#af73a19d3f318509d97f057ad0cf45fc7">DCF_STATUS_READ_CHECK</a></div><div class="ttdeci">#define DCF_STATUS_READ_CHECK</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8h_source.html#l00025">dcf.h:25</a></div></div>
+<div class="ttc" id="adef_8h_html_a7d9dad1485ed532424092d21b1e22ad2"><div class="ttname"><a href="def_8h.html#a7d9dad1485ed532424092d21b1e22ad2">SDO_FINISHED</a></div><div class="ttdeci">#define SDO_FINISHED</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00076">def.h:76</a></div></div>
+<div class="ttc" id="adef_8h_html_a9654207fdc32413aa792c8a2dc9d414f"><div class="ttname"><a href="def_8h.html#a9654207fdc32413aa792c8a2dc9d414f">NMT_Start_Node</a></div><div class="ttdeci">#define NMT_Start_Node</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00153">def.h:153</a></div></div>
+<div class="ttc" id="adef_8h_html_ab349b5574a1ea67ff0ef76b9f9b6319e"><div class="ttname"><a href="def_8h.html#ab349b5574a1ea67ff0ef76b9f9b6319e">NMT_Reset_Node</a></div><div class="ttdeci">#define NMT_Reset_Node</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00156">def.h:156</a></div></div>
+<div class="ttc" id="adef_8h_html_acb82b94eb8e368e8c347b2273b6e514e"><div class="ttname"><a href="def_8h.html#acb82b94eb8e368e8c347b2273b6e514e">OD_SUCCESSFUL</a></div><div class="ttdeci">#define OD_SUCCESSFUL</div><div class="ttdoc">definitions used for object dictionary access.</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00031">def.h:31</a></div></div>
+<div class="ttc" id="agroup__nmtmaster_html_ga7c6150ad7ae50e0c30edeb9f9913f7a7"><div class="ttname"><a href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">masterSendNMTstateChange</a></div><div class="ttdeci">UNS8 masterSendNMTstateChange(CO_Data *d, UNS8 nodeId, UNS8 cs)</div><div class="ttdoc">Transmit a NMT message on the network to the slave whose nodeId is node ID.</div><div class="ttdef"><b>Definition:</b> <a href="nmt_master_8c_source.html#l00046">nmtMaster.c:46</a></div></div>
+<div class="ttc" id="agroup__sdo_html_ga1dde1086506324c8b8c0386f142fba40"><div class="ttname"><a href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">readNetworkDictCallbackAI</a></div><div class="ttdeci">UNS8 readNetworkDictCallbackAI(CO_Data *d, UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS8 dataType, SDOCallback_t Callback, UNS8 useBlockMode)</div><div class="ttdoc">Used to send a SDO request frame to read in a distant node dictionnary.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02249">sdo.c:2249</a></div></div>
+<div class="ttc" id="agroup__sdo_html_ga8671e306873f19362c60bb50ab930d1d"><div class="ttname"><a href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a></div><div class="ttdeci">UNS8 getWriteResultNetworkDict(CO_Data *d, UNS8 nodeId, UNS32 *abortCode)</div><div class="ttdoc">Use this function after calling writeNetworkDict function to get the result of the write.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02403">sdo.c:2403</a></div></div>
+<div class="ttc" id="agroup__sdo_html_gab8a362443447b15446e516130ececfe4"><div class="ttname"><a href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a></div><div class="ttdeci">UNS8 getReadResultNetworkDict(CO_Data *d, UNS8 nodeId, void *data, UNS32 *size, UNS32 *abortCode)</div><div class="ttdoc">Use this function after calling readNetworkDict to get the result.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02312">sdo.c:2312</a></div></div>
+<div class="ttc" id="agroup__sdo_html_gabf3dd0fbf1353159d74956a8021b267f"><div class="ttname"><a href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">resetClientSDOLineFromNodeId</a></div><div class="ttdeci">void resetClientSDOLineFromNodeId(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Reset the SDO client line used to communicate with the server nodeId Mustbe called after getRead/Writ...</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l01887">sdo.c:1887</a></div></div>
+<div class="ttc" id="agroup__sdo_html_gad7766666a4917fa5ddea3f0c9f60ae99"><div class="ttname"><a href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">writeNetworkDictCallBackAI</a></div><div class="ttdeci">UNS8 writeNetworkDictCallBackAI(CO_Data *d, UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 count, UNS8 dataType, void *data, SDOCallback_t Callback, UNS8 endianize, UNS8 useBlockMode)</div><div class="ttdoc">Used to send a SDO request frame to write in a distant node dictionnary.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02084">sdo.c:2084</a></div></div>
+<div class="ttc" id="astates_8h_html_a3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0"><div class="ttname"><a href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646a6ea90df6fe966852496b4846da497fb0">Connecting</a></div><div class="ttdeci">@ Connecting</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00042">states.h:42</a></div></div>
+<div class="ttc" id="astates_8h_html_a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59"><div class="ttname"><a href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a></div><div class="ttdeci">@ Unknown_state</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00048">states.h:47</a></div></div>
+<div class="ttc" id="astates_8h_html_a3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5"><div class="ttname"><a href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646aeb3ae26d7a1629aa0fc6c83f46306cf5">Initialisation</a></div><div class="ttdeci">@ Initialisation</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00040">states.h:40</a></div></div>
+<div class="ttc" id="astructdcf__entry__t_html"><div class="ttname"><a href="structdcf__entry__t.html">dcf_entry_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00041">dcf.c:41</a></div></div>
+<div class="ttc" id="astructdcf__entry__t_html_a444ece5da4335b77e7f7d06a90623342"><div class="ttname"><a href="structdcf__entry__t.html#a444ece5da4335b77e7f7d06a90623342">dcf_entry_t::Size</a></div><div class="ttdeci">UNS32 Size</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00044">dcf.c:44</a></div></div>
+<div class="ttc" id="astructdcf__entry__t_html_a460ae8b274b4abad24e339e1cf74d412"><div class="ttname"><a href="structdcf__entry__t.html#a460ae8b274b4abad24e339e1cf74d412">dcf_entry_t::Index</a></div><div class="ttdeci">UNS16 Index</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00042">dcf.c:42</a></div></div>
+<div class="ttc" id="astructdcf__entry__t_html_a4b6bedef392e9a580b32396ec1eb0f0e"><div class="ttname"><a href="structdcf__entry__t.html#a4b6bedef392e9a580b32396ec1eb0f0e">dcf_entry_t::Data</a></div><div class="ttdeci">UNS8 * Data</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00045">dcf.c:45</a></div></div>
+<div class="ttc" id="astructdcf__entry__t_html_ad1f8c14eb92143c2e1ab7c914818f1d2"><div class="ttname"><a href="structdcf__entry__t.html#ad1f8c14eb92143c2e1ab7c914818f1d2">dcf_entry_t::Subindex</a></div><div class="ttdeci">UNS8 Subindex</div><div class="ttdef"><b>Definition:</b> <a href="dcf_8c_source.html#l00043">dcf.c:43</a></div></div>
+<div class="ttc" id="astructs__quick__index_html_ad6d91dbbe05d5018f7b54900bee9b045"><div class="ttname"><a href="structs__quick__index.html#ad6d91dbbe05d5018f7b54900bee9b045">s_quick_index::SDO_CLT</a></div><div class="ttdeci">UNS16 SDO_CLT</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00111">objdictdef.h:111</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html"><div class="ttname"><a href="structstruct___c_o___data.html">struct_CO_Data</a></div><div class="ttdoc">This structure contains all necessary informations to define a CANOpen node</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00056">data.h:56</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a0c881bde97ec548c50fcc2198022e4f7"><div class="ttname"><a href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">struct_CO_Data::NMTable</a></div><div class="ttdeci">e_nodeState NMTable[NMT_MAX_NODE_ID]</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00090">data.h:90</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a140179b8d59e98354df1ec47df5437fd"><div class="ttname"><a href="structstruct___c_o___data.html#a140179b8d59e98354df1ec47df5437fd">struct_CO_Data::objdict</a></div><div class="ttdeci">const indextable * objdict</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00059">data.h:59</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a1ad45a21f0d07b257920e2f48b45f44b"><div class="ttname"><a href="structstruct___c_o___data.html#a1ad45a21f0d07b257920e2f48b45f44b">struct_CO_Data::dcf_odentry</a></div><div class="ttdeci">const indextable * dcf_odentry</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00117">data.h:117</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a54c8b00eb21cfb538b55daecfd691506"><div class="ttname"><a href="structstruct___c_o___data.html#a54c8b00eb21cfb538b55daecfd691506">struct_CO_Data::firstIndex</a></div><div class="ttdeci">const quick_index * firstIndex</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00063">data.h:63</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a6e1e35140a6c0ac9c5ce4da309b8fad2"><div class="ttname"><a href="structstruct___c_o___data.html#a6e1e35140a6c0ac9c5ce4da309b8fad2">struct_CO_Data::dcf_status</a></div><div class="ttdeci">UNS8 dcf_status</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00120">data.h:120</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a78a84d0cdfd07a1edbb1b9d744caab04"><div class="ttname"><a href="structstruct___c_o___data.html#a78a84d0cdfd07a1edbb1b9d744caab04">struct_CO_Data::dcf_data</a></div><div class="ttdeci">UNS8 * dcf_data</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00122">data.h:122</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a9a1b2531584377fe0009aa8aa0c4f3c1"><div class="ttname"><a href="structstruct___c_o___data.html#a9a1b2531584377fe0009aa8aa0c4f3c1">struct_CO_Data::dcf_entries_count</a></div><div class="ttdeci">UNS32 dcf_entries_count</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00119">data.h:119</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_ab69d8f5a622bdb913850f5f506cab38b"><div class="ttname"><a href="structstruct___c_o___data.html#ab69d8f5a622bdb913850f5f506cab38b">struct_CO_Data::scanIndexOD</a></div><div class="ttdeci">scanIndexOD_t scanIndexOD</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00113">data.h:113</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_af25121a57c8bdb18be7b502d0fcd9979"><div class="ttname"><a href="structstruct___c_o___data.html#af25121a57c8bdb18be7b502d0fcd9979">struct_CO_Data::dcf_cursor</a></div><div class="ttdeci">UNS8 * dcf_cursor</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00118">data.h:118</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_aff7fcd05f481989aae864fb5871a5750"><div class="ttname"><a href="structstruct___c_o___data.html#aff7fcd05f481989aae864fb5871a5750">struct_CO_Data::dcf_size</a></div><div class="ttdeci">UNS32 dcf_size</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00121">data.h:121</a></div></div>
+<div class="ttc" id="astructtd__indextable_html_ae2e016779318996cf2fceb10f2c97399"><div class="ttname"><a href="structtd__indextable.html#ae2e016779318996cf2fceb10f2c97399">td_indextable::pSubindex</a></div><div class="ttdeci">subindex * pSubindex</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00101">objdictdef.h:101</a></div></div>
+<div class="ttc" id="astructtd__indextable_html_ae91a50d00603ee3973f1e7b2febef883"><div class="ttname"><a href="structtd__indextable.html#ae91a50d00603ee3973f1e7b2febef883">td_indextable::bSubCount</a></div><div class="ttdeci">UNS8 bSubCount</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00102">objdictdef.h:102</a></div></div>
+<div class="ttc" id="astructtd__subindex_html_a1340107ddcd152cd0c21a01e5b05885f"><div class="ttname"><a href="structtd__subindex.html#a1340107ddcd152cd0c21a01e5b05885f">td_subindex::pObject</a></div><div class="ttdeci">void * pObject</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00093">objdictdef.h:93</a></div></div>
+<div class="ttc" id="astructtd__subindex_html_a61cbcc187eddb1ac3cf51548bbfb1dfa"><div class="ttname"><a href="structtd__subindex.html#a61cbcc187eddb1ac3cf51548bbfb1dfa">td_subindex::size</a></div><div class="ttdeci">UNS32 size</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00092">objdictdef.h:92</a></div></div>
+<div class="ttc" id="asysdep_8h_html"><div class="ttname"><a href="sysdep_8h.html">sysdep.h</a></div></div>
+<div class="ttc" id="asysdep_8h_html_a24e48010face63118a10d3131d3aff62"><div class="ttname"><a href="sysdep_8h.html#a24e48010face63118a10d3131d3aff62">UNS32_LE</a></div><div class="ttdeci">#define UNS32_LE(v)</div><div class="ttdef"><b>Definition:</b> <a href="sysdep_8h_source.html#l00022">sysdep.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="dcf_8c.html">dcf.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/emcy.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('emcy_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">emcy.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Declarations of the functions that manage EMCY (emergency) messages  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="applicfg_8h_source.html">applicfg.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
+</div>
+<p><a href="emcy_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__errors.html">s_errors</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ab23eac75750ad002e288d18cde4fb080"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604">enum_errorState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#ab23eac75750ad002e288d18cde4fb080">e_errorState</a></td></tr>
+<tr class="separator:ab23eac75750ad002e288d18cde4fb080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48e5da6aaa73423356036198ac50b60"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#ae48e5da6aaa73423356036198ac50b60">post_emcy_t</a>) (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeID, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errReg, const <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errSpec[5])</td></tr>
+<tr class="separator:ae48e5da6aaa73423356036198ac50b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a8e6945828bf351fc14f91e0e372b1604"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604">enum_errorState</a> { <a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b">Error_free</a> = 0x00
+, <a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a">Error_occurred</a> = 0x01
+ }</td></tr>
+<tr class="separator:a8e6945828bf351fc14f91e0e372b1604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a141b3326bb4c1e65e2acaa1c4f42b23e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a141b3326bb4c1e65e2acaa1c4f42b23e">_post_emcy</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeID, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errReg, const <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errSpec[5])</td></tr>
+<tr class="separator:a141b3326bb4c1e65e2acaa1c4f42b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010abb14cd143ac91e7aa55c2be0510b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a010abb14cd143ac91e7aa55c2be0510b">EMCY_setError</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errRegMask, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> addInfo)</td></tr>
+<tr class="memdesc:a010abb14cd143ac91e7aa55c2be0510b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new error with code errCode.  <a href="emcy_8h.html#a010abb14cd143ac91e7aa55c2be0510b">更多...</a><br /></td></tr>
+<tr class="separator:a010abb14cd143ac91e7aa55c2be0510b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b426b69db22c42ab8e51a2b16bfc9f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a2b426b69db22c42ab8e51a2b16bfc9f1">EMCY_errorRecovered</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode)</td></tr>
+<tr class="memdesc:a2b426b69db22c42ab8e51a2b16bfc9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates it has recovered from error errCode.  <a href="emcy_8h.html#a2b426b69db22c42ab8e51a2b16bfc9f1">更多...</a><br /></td></tr>
+<tr class="separator:a2b426b69db22c42ab8e51a2b16bfc9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ae9a72b60fc7dfde81d1c70b3f3196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#ac1ae9a72b60fc7dfde81d1c70b3f3196">emergencyInit</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:ac1ae9a72b60fc7dfde81d1c70b3f3196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start EMCY consumer and producer  <a href="emcy_8h.html#ac1ae9a72b60fc7dfde81d1c70b3f3196">更多...</a><br /></td></tr>
+<tr class="separator:ac1ae9a72b60fc7dfde81d1c70b3f3196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6a2abe14c9416b18bfbce1665247fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a7b6a2abe14c9416b18bfbce1665247fb">emergencyStop</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:a7b6a2abe14c9416b18bfbce1665247fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop EMCY producer and consumer  <a href="emcy_8h.html#a7b6a2abe14c9416b18bfbce1665247fb">更多...</a><br /></td></tr>
+<tr class="separator:a7b6a2abe14c9416b18bfbce1665247fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5b0a7a06668cdac55141b7076e0fe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="emcy_8h.html#a1d5b0a7a06668cdac55141b7076e0fe5">proceedEMCY</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="struct_message.html">Message</a> *m)</td></tr>
+<tr class="memdesc:a1d5b0a7a06668cdac55141b7076e0fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is responsible to process an EMCY canopen-message  <a href="emcy_8h.html#a1d5b0a7a06668cdac55141b7076e0fe5">更多...</a><br /></td></tr>
+<tr class="separator:a1d5b0a7a06668cdac55141b7076e0fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >Declarations of the functions that manage EMCY (emergency) messages </p>
+<dl class="section author"><dt>作者</dt><dd>Luis Jimenez </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>Wed Sep 26 2007</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8h_source.html">emcy.h</a> 中定义.</p>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="ab23eac75750ad002e288d18cde4fb080" name="ab23eac75750ad002e288d18cde4fb080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23eac75750ad002e288d18cde4fb080">&#9670;&#160;</a></span>e_errorState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604">enum_errorState</a> <a class="el" href="emcy_8h.html#ab23eac75750ad002e288d18cde4fb080">e_errorState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae48e5da6aaa73423356036198ac50b60" name="ae48e5da6aaa73423356036198ac50b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48e5da6aaa73423356036198ac50b60">&#9670;&#160;</a></span>post_emcy_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* post_emcy_t) (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeID, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errReg, const <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errSpec[5])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="emcy_8h_source.html">emcy.h</a> 第 <a class="el" href="emcy_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a8e6945828bf351fc14f91e0e372b1604" name="a8e6945828bf351fc14f91e0e372b1604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6945828bf351fc14f91e0e372b1604">&#9670;&#160;</a></span>enum_errorState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604">enum_errorState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b" name="a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b"></a>Error_free&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a" name="a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a"></a>Error_occurred&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="emcy_8h_source.html">emcy.h</a> 第 <a class="el" href="emcy_8h_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a141b3326bb4c1e65e2acaa1c4f42b23e" name="a141b3326bb4c1e65e2acaa1c4f42b23e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a141b3326bb4c1e65e2acaa1c4f42b23e">&#9670;&#160;</a></span>_post_emcy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _post_emcy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>errCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>errReg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>errSpec</em>[5]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00257">257</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2b426b69db22c42ab8e51a2b16bfc9f1" name="a2b426b69db22c42ab8e51a2b16bfc9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b426b69db22c42ab8e51a2b16bfc9f1">&#9670;&#160;</a></span>EMCY_errorRecovered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EMCY_errorRecovered </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>errCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates it has recovered from error errCode. </p>
+<p >Also clears corresponding bits in Error register (1001h) </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">errCode</td><td>The error code</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Deletes error errCode. Also clears corresponding bits in Error register (1001h)</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">errCode</td><td>Code of the error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>1 if error, 0 if successful </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00192">192</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a010abb14cd143ac91e7aa55c2be0510b" name="a010abb14cd143ac91e7aa55c2be0510b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010abb14cd143ac91e7aa55c2be0510b">&#9670;&#160;</a></span>EMCY_setError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> EMCY_setError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>errCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>errRegMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>addInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a new error with code errCode. </p>
+<p >Also sets corresponding bits in Error register (1001h) </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">errCode</td><td>The error code </td></tr>
+    <tr><td class="paramname">errRegMask</td><td></td></tr>
+    <tr><td class="paramname">addInfo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<p>Sets a new error with code errCode. Also sets corresponding bits in Error register (1001h)</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">errCode</td><td>Code of the error <br  />
+ </td></tr>
+    <tr><td class="paramname">errRegMask</td><td></td></tr>
+    <tr><td class="paramname">addInfo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>1 if error, 0 if successful </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00134">134</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac1ae9a72b60fc7dfde81d1c70b3f3196" name="ac1ae9a72b60fc7dfde81d1c70b3f3196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ae9a72b60fc7dfde81d1c70b3f3196">&#9670;&#160;</a></span>emergencyInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emergencyInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start EMCY consumer and producer </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>start the EMCY mangagement.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00077">77</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7b6a2abe14c9416b18bfbce1665247fb" name="a7b6a2abe14c9416b18bfbce1665247fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6a2abe14c9416b18bfbce1665247fb">&#9670;&#160;</a></span>emergencyStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void emergencyStop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop EMCY producer and consumer </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure</td></tr>
+    <tr><td class="paramname">d</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1d5b0a7a06668cdac55141b7076e0fe5" name="a1d5b0a7a06668cdac55141b7076e0fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5b0a7a06668cdac55141b7076e0fe5">&#9670;&#160;</a></span>proceedEMCY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void proceedEMCY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_message.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is responsible to process an EMCY canopen-message </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">*m</td><td>Pointer on the CAN-message which has to be analysed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function is responsible to process an EMCY canopen-message.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">m</td><td>The CAN-message which has to be analysed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="emcy_8c_source.html">emcy.c</a> 第 <a class="el" href="emcy_8c_source.html#l00236">236</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_e0597e218f81c4f883e099b6dc79c2af.html">inc</a></li><li class="navelem"><a class="el" href="emcy_8h.html">emcy.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

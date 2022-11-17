@@ -1,0 +1,25 @@
+var annotated_dup =
+[
+    [ "can_app_struct", "structcan__app__struct.html", "structcan__app__struct" ],
+    [ "dcf_entry_t", "structdcf__entry__t.html", "structdcf__entry__t" ],
+    [ "Fix_Typedef", "struct_fix___typedef.html", "struct_fix___typedef" ],
+    [ "Map_Val_INTEGER32", "struct_map___val___i_n_t_e_g_e_r32.html", "struct_map___val___i_n_t_e_g_e_r32" ],
+    [ "Map_Val_INTEGER8", "struct_map___val___i_n_t_e_g_e_r8.html", "struct_map___val___i_n_t_e_g_e_r8" ],
+    [ "Map_Val_UNS16", "struct_map___val___u_n_s16.html", "struct_map___val___u_n_s16" ],
+    [ "Map_Val_UNS32", "struct_map___val___u_n_s32.html", "struct_map___val___u_n_s32" ],
+    [ "Message", "struct_message.html", "struct_message" ],
+    [ "node_config_state", "structnode__config__state.html", "structnode__config__state" ],
+    [ "node_list", "structnode__list.html", "structnode__list" ],
+    [ "s_BOARD", "structs___b_o_a_r_d.html", "structs___b_o_a_r_d" ],
+    [ "s_errors", "structs__errors.html", "structs__errors" ],
+    [ "s_quick_index", "structs__quick__index.html", "structs__quick__index" ],
+    [ "s_state_communication", "structs__state__communication.html", "structs__state__communication" ],
+    [ "stm32_hwtimer", "structstm32__hwtimer.html", "structstm32__hwtimer" ],
+    [ "struct_CO_Data", "structstruct___c_o___data.html", "structstruct___c_o___data" ],
+    [ "struct_lss_transfer", "structstruct__lss__transfer.html", "structstruct__lss__transfer" ],
+    [ "struct_s_PDO_status", "structstruct__s___p_d_o__status.html", "structstruct__s___p_d_o__status" ],
+    [ "struct_s_timer_entry", "structstruct__s__timer__entry.html", "structstruct__s__timer__entry" ],
+    [ "struct_s_transfer", "structstruct__s__transfer.html", "structstruct__s__transfer" ],
+    [ "td_indextable", "structtd__indextable.html", "structtd__indextable" ],
+    [ "td_subindex", "structtd__subindex.html", "structtd__subindex" ]
+];

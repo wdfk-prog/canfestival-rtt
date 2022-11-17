@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/lifegrd.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lifegrd_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lifegrd.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lifegrd_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">This file is part of CanFestival, a library implementing CanOpen Stack. </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">Copyright (C): Edouard TISSERANT and Francis DUPIN</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">See COPYING file for copyrights details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">License along with this library; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#ifndef __lifegrd_h__</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define __lifegrd_h__</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &lt;<a class="code" href="applicfg_8h.html">applicfg.h</a>&gt;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="lifegrd_8h.html#a7f5b1ea4e1a1f1d9e350becbf8a8ea00">   58</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lifegrd_8h.html#a7f5b1ea4e1a1f1d9e350becbf8a8ea00">heartbeatError_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>*, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#aca0a09971885eb6d95fd0232ad5905ab">_heartbeatError</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> heartbeatID);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="lifegrd_8h.html#a18bd7346ccfaf6a357b933cb378947bd">   61</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lifegrd_8h.html#a18bd7346ccfaf6a357b933cb378947bd">post_SlaveBootup_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>*, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#acd2662892d77ea17b934eca64ed39aef">_post_SlaveBootup</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> SlaveID);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="lifegrd_8h.html#a096a793e3a28ac4db02972b82cc06d02">   64</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lifegrd_8h.html#a096a793e3a28ac4db02972b82cc06d02">post_SlaveStateChange_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>*, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>, <a class="code hl_typedef" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#a639cc3c05ad28deeb74a7d4a30fe1845">_post_SlaveStateChange</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="code hl_typedef" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a> newNodeState);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="lifegrd_8h.html#a4cee176e16b9a4d87bd9b48694effb40">   67</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lifegrd_8h.html#a4cee176e16b9a4d87bd9b48694effb40">nodeguardError_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>*, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#a3f529764ce623a76fe02b5e8326b6e1e">_nodeguardError</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &quot;<a class="code" href="data_8h.html">data.h</a>&quot;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/*************************************************************************</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"> * Functions</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment"> *************************************************************************/</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__nodeguardo.html#ga3f81fed5eb843c8baf131915f5826649">nodeguardInit</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__nodeguardo.html#gac259820ffbdf98861fc0e75646fba119">nodeguardStop</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#aeb614e7da7ad05814be22489ee022b87">lifeGuardInit</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> <a class="code hl_function" href="lifegrd_8h.html#a7bd167c1fa9ac8e87a4bac7735a58966">lifeGuardStop</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><a class="code hl_typedef" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a> <a class="code hl_function" href="group__statemachine.html#ga627254070e45c23f1776e12c524492ff">getNodeState</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__heartbeato.html#ga8896f6846e4d020390f6953f3d98aa21">heartbeatInit</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__heartbeato.html#ga1b73047269c2a02065e12af18c6053c7">heartbeatStop</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__nodeguardo.html#gab3248945e06e8b05518beddf665f174d">proceedNODE_GUARD</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_struct" href="struct_message.html">Message</a>* m);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif </span><span class="comment">/*__lifegrd_h__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aapplicfg_8h_html"><div class="ttname"><a href="applicfg_8h.html">applicfg.h</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="adata_8h_html"><div class="ttname"><a href="data_8h.html">data.h</a></div></div>
+<div class="ttc" id="agroup__heartbeato_html_ga1b73047269c2a02065e12af18c6053c7"><div class="ttname"><a href="group__heartbeato.html#ga1b73047269c2a02065e12af18c6053c7">heartbeatStop</a></div><div class="ttdeci">void heartbeatStop(CO_Data *d)</div><div class="ttdoc">Stop heartbeat consumer and producer</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00342">lifegrd.c:342</a></div></div>
+<div class="ttc" id="agroup__heartbeato_html_ga8896f6846e4d020390f6953f3d98aa21"><div class="ttname"><a href="group__heartbeato.html#ga8896f6846e4d020390f6953f3d98aa21">heartbeatInit</a></div><div class="ttdeci">void heartbeatInit(CO_Data *d)</div><div class="ttdoc">Start heartbeat consumer and producer with respect to 0x1016 and 0x1017 object dictionary entries</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00292">lifegrd.c:292</a></div></div>
+<div class="ttc" id="agroup__nodeguardo_html_ga3f81fed5eb843c8baf131915f5826649"><div class="ttname"><a href="group__nodeguardo.html#ga3f81fed5eb843c8baf131915f5826649">nodeguardInit</a></div><div class="ttdeci">void nodeguardInit(CO_Data *d)</div><div class="ttdoc">Start node guarding with respect to 0x100C and 0x100D in the object dictionary</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00317">lifegrd.c:317</a></div></div>
+<div class="ttc" id="agroup__nodeguardo_html_gab3248945e06e8b05518beddf665f174d"><div class="ttname"><a href="group__nodeguardo.html#gab3248945e06e8b05518beddf665f174d">proceedNODE_GUARD</a></div><div class="ttdeci">void proceedNODE_GUARD(CO_Data *d, Message *m)</div><div class="ttdoc">This function is responsible to process a canopen-message which seams to be an NMT Error Control Mess...</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00082">lifegrd.c:82</a></div></div>
+<div class="ttc" id="agroup__nodeguardo_html_gac259820ffbdf98861fc0e75646fba119"><div class="ttname"><a href="group__nodeguardo.html#gac259820ffbdf98861fc0e75646fba119">nodeguardStop</a></div><div class="ttdeci">void nodeguardStop(CO_Data *d)</div><div class="ttdoc">Stop producing node guarding messages</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00353">lifegrd.c:353</a></div></div>
+<div class="ttc" id="agroup__statemachine_html_ga627254070e45c23f1776e12c524492ff"><div class="ttname"><a href="group__statemachine.html#ga627254070e45c23f1776e12c524492ff">getNodeState</a></div><div class="ttdeci">e_nodeState getNodeState(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">To read the state of a node This can be used by the master after having sent a life guard request,...</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00050">lifegrd.c:50</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a096a793e3a28ac4db02972b82cc06d02"><div class="ttname"><a href="lifegrd_8h.html#a096a793e3a28ac4db02972b82cc06d02">post_SlaveStateChange_t</a></div><div class="ttdeci">void(* post_SlaveStateChange_t)(CO_Data *, UNS8, e_nodeState)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8h_source.html#l00064">lifegrd.h:64</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a18bd7346ccfaf6a357b933cb378947bd"><div class="ttname"><a href="lifegrd_8h.html#a18bd7346ccfaf6a357b933cb378947bd">post_SlaveBootup_t</a></div><div class="ttdeci">void(* post_SlaveBootup_t)(CO_Data *, UNS8)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8h_source.html#l00061">lifegrd.h:61</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a3f529764ce623a76fe02b5e8326b6e1e"><div class="ttname"><a href="lifegrd_8h.html#a3f529764ce623a76fe02b5e8326b6e1e">_nodeguardError</a></div><div class="ttdeci">void _nodeguardError(CO_Data *d, UNS8 id)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00376">lifegrd.c:376</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a4cee176e16b9a4d87bd9b48694effb40"><div class="ttname"><a href="lifegrd_8h.html#a4cee176e16b9a4d87bd9b48694effb40">nodeguardError_t</a></div><div class="ttdeci">void(* nodeguardError_t)(CO_Data *, UNS8)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8h_source.html#l00067">lifegrd.h:67</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a639cc3c05ad28deeb74a7d4a30fe1845"><div class="ttname"><a href="lifegrd_8h.html#a639cc3c05ad28deeb74a7d4a30fe1845">_post_SlaveStateChange</a></div><div class="ttdeci">void _post_SlaveStateChange(CO_Data *d, UNS8 nodeId, e_nodeState newNodeState)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00375">lifegrd.c:375</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a7bd167c1fa9ac8e87a4bac7735a58966"><div class="ttname"><a href="lifegrd_8h.html#a7bd167c1fa9ac8e87a4bac7735a58966">lifeGuardStop</a></div><div class="ttdeci">void lifeGuardStop(CO_Data *d)</div><div class="ttdoc">Stop the life guarding service (heartbeat/node guarding).</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00366">lifegrd.c:366</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_a7f5b1ea4e1a1f1d9e350becbf8a8ea00"><div class="ttname"><a href="lifegrd_8h.html#a7f5b1ea4e1a1f1d9e350becbf8a8ea00">heartbeatError_t</a></div><div class="ttdeci">void(* heartbeatError_t)(CO_Data *, UNS8)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8h_source.html#l00058">lifegrd.h:58</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_aca0a09971885eb6d95fd0232ad5905ab"><div class="ttname"><a href="lifegrd_8h.html#aca0a09971885eb6d95fd0232ad5905ab">_heartbeatError</a></div><div class="ttdeci">void _heartbeatError(CO_Data *d, UNS8 heartbeatID)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00373">lifegrd.c:373</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_acd2662892d77ea17b934eca64ed39aef"><div class="ttname"><a href="lifegrd_8h.html#acd2662892d77ea17b934eca64ed39aef">_post_SlaveBootup</a></div><div class="ttdeci">void _post_SlaveBootup(CO_Data *d, UNS8 SlaveID)</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00374">lifegrd.c:374</a></div></div>
+<div class="ttc" id="alifegrd_8h_html_aeb614e7da7ad05814be22489ee022b87"><div class="ttname"><a href="lifegrd_8h.html#aeb614e7da7ad05814be22489ee022b87">lifeGuardInit</a></div><div class="ttdeci">void lifeGuardInit(CO_Data *d)</div><div class="ttdoc">Start the life guarding service (heartbeat/node guarding).</div><div class="ttdef"><b>Definition:</b> <a href="lifegrd_8c_source.html#l00359">lifegrd.c:359</a></div></div>
+<div class="ttc" id="astates_8h_html_a5891f63a4c9243179838389a93d084e2"><div class="ttname"><a href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a></div><div class="ttdeci">enum enum_nodeState e_nodeState</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00050">states.h:50</a></div></div>
+<div class="ttc" id="astruct_message_html"><div class="ttname"><a href="struct_message.html">Message</a></div><div class="ttdoc">The CAN message structure</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00032">canoepn_can.h:32</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html"><div class="ttname"><a href="structstruct___c_o___data.html">struct_CO_Data</a></div><div class="ttdoc">This structure contains all necessary informations to define a CANOpen node</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00056">data.h:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_e0597e218f81c4f883e099b6dc79c2af.html">inc</a></li><li class="navelem"><a class="el" href="lifegrd_8h.html">lifegrd.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

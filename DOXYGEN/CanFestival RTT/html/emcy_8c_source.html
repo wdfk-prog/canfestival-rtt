@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/emcy.c 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('emcy_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">emcy.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="emcy_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  This file is part of CanFestival, a library implementing CanOpen</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Stack.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  Copyright (C): Edouard TISSERANT and Francis DUPIN</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  Modified by: Jaroslav Fojtik</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  See COPYING file for copyrights details.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"></span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  License along with this library; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">  USA</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;<a class="code" href="data_8h.html">data.h</a>&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="emcy_8h.html">emcy.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="canfestival_8h.html">canfestival.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="sysdep_8h.html">sysdep.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> <a class="code hl_function" href="emcy_8c.html#a11265d2ea7926d22310f1802ae722c5b">OnNumberOfErrorsUpdate</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <span class="keyword">const</span> <a class="code hl_struct" href="structtd__indextable.html">indextable</a> * unsused_indextable, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> unsused_bSubindex);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="emcy_8c.html#a0c209e815d35b218025a240523b4335b">   45</a></span><span class="preprocessor">#define Data data  </span><span class="comment">/* temporary fix */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="emcy_8c.html#a11265d2ea7926d22310f1802ae722c5b">   57</a></span><a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> <a class="code hl_function" href="emcy_8c.html#a11265d2ea7926d22310f1802ae722c5b">OnNumberOfErrorsUpdate</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <span class="keyword">const</span> <a class="code hl_struct" href="structtd__indextable.html">indextable</a> * unsused_indextable, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> unsused_bSubindex)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> index;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="comment">// if 0, reset Pre-defined Error Field</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="comment">// else, don&#39;t change and give an abort message (eeror code: 0609 0030h)</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (*d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a90238323d2e578e37bed9d831eefcbff">error_number</a> == 0)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">for</span> (index = 0; index &lt; d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af07bd4fad2a97c18d3dba1213e18bb4b">error_history_size</a>; ++index)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1aaed13d5efbc812ff663470653e4047">error_first_element</a> + index) = 0;      <span class="comment">/* clear all the fields in Pre-defined Error Field (1003h) */</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        ;<span class="comment">// abort message</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="emcy_8h.html#ac1ae9a72b60fc7dfde81d1c70b3f3196">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="emcy_8c.html#ac1ae9a72b60fc7dfde81d1c70b3f3196">emergencyInit</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <a class="code hl_function" href="objacces_8h.html#a514e7b9c13835a86446b1cd38fa34049">RegisterSetODentryCallBack</a>(d, 0x1003, 0x00, &amp;<a class="code hl_function" href="emcy_8c.html#a11265d2ea7926d22310f1802ae722c5b">OnNumberOfErrorsUpdate</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  *d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a90238323d2e578e37bed9d831eefcbff">error_number</a> = 0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="emcy_8h.html#a7b6a2abe14c9416b18bfbce1665247fb">   89</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="emcy_8c.html#a7b6a2abe14c9416b18bfbce1665247fb">emergencyStop</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="emcy_8c.html#af1e1f666c9e850f70d50058ca5062634">  104</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="emcy_8c.html#af1e1f666c9e850f70d50058ca5062634">sendEMCY</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errRegister, <span class="keyword">const</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errSpecific[5])</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_struct" href="struct_message.html">Message</a> m;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3051, <span class="stringliteral">&quot;sendEMCY&quot;</span>, 0);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    m.<a class="code hl_variable" href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">cob_id</a> = (<a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)(*(<a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>*)d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a8de99350cc60d6396a2e926530050dc7">error_cobid</a>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    m.<a class="code hl_variable" href="struct_message.html#af71454c0a19256996c9591ceec70de93">rtr</a> = <a class="code hl_define" href="def_8h.html#a0c43b00ce49efc3586ad17dd80d73940">NOT_A_REQUEST</a>;  </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    m.<a class="code hl_variable" href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">len</a> = 8;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    m.Data[0] = errCode &amp; 0xFF;        <span class="comment">/* LSB */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    m.Data[1] = (errCode &gt;&gt; 8) &amp; 0xFF; <span class="comment">/* MSB */</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    m.Data[2] = errRegister;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (errSpecific == NULL)    <span class="comment">/* Manufacturer Specific Error Field */</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        memset(&amp;m.Data[3], 0, 5);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_define" href="applicfg_8h.html#a9623eafeaa0b30344525b18d685b8c31">memcpy</a>(&amp;m.Data[3], errSpecific, 5);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="can__driver_8h.html#a27e197147f76a261f75d153734499873">canSend</a>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#ac0b528e9b4eb105a5dc61e1dcce8511d">canHandle</a>,&amp;m);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="emcy_8h.html#a010abb14cd143ac91e7aa55c2be0510b">  134</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="emcy_8c.html#a010abb14cd143ac91e7aa55c2be0510b">EMCY_setError</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errRegMask, <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> addInfo)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> index;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errRegister_tmp;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">for</span> (index = 0; index &lt; <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>; ++index)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#ab2996f514876f132678f08225e68eaa0">errCode</a> == errCode)        <span class="comment">/* error already registered */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a>)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3052, <span class="stringliteral">&quot;EMCY message already sent&quot;</span>, 0);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            } <span class="keywordflow">else</span> d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> = 1;     <span class="comment">/* set as active error */</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (index == <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>)       <span class="comment">/* if errCode not already registered */</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">for</span> (index = 0; index &lt; <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>; ++index) <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> == 0) <span class="keywordflow">break</span>;  <span class="comment">/* find first inactive error */</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (index == <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>)       <span class="comment">/* error_data full */</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x3053, <span class="stringliteral">&quot;error_data full&quot;</span>, 0);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#ab2996f514876f132678f08225e68eaa0">errCode</a> = errCode;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#a921ce0b71fb4785906e6d64456291988">errRegMask</a> = errRegMask;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> = 1;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="comment">/* set the new state in the error state machine */</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af40d3a1ef63bfa28362a7913f88799db">error_state</a> = <a class="code hl_enumvalue" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a">Error_occurred</a>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">/* set Error Register (1001h) */</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">for</span> (index = 0, errRegister_tmp = 0; index &lt; <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>; ++index)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> == 1) errRegister_tmp |= d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#a921ce0b71fb4785906e6d64456291988">errRegMask</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    *d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aa837254649e357e1a6940bf89a4d93ae">error_register</a> = errRegister_tmp;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="comment">/* set Pre-defined Error Field (1003h) */</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span> (index = d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af07bd4fad2a97c18d3dba1213e18bb4b">error_history_size</a> - 1; index &gt; 0; --index)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1aaed13d5efbc812ff663470653e4047">error_first_element</a> + index) = *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1aaed13d5efbc812ff663470653e4047">error_first_element</a> + index - 1);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    *(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a1aaed13d5efbc812ff663470653e4047">error_first_element</a>) = errCode | ((<a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>)addInfo &lt;&lt; 16);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">if</span>(*d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a90238323d2e578e37bed9d831eefcbff">error_number</a> &lt; d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af07bd4fad2a97c18d3dba1213e18bb4b">error_history_size</a>) ++(*d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a90238323d2e578e37bed9d831eefcbff">error_number</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">/* send EMCY message */</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a3774a20c6254831020b8d3ca367a1d54">CurrentCommunicationState</a>.<a class="code hl_variable" href="structs__state__communication.html#adb536f2d97197b05bc17ac22837a94de">csEmergency</a>)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="emcy_8c.html#af1e1f666c9e850f70d50058ca5062634">sendEMCY</a>(d, errCode, *d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aa837254649e357e1a6940bf89a4d93ae">error_register</a>, NULL);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="emcy_8h.html#a2b426b69db22c42ab8e51a2b16bfc9f1">  192</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="emcy_8c.html#a2b426b69db22c42ab8e51a2b16bfc9f1">EMCY_errorRecovered</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> index;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errRegister_tmp;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> anyActiveError = 0;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">for</span> (index = 0; index &lt; <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>; ++index)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#ab2996f514876f132678f08225e68eaa0">errCode</a> == errCode) <span class="keywordflow">break</span>;     <span class="comment">/* find the position of the error */</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">if</span> ((index != <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>) &amp;&amp; (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> == 1))</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment">/* set Error Register (1001h) and check error state machine */</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">for</span> (index = 0, errRegister_tmp = 0; index &lt; <a class="code hl_define" href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a>; ++index)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">active</a> == 1)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                anyActiveError = 1;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                errRegister_tmp |= d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">error_data</a>[index].<a class="code hl_variable" href="structs__errors.html#a921ce0b71fb4785906e6d64456291988">errRegMask</a>;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span>(anyActiveError == 0)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#af40d3a1ef63bfa28362a7913f88799db">error_state</a> = <a class="code hl_enumvalue" href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b">Error_free</a>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="comment">/* send a EMCY message with code &quot;Error Reset or No Error&quot; */</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">if</span> (d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a3774a20c6254831020b8d3ca367a1d54">CurrentCommunicationState</a>.<a class="code hl_variable" href="structs__state__communication.html#adb536f2d97197b05bc17ac22837a94de">csEmergency</a>)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <a class="code hl_function" href="emcy_8c.html#af1e1f666c9e850f70d50058ca5062634">sendEMCY</a>(d, 0x0000, 0x00, NULL);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        *d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#aa837254649e357e1a6940bf89a4d93ae">error_register</a> = errRegister_tmp;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3054, <span class="stringliteral">&quot;recovered error was not active&quot;</span>, 0);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="emcy_8h.html#a1d5b0a7a06668cdac55141b7076e0fe5">  236</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="emcy_8c.html#a1d5b0a7a06668cdac55141b7076e0fe5">proceedEMCY</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_struct" href="struct_message.html">Message</a>* m)</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>{</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeID;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errReg;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3055, <span class="stringliteral">&quot;EMCY received. Proceed. &quot;</span>, 0);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="comment">/* Test if the size of the EMCY is ok */</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">if</span> ( m-&gt;<a class="code hl_variable" href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">len</a> != 8) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <a class="code hl_define" href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a>(0x1056, <span class="stringliteral">&quot;Error size EMCY. CobId  : &quot;</span>, m-&gt;<a class="code hl_variable" href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">cob_id</a>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="comment">/* post the received EMCY */</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    nodeID = m-&gt;<a class="code hl_variable" href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">cob_id</a> &amp; 0x7F;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    errCode = m-&gt;Data[0] | ((<a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)m-&gt;Data[1] &lt;&lt; 8);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    errReg = m-&gt;Data[2];</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    (*d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a2ca26c1c940be623220f536dc8dc3b9b">post_emcy</a>)(d, nodeID, errCode, errReg, (<span class="keyword">const</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*)&amp;m-&gt;Data[3]);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="emcy_8h.html#a141b3326bb4c1e65e2acaa1c4f42b23e">  257</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="emcy_8c.html#a141b3326bb4c1e65e2acaa1c4f42b23e">_post_emcy</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeID, <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> errCode, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errReg, <span class="keyword">const</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> errSpec[5]){}</div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5528eeccf214bfe021532622d78c6a96"><div class="ttname"><a href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a></div><div class="ttdeci">#define UNS16</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00043">applicfg.h:43</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5f4e5133c4c3113931684d3aba518bba"><div class="ttname"><a href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a></div><div class="ttdeci">#define MSG_WAR(num, str, val)</div><div class="ttdoc">Definition of MSG_WAR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00082">applicfg.h:82</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a889a782714194ae2f780002d25d6e0be"><div class="ttname"><a href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a></div><div class="ttdeci">#define UNS32</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00044">applicfg.h:44</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a9623eafeaa0b30344525b18d685b8c31"><div class="ttname"><a href="applicfg_8h.html#a9623eafeaa0b30344525b18d685b8c31">memcpy</a></div><div class="ttdeci">#define memcpy(dst, src, count)</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00029">applicfg.h:29</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a99178e2619db849578b20df5aa241844"><div class="ttname"><a href="applicfg_8h.html#a99178e2619db849578b20df5aa241844">MSG_ERR</a></div><div class="ttdeci">#define MSG_ERR(num, str, val)</div><div class="ttdoc">Definition of MSG_ERR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00072">applicfg.h:72</a></div></div>
+<div class="ttc" id="acan__driver_8h_html_a27e197147f76a261f75d153734499873"><div class="ttname"><a href="can__driver_8h.html#a27e197147f76a261f75d153734499873">canSend</a></div><div class="ttdeci">UNS8 DLL_CALL() canSend(CAN_HANDLE, Message const *) FCT_PTR_INIT</div></div>
+<div class="ttc" id="acanfestival_8h_html"><div class="ttname"><a href="canfestival_8h.html">canfestival.h</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a7f30480705280ad0f295016dc8868e7e"><div class="ttname"><a href="config_8h.html#a7f30480705280ad0f295016dc8868e7e">EMCY_MAX_ERRORS</a></div><div class="ttdeci">#define EMCY_MAX_ERRORS</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00054">config.h:54</a></div></div>
+<div class="ttc" id="adata_8h_html"><div class="ttname"><a href="data_8h.html">data.h</a></div></div>
+<div class="ttc" id="adef_8h_html_a0c43b00ce49efc3586ad17dd80d73940"><div class="ttname"><a href="def_8h.html#a0c43b00ce49efc3586ad17dd80d73940">NOT_A_REQUEST</a></div><div class="ttdeci">#define NOT_A_REQUEST</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00059">def.h:59</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a010abb14cd143ac91e7aa55c2be0510b"><div class="ttname"><a href="emcy_8c.html#a010abb14cd143ac91e7aa55c2be0510b">EMCY_setError</a></div><div class="ttdeci">UNS8 EMCY_setError(CO_Data *d, UNS16 errCode, UNS8 errRegMask, UNS16 addInfo)</div><div class="ttdoc">Sets a new error with code errCode.</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00134">emcy.c:134</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a11265d2ea7926d22310f1802ae722c5b"><div class="ttname"><a href="emcy_8c.html#a11265d2ea7926d22310f1802ae722c5b">OnNumberOfErrorsUpdate</a></div><div class="ttdeci">UNS32 OnNumberOfErrorsUpdate(CO_Data *d, const indextable *unsused_indextable, UNS8 unsused_bSubindex)</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00057">emcy.c:57</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a141b3326bb4c1e65e2acaa1c4f42b23e"><div class="ttname"><a href="emcy_8c.html#a141b3326bb4c1e65e2acaa1c4f42b23e">_post_emcy</a></div><div class="ttdeci">void _post_emcy(CO_Data *d, UNS8 nodeID, UNS16 errCode, UNS8 errReg, const UNS8 errSpec[5])</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00257">emcy.c:257</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a1d5b0a7a06668cdac55141b7076e0fe5"><div class="ttname"><a href="emcy_8c.html#a1d5b0a7a06668cdac55141b7076e0fe5">proceedEMCY</a></div><div class="ttdeci">void proceedEMCY(CO_Data *d, Message *m)</div><div class="ttdoc">This function is responsible to process an EMCY canopen-message</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00236">emcy.c:236</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a2b426b69db22c42ab8e51a2b16bfc9f1"><div class="ttname"><a href="emcy_8c.html#a2b426b69db22c42ab8e51a2b16bfc9f1">EMCY_errorRecovered</a></div><div class="ttdeci">void EMCY_errorRecovered(CO_Data *d, UNS16 errCode)</div><div class="ttdoc">Indicates it has recovered from error errCode.</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00192">emcy.c:192</a></div></div>
+<div class="ttc" id="aemcy_8c_html_a7b6a2abe14c9416b18bfbce1665247fb"><div class="ttname"><a href="emcy_8c.html#a7b6a2abe14c9416b18bfbce1665247fb">emergencyStop</a></div><div class="ttdeci">void emergencyStop(CO_Data *d)</div><div class="ttdoc">Stop EMCY producer and consumer</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00089">emcy.c:89</a></div></div>
+<div class="ttc" id="aemcy_8c_html_ac1ae9a72b60fc7dfde81d1c70b3f3196"><div class="ttname"><a href="emcy_8c.html#ac1ae9a72b60fc7dfde81d1c70b3f3196">emergencyInit</a></div><div class="ttdeci">void emergencyInit(CO_Data *d)</div><div class="ttdoc">Start EMCY consumer and producer</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00077">emcy.c:77</a></div></div>
+<div class="ttc" id="aemcy_8c_html_af1e1f666c9e850f70d50058ca5062634"><div class="ttname"><a href="emcy_8c.html#af1e1f666c9e850f70d50058ca5062634">sendEMCY</a></div><div class="ttdeci">UNS8 sendEMCY(CO_Data *d, UNS16 errCode, UNS8 errRegister, const UNS8 errSpecific[5])</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8c_source.html#l00104">emcy.c:104</a></div></div>
+<div class="ttc" id="aemcy_8h_html"><div class="ttname"><a href="emcy_8h.html">emcy.h</a></div><div class="ttdoc">Declarations of the functions that manage EMCY (emergency) messages</div></div>
+<div class="ttc" id="aemcy_8h_html_a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b"><div class="ttname"><a href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604a4e35539341f6269b2a48e05576a09d8b">Error_free</a></div><div class="ttdeci">@ Error_free</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8h_source.html#l00047">emcy.h:47</a></div></div>
+<div class="ttc" id="aemcy_8h_html_a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a"><div class="ttname"><a href="emcy_8h.html#a8e6945828bf351fc14f91e0e372b1604ab7f4dba8dabba630a12e160d02da367a">Error_occurred</a></div><div class="ttdeci">@ Error_occurred</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8h_source.html#l00049">emcy.h:48</a></div></div>
+<div class="ttc" id="aobjacces_8h_html_a514e7b9c13835a86446b1cd38fa34049"><div class="ttname"><a href="objacces_8h.html#a514e7b9c13835a86446b1cd38fa34049">RegisterSetODentryCallBack</a></div><div class="ttdeci">UNS32 RegisterSetODentryCallBack(CO_Data *d, UNS16 wIndex, UNS8 bSubindex, ODCallback_t Callback)</div><div class="ttdef"><b>Definition:</b> <a href="objacces_8c_source.html#l00258">objacces.c:258</a></div></div>
+<div class="ttc" id="astruct_message_html"><div class="ttname"><a href="struct_message.html">Message</a></div><div class="ttdoc">The CAN message structure</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00032">canoepn_can.h:32</a></div></div>
+<div class="ttc" id="astruct_message_html_a293f605bccda3a182bb7f10b2d3fcafe"><div class="ttname"><a href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">Message::len</a></div><div class="ttdeci">UNS8 len</div><div class="ttdoc">message's length (0 to 8)</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00035">canoepn_can.h:35</a></div></div>
+<div class="ttc" id="astruct_message_html_abe845f0dbe8214540c329bd0bb5ba7e6"><div class="ttname"><a href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">Message::cob_id</a></div><div class="ttdeci">UNS16 cob_id</div><div class="ttdoc">message's ID</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00033">canoepn_can.h:33</a></div></div>
+<div class="ttc" id="astruct_message_html_af71454c0a19256996c9591ceec70de93"><div class="ttname"><a href="struct_message.html#af71454c0a19256996c9591ceec70de93">Message::rtr</a></div><div class="ttdeci">UNS8 rtr</div><div class="ttdoc">remote transmission request.</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00034">canoepn_can.h:34</a></div></div>
+<div class="ttc" id="astructs__errors_html_a921ce0b71fb4785906e6d64456291988"><div class="ttname"><a href="structs__errors.html#a921ce0b71fb4785906e6d64456291988">s_errors::errRegMask</a></div><div class="ttdeci">UNS8 errRegMask</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8h_source.html#l00053">emcy.h:53</a></div></div>
+<div class="ttc" id="astructs__errors_html_aa653bc257b4dfbe35d7f2b5518e78c91"><div class="ttname"><a href="structs__errors.html#aa653bc257b4dfbe35d7f2b5518e78c91">s_errors::active</a></div><div class="ttdeci">UNS8 active</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8h_source.html#l00054">emcy.h:54</a></div></div>
+<div class="ttc" id="astructs__errors_html_ab2996f514876f132678f08225e68eaa0"><div class="ttname"><a href="structs__errors.html#ab2996f514876f132678f08225e68eaa0">s_errors::errCode</a></div><div class="ttdeci">UNS16 errCode</div><div class="ttdef"><b>Definition:</b> <a href="emcy_8h_source.html#l00052">emcy.h:52</a></div></div>
+<div class="ttc" id="astructs__state__communication_html_adb536f2d97197b05bc17ac22837a94de"><div class="ttname"><a href="structs__state__communication.html#adb536f2d97197b05bc17ac22837a94de">s_state_communication::csEmergency</a></div><div class="ttdeci">INTEGER8 csEmergency</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00056">states.h:56</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html"><div class="ttname"><a href="structstruct___c_o___data.html">struct_CO_Data</a></div><div class="ttdoc">This structure contains all necessary informations to define a CANOpen node</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00056">data.h:56</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a1aaed13d5efbc812ff663470653e4047"><div class="ttname"><a href="structstruct___c_o___data.html#a1aaed13d5efbc812ff663470653e4047">struct_CO_Data::error_first_element</a></div><div class="ttdeci">UNS32 * error_first_element</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00128">data.h:128</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a2ca26c1c940be623220f536dc8dc3b9b"><div class="ttname"><a href="structstruct___c_o___data.html#a2ca26c1c940be623220f536dc8dc3b9b">struct_CO_Data::post_emcy</a></div><div class="ttdeci">post_emcy_t post_emcy</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00132">data.h:132</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a3774a20c6254831020b8d3ca367a1d54"><div class="ttname"><a href="structstruct___c_o___data.html#a3774a20c6254831020b8d3ca367a1d54">struct_CO_Data::CurrentCommunicationState</a></div><div class="ttdeci">s_state_communication CurrentCommunicationState</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00075">data.h:75</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a8de99350cc60d6396a2e926530050dc7"><div class="ttname"><a href="structstruct___c_o___data.html#a8de99350cc60d6396a2e926530050dc7">struct_CO_Data::error_cobid</a></div><div class="ttdeci">UNS32 * error_cobid</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00130">data.h:130</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a90238323d2e578e37bed9d831eefcbff"><div class="ttname"><a href="structstruct___c_o___data.html#a90238323d2e578e37bed9d831eefcbff">struct_CO_Data::error_number</a></div><div class="ttdeci">UNS8 * error_number</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00127">data.h:127</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_aa837254649e357e1a6940bf89a4d93ae"><div class="ttname"><a href="structstruct___c_o___data.html#aa837254649e357e1a6940bf89a4d93ae">struct_CO_Data::error_register</a></div><div class="ttdeci">UNS8 * error_register</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00129">data.h:129</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_aab2e17680abb2b859d41fe85ddfa0042"><div class="ttname"><a href="structstruct___c_o___data.html#aab2e17680abb2b859d41fe85ddfa0042">struct_CO_Data::error_data</a></div><div class="ttdeci">s_errors error_data[EMCY_MAX_ERRORS]</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00131">data.h:131</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_ac0b528e9b4eb105a5dc61e1dcce8511d"><div class="ttname"><a href="structstruct___c_o___data.html#ac0b528e9b4eb105a5dc61e1dcce8511d">struct_CO_Data::canHandle</a></div><div class="ttdeci">CAN_PORT canHandle</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00112">data.h:112</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_af07bd4fad2a97c18d3dba1213e18bb4b"><div class="ttname"><a href="structstruct___c_o___data.html#af07bd4fad2a97c18d3dba1213e18bb4b">struct_CO_Data::error_history_size</a></div><div class="ttdeci">UNS8 error_history_size</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00126">data.h:126</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_af40d3a1ef63bfa28362a7913f88799db"><div class="ttname"><a href="structstruct___c_o___data.html#af40d3a1ef63bfa28362a7913f88799db">struct_CO_Data::error_state</a></div><div class="ttdeci">e_errorState error_state</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00125">data.h:125</a></div></div>
+<div class="ttc" id="astructtd__indextable_html"><div class="ttname"><a href="structtd__indextable.html">td_indextable</a></div><div class="ttdoc">Struct for creating entries in the communictaion profile</div><div class="ttdef"><b>Definition:</b> <a href="objdictdef_8h_source.html#l00099">objdictdef.h:100</a></div></div>
+<div class="ttc" id="asysdep_8h_html"><div class="ttname"><a href="sysdep_8h.html">sysdep.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="emcy_8c.html">emcy.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

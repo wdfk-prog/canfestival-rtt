@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/lifegrd.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lifegrd_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">lifegrd.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="lifegrd_8h_source.html">lifegrd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="canfestival_8h_source.html">canfestival.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dcf_8h_source.html">dcf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sysdep_8h_source.html">sysdep.h</a>&quot;</code><br />
+</div>
+<p><a href="lifegrd_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gac1fe275595c601d9dfed7cb9f5e3373e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__heartbeato.html#gac1fe275595c601d9dfed7cb9f5e3373e">ConsumerHeartbeatAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> id)</td></tr>
+<tr class="separator:gac1fe275595c601d9dfed7cb9f5e3373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab762f7a046fafea414bb71a456c56709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__heartbeato.html#gab762f7a046fafea414bb71a456c56709">ProducerHeartbeatAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> id)</td></tr>
+<tr class="separator:gab762f7a046fafea414bb71a456c56709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4162208406b56791eb603ae454fbcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#a1f4162208406b56791eb603ae454fbcc">OnHearbeatProducerUpdate</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *unused_indextable, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> unused_bSubindex)</td></tr>
+<tr class="separator:a1f4162208406b56791eb603ae454fbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58b22c95490ed51c5fd5608ac4f5d148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nodeguardo.html#ga58b22c95490ed51c5fd5608ac4f5d148">GuardTimeAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> id)</td></tr>
+<tr class="memdesc:ga58b22c95490ed51c5fd5608ac4f5d148"><td class="mdescLeft">&#160;</td><td class="mdescRight">The guardTime - Timer Callback.  <a href="group__nodeguardo.html#ga58b22c95490ed51c5fd5608ac4f5d148">更多...</a><br /></td></tr>
+<tr class="separator:ga58b22c95490ed51c5fd5608ac4f5d148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ca299d2e686313a85093b8a381af80a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nodeguardo.html#ga6ca299d2e686313a85093b8a381af80a">OnNodeGuardUpdate</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *unused_indextable, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> unused_bSubindex)</td></tr>
+<tr class="memdesc:ga6ca299d2e686313a85093b8a381af80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called, if index 0x100C or 0x100D is updated to restart the node-guarding service with the new parameters  <a href="group__nodeguardo.html#ga6ca299d2e686313a85093b8a381af80a">更多...</a><br /></td></tr>
+<tr class="separator:ga6ca299d2e686313a85093b8a381af80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga627254070e45c23f1776e12c524492ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__statemachine.html#ga627254070e45c23f1776e12c524492ff">getNodeState</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</td></tr>
+<tr class="memdesc:ga627254070e45c23f1776e12c524492ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">To read the state of a node This can be used by the master after having sent a life guard request, of by any node if it is waiting for heartbeat.  <a href="group__statemachine.html#ga627254070e45c23f1776e12c524492ff">更多...</a><br /></td></tr>
+<tr class="separator:ga627254070e45c23f1776e12c524492ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3248945e06e8b05518beddf665f174d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nodeguardo.html#gab3248945e06e8b05518beddf665f174d">proceedNODE_GUARD</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="struct_message.html">Message</a> *m)</td></tr>
+<tr class="memdesc:gab3248945e06e8b05518beddf665f174d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is responsible to process a canopen-message which seams to be an NMT Error Control Messages.  <a href="group__nodeguardo.html#gab3248945e06e8b05518beddf665f174d">更多...</a><br /></td></tr>
+<tr class="separator:gab3248945e06e8b05518beddf665f174d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad32067289c0105a381c2dcec74311226"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__heartbeato.html#gad32067289c0105a381c2dcec74311226">OnHeartbeatProducerUpdate</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *unused_indextable, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> unused_bSubindex)</td></tr>
+<tr class="separator:gad32067289c0105a381c2dcec74311226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8896f6846e4d020390f6953f3d98aa21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__heartbeato.html#ga8896f6846e4d020390f6953f3d98aa21">heartbeatInit</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:ga8896f6846e4d020390f6953f3d98aa21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start heartbeat consumer and producer with respect to 0x1016 and 0x1017 object dictionary entries  <a href="group__heartbeato.html#ga8896f6846e4d020390f6953f3d98aa21">更多...</a><br /></td></tr>
+<tr class="separator:ga8896f6846e4d020390f6953f3d98aa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f81fed5eb843c8baf131915f5826649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nodeguardo.html#ga3f81fed5eb843c8baf131915f5826649">nodeguardInit</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:ga3f81fed5eb843c8baf131915f5826649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start node guarding with respect to 0x100C and 0x100D in the object dictionary  <a href="group__nodeguardo.html#ga3f81fed5eb843c8baf131915f5826649">更多...</a><br /></td></tr>
+<tr class="separator:ga3f81fed5eb843c8baf131915f5826649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b73047269c2a02065e12af18c6053c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__heartbeato.html#ga1b73047269c2a02065e12af18c6053c7">heartbeatStop</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:ga1b73047269c2a02065e12af18c6053c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop heartbeat consumer and producer  <a href="group__heartbeato.html#ga1b73047269c2a02065e12af18c6053c7">更多...</a><br /></td></tr>
+<tr class="separator:ga1b73047269c2a02065e12af18c6053c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac259820ffbdf98861fc0e75646fba119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nodeguardo.html#gac259820ffbdf98861fc0e75646fba119">nodeguardStop</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:gac259820ffbdf98861fc0e75646fba119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop producing node guarding messages  <a href="group__nodeguardo.html#gac259820ffbdf98861fc0e75646fba119">更多...</a><br /></td></tr>
+<tr class="separator:gac259820ffbdf98861fc0e75646fba119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb614e7da7ad05814be22489ee022b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#aeb614e7da7ad05814be22489ee022b87">lifeGuardInit</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:aeb614e7da7ad05814be22489ee022b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the life guarding service (heartbeat/node guarding).  <a href="lifegrd_8c.html#aeb614e7da7ad05814be22489ee022b87">更多...</a><br /></td></tr>
+<tr class="separator:aeb614e7da7ad05814be22489ee022b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd167c1fa9ac8e87a4bac7735a58966"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#a7bd167c1fa9ac8e87a4bac7735a58966">lifeGuardStop</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:a7bd167c1fa9ac8e87a4bac7735a58966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the life guarding service (heartbeat/node guarding).  <a href="lifegrd_8c.html#a7bd167c1fa9ac8e87a4bac7735a58966">更多...</a><br /></td></tr>
+<tr class="separator:a7bd167c1fa9ac8e87a4bac7735a58966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0a09971885eb6d95fd0232ad5905ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#aca0a09971885eb6d95fd0232ad5905ab">_heartbeatError</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> heartbeatID)</td></tr>
+<tr class="separator:aca0a09971885eb6d95fd0232ad5905ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2662892d77ea17b934eca64ed39aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#acd2662892d77ea17b934eca64ed39aef">_post_SlaveBootup</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> SlaveID)</td></tr>
+<tr class="separator:acd2662892d77ea17b934eca64ed39aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639cc3c05ad28deeb74a7d4a30fe1845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#a639cc3c05ad28deeb74a7d4a30fe1845">_post_SlaveStateChange</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a> newNodeState)</td></tr>
+<tr class="separator:a639cc3c05ad28deeb74a7d4a30fe1845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f529764ce623a76fe02b5e8326b6e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lifegrd_8c.html#a3f529764ce623a76fe02b5e8326b6e1e">_nodeguardError</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> id)</td></tr>
+<tr class="separator:a3f529764ce623a76fe02b5e8326b6e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Edouard TISSERANT </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>Mon Jun 4 17:19:24 2007 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="aca0a09971885eb6d95fd0232ad5905ab" name="aca0a09971885eb6d95fd0232ad5905ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca0a09971885eb6d95fd0232ad5905ab">&#9670;&#160;</a></span>_heartbeatError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _heartbeatError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>heartbeatID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00373">373</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3f529764ce623a76fe02b5e8326b6e1e" name="a3f529764ce623a76fe02b5e8326b6e1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f529764ce623a76fe02b5e8326b6e1e">&#9670;&#160;</a></span>_nodeguardError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _nodeguardError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00376">376</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acd2662892d77ea17b934eca64ed39aef" name="acd2662892d77ea17b934eca64ed39aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2662892d77ea17b934eca64ed39aef">&#9670;&#160;</a></span>_post_SlaveBootup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _post_SlaveBootup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>SlaveID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00374">374</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a639cc3c05ad28deeb74a7d4a30fe1845" name="a639cc3c05ad28deeb74a7d4a30fe1845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639cc3c05ad28deeb74a7d4a30fe1845">&#9670;&#160;</a></span>_post_SlaveStateChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _post_SlaveStateChange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="states_8h.html#a5891f63a4c9243179838389a93d084e2">e_nodeState</a>&#160;</td>
+          <td class="paramname"><em>newNodeState</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00375">375</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aeb614e7da7ad05814be22489ee022b87" name="aeb614e7da7ad05814be22489ee022b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb614e7da7ad05814be22489ee022b87">&#9670;&#160;</a></span>lifeGuardInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lifeGuardInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start the life guarding service (heartbeat/node guarding). </p>
+<p >This service handles NMT error control messages either by using heartbeats and/or by using node guarding messages (defined via the object dictionary)</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00359">359</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7bd167c1fa9ac8e87a4bac7735a58966" name="a7bd167c1fa9ac8e87a4bac7735a58966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd167c1fa9ac8e87a4bac7735a58966">&#9670;&#160;</a></span>lifeGuardStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lifeGuardStop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop the life guarding service (heartbeat/node guarding). </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="lifegrd_8c_source.html">lifegrd.c</a> 第 <a class="el" href="lifegrd_8c_source.html#l00366">366</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1f4162208406b56791eb603ae454fbcc" name="a1f4162208406b56791eb603ae454fbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4162208406b56791eb603ae454fbcc">&#9670;&#160;</a></span>OnHearbeatProducerUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> OnHearbeatProducerUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *&#160;</td>
+          <td class="paramname"><em>unused_indextable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>unused_bSubindex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="lifegrd_8c.html">lifegrd.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

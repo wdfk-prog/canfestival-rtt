@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/lss.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('lss_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lss.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lss_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">This file is part of CanFestival, a library implementing CanOpen Stack. </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">Copyright (C): Jorge Berzosa</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">See COPYING file for copyrights details.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"></span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"></span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">License along with this library; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifndef __LSS_h__</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define __LSS_h__</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lss_8h.html#a764ac76cce8e104748b91776b3561157">   37</a></span><span class="preprocessor">#define SLSS_ADRESS 0x7E4</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="lss_8h.html#a859df46e9b66c536450edf330605a2dc">   38</a></span><span class="preprocessor">#define MLSS_ADRESS 0x7E5</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="lss_8h.html#ad01ce6a6a70feb9f2fd4f8b8a416b624">   40</a></span><span class="preprocessor">#define SDELAY_OFF      0</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="lss_8h.html#aaf1a2b9ef7efa227b4c345e8ab87e3ce">   41</a></span><span class="preprocessor">#define SDELAY_FIRST    1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="lss_8h.html#a4b64242f955ffa5dd1a564c09ab8519b">   42</a></span><span class="preprocessor">#define SDELAY_SECOND   2</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="lss_8h.html#a4e39c1c28e2a47ff25a529b168289eae">   44</a></span><span class="preprocessor">#define LSS_WAITING_MODE 0</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="lss_8h.html#afc8840188e12624da665d3a9b8575a65">   45</a></span><span class="preprocessor">#define LSS_CONFIGURATION_MODE 1</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/* Switch mode services */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="lss_8h.html#ac7e3328178034e6c88f28415541b695b">   48</a></span><span class="preprocessor">#define LSS_SM_GLOBAL                4</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="lss_8h.html#a1a5bd7798c55ded913b5d012ef5f0116">   49</a></span><span class="preprocessor">#define LSS_SM_SELECTIVE_VENDOR     64</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="lss_8h.html#a9a380f4ffb41509e67c43a2f7d5b550a">   50</a></span><span class="preprocessor">#define LSS_SM_SELECTIVE_PRODUCT    65</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="lss_8h.html#ab4dff0e57494bf98d9ee6001277b937b">   51</a></span><span class="preprocessor">#define LSS_SM_SELECTIVE_REVISION   66</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="lss_8h.html#a6e3cf0067565d1ab2d96f7c72ac509a6">   52</a></span><span class="preprocessor">#define LSS_SM_SELECTIVE_SERIAL     67</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="lss_8h.html#a0e70227b792761aebaf976b76fb70a02">   53</a></span><span class="preprocessor">#define LSS_SM_SELECTIVE_RESP       68</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">/* Configuration services */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="lss_8h.html#a86ff38f266aede740128fec7dad20e49">   55</a></span><span class="preprocessor">#define LSS_CONF_NODE_ID            17</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="lss_8h.html#a95730a487ee85626a9778438b092cbff">   56</a></span><span class="preprocessor">#define LSS_CONF_BIT_TIMING         19</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="lss_8h.html#a9d541d973ce7266d97669565026a6f83">   57</a></span><span class="preprocessor">#define LSS_CONF_ACT_BIT_TIMING     21</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="lss_8h.html#a53830e2e3fb09e1acab320e25cfce234">   58</a></span><span class="preprocessor">#define LSS_CONF_STORE              23</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">/* Inquire services */</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="lss_8h.html#a9f90d87b36b742065d116b5cd244e262">   60</a></span><span class="preprocessor">#define LSS_INQ_VENDOR_ID       90</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="lss_8h.html#a1ecaaa5b2ef20641f85eac318cd43909">   61</a></span><span class="preprocessor">#define LSS_INQ_PRODUCT_CODE    91</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="lss_8h.html#af80a881f6a92355944dfd8d559804b13">   62</a></span><span class="preprocessor">#define LSS_INQ_REV_NUMBER      92</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="lss_8h.html#ac43f7cd88aef12545c8c57f5c2c83c04">   63</a></span><span class="preprocessor">#define LSS_INQ_SERIAL_NUMBER   93</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="lss_8h.html#ad23db9d212f17f08c8b0354e7f8a5e94">   64</a></span><span class="preprocessor">#define LSS_INQ_NODE_ID         94</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/* Identification services */</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="lss_8h.html#afaef584e2f2661bab8f53884f6accd84">   66</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_VENDOR         70</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="lss_8h.html#a075c920207ec0c27f609ddb1c11ef972">   67</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_PRODUCT        71</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="lss_8h.html#a1968fccf9e4c366ba4a0d2b636f03ffd">   68</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_REV_LOW        72</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="lss_8h.html#a16ea634d10a8175451fe16e137eebe73">   69</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_REV_HIGH       73</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="lss_8h.html#a84bb7fa4b7e5b0a13e19dabc484f7a83">   70</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_SERIAL_LOW     74</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="lss_8h.html#a4f8fa374408f48c2594554c5544dc9dd">   71</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_SERIAL_HIGH    75</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="lss_8h.html#af3e26b2dea313a9bdebacf9d0f1a26ea">   72</a></span><span class="preprocessor">#define LSS_IDENT_REMOTE_NON_CONF       76</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="lss_8h.html#a6fd9df44909961d99ea830ebfd8c2f0d">   73</a></span><span class="preprocessor">#define LSS_IDENT_SLAVE                 79</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="lss_8h.html#ae89842a3bee4c9d0208ef17b843ef4ce">   74</a></span><span class="preprocessor">#define LSS_IDENT_NON_CONF_SLAVE        80</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="lss_8h.html#adf4bca3444338c9099b95d5713dce82d">   75</a></span><span class="preprocessor">#define LSS_IDENT_FASTSCAN              81</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">/*FastScan State Machine*/</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="lss_8h.html#ae176e43a3df992d1dd4641df5ed27aac">   78</a></span><span class="preprocessor">#define LSS_FS_RESET    0</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="lss_8h.html#a185c6ef9bcab04a005476ec05cbbbcd0">   79</a></span><span class="preprocessor">#define LSS_FS_PROCESSING 1</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="lss_8h.html#af67312355a39481e44206bfc496fede0">   80</a></span><span class="preprocessor">#define LSS_FS_CONFIRMATION 2</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="lss_8h.html#a1f2cdfadf85f9b16c7d919ab5097e105">   83</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lss_8h.html#a1f2cdfadf85f9b16c7d919ab5097e105">LSSCallback_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> command); </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="lss_8h.html#ace495c1cdd42a6522c479f884719b690">   85</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="lss_8h.html#ace495c1cdd42a6522c479f884719b690">lss_StoreConfiguration_t</a>)(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d,<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*,<a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>*);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//void _lss_StoreConfiguration(UNS8 *error, UNS8 *spec_error);</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//typedef void (*lss_ChangeBaudRate_t)(CO_Data* d,char*);</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//void _lss_ChangeBaudRate(char *BaudRate);</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">struct </span><a class="code hl_struct" href="structstruct__lss__transfer.html">struct_lss_transfer</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">//#include &quot;timer.h&quot;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#ifdef CO_ENABLE_LSS_FS</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">struct </span>struct_lss_fs_transfer {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> FS_LSS_ID[4];</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> FS_BitChecked[4];</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">typedef</span> <span class="keyword">struct </span>struct_lss_fs_transfer lss_fs_transfer_t;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">/* The Transfer structure</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">* Used to store the different fields of the internal state of the LSS  </span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html">  109</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structstruct__lss__transfer.html">struct_lss_transfer</a> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a7794a183263db285e3c04d2cbcdfba40">  110</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>          <a class="code hl_variable" href="structstruct__lss__transfer.html#a7794a183263db285e3c04d2cbcdfba40">state</a>;      <span class="comment">/* state of the transmission : Takes the values LSS_... */</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">  111</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>          <a class="code hl_variable" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">command</a>;     <span class="comment">/* the LSS command of the transmision */</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#ac3285299c5c2973809f20bdfa79667c6">  112</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>          <a class="code hl_variable" href="structstruct__lss__transfer.html#ac3285299c5c2973809f20bdfa79667c6">mode</a>;       <span class="comment">/* LSS mode */</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">  114</a></span>  <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>         <a class="code hl_variable" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">dat1</a>;       <span class="comment">/* the data from the last msg received */</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">  115</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>          <a class="code hl_variable" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">dat2</a>; </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#ad2ec1a7dfd10c65ba911fb86c9d0972e">  117</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#ad2ec1a7dfd10c65ba911fb86c9d0972e">nodeID</a>;              <span class="comment">/* the new nodeid stored to update the nodeid when switching to LSS operational*/</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a3d611e73706a35ac7e79b9539ce9d5f6">  118</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a3d611e73706a35ac7e79b9539ce9d5f6">addr_sel_match</a>;      <span class="comment">/* the matching mask for the LSS Switch Mode Selective service */</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a60ba5775587423ab25b629b59b34bced">  119</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a60ba5775587423ab25b629b59b34bced">addr_ident_match</a>;    <span class="comment">/* the matching mask for the LSS Identify Remote Slaves service*/</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a9dd9ea7dc373a8889ced79283dc1e95b">  121</a></span>  <span class="keywordtype">char</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a9dd9ea7dc373a8889ced79283dc1e95b">baudRate</a>;           <span class="comment">/* the new baudrate stored to update the node baudrate when a Activate Bit </span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">                             * Timing Parameters is received*/</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#aeb8bf55bded280e0b7997a09aac16b09">  123</a></span>  <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#aeb8bf55bded280e0b7997a09aac16b09">switchDelay</a>;        <span class="comment">/* the period of the two delay */</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a86af7e97f258e93671cad44c89e8de20">  124</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>  <a class="code hl_variable" href="structstruct__lss__transfer.html#a86af7e97f258e93671cad44c89e8de20">switchDelayState</a>;   <span class="comment">/* the state machine for the switchDelay */</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#aec0ae7a31c32b844a449eb9f5558edf6">  125</a></span>  <a class="code hl_typedef" href="applicfg_8h.html#a7ef59f941603c6680e74fc335523f17e">CAN_PORT</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#aec0ae7a31c32b844a449eb9f5558edf6">canHandle_t</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                              <span class="comment">/* Time counters to implement a timeout in milliseconds.*/</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a7459cd0f080c8038a8816b62d6322238">  128</a></span>  <a class="code hl_define" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a7459cd0f080c8038a8816b62d6322238">timerMSG</a>;      <span class="comment">/* timerMSG is automatically incremented whenever </span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">                              * the lss state is in LSS_TRANS_IN_PROGRESS, and reseted to 0 </span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">                              * when the response LSS have been received.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">                              */</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                             </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a6135d0d0ab3a074c1060dfb91aa6c20e">  133</a></span>  <a class="code hl_define" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a6135d0d0ab3a074c1060dfb91aa6c20e">timerSDELAY</a>;   <span class="comment">/* timerSDELAY is automatically incremented whenever </span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">                              * the lss switchDelayState is in SDELAY_FIRST or SDELAY_SECOND, and reseted to 0 </span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">                              * when the two periods have been expired.</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">                              */</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                              </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a63213ca93d8ef01ae59b67060ba1ef0f">  138</a></span>  <a class="code hl_typedef" href="lss_8h.html#a1f2cdfadf85f9b16c7d919ab5097e105">LSSCallback_t</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a63213ca93d8ef01ae59b67060ba1ef0f">Callback</a>;   <span class="comment">/* The user callback func to be called at LSS transaction end */</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="structstruct__lss__transfer.html#a2a640b075a0d5e96468240ffcd67d4ea">  140</a></span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a2a640b075a0d5e96468240ffcd67d4ea">LSSanswer</a>;           <span class="comment">/* stores if a message has been received during a timer period */</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#ifdef CO_ENABLE_LSS_FS </span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> IDNumber;           <span class="comment">/* in the master, the LSS address parameter which it currently tries to identify.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">                             * in the slave, the LSS address parameter which is being checked (LSS-ID[sub]). */</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> BitChecked;          <span class="comment">/* bits of the current IDNumber that are currently checked */</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> LSSSub;              <span class="comment">/* which part of the LSS-ID is currently checked in IDNumber */</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> LSSNext;             <span class="comment">/* which LSSSub value will be used in the next request */</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> LSSPos;              <span class="comment">/* in the slave, which part of the LSS-ID is currently processed*/</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> FastScan_SM;         <span class="comment">/* the state machine for the FastScan protocol */</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <a class="code hl_define" href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a> timerFS;     <span class="comment">/* timerFS is automatically incremented when the FastScan service</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">                             * has been requested and reseted to 0 when the protocol ends.</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">                              */</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#ifdef CO_ENABLE_LSS_FS</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  lss_fs_transfer_t lss_fs_transfer;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#endif                           </span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#ifdef CO_ENABLE_LSS</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structstruct__lss__transfer.html">struct_lss_transfer</a> <a class="code hl_typedef" href="lss_8h.html#a5162e1386ac632e15ad3f93af9607171">lss_transfer_t</a>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="lss_8h.html#a5162e1386ac632e15ad3f93af9607171">  163</a></span><span class="keyword">typedef</span> <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_typedef" href="lss_8h.html#a5162e1386ac632e15ad3f93af9607171">lss_transfer_t</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="lss_8h.html#a1dae0a7172d0e22200aabe315f8b03c1">  168</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lss_8h.html#a1dae0a7172d0e22200aabe315f8b03c1">startLSS</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="lss_8h.html#a008718826e1d0a254b39079e81374e7c">  169</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="lss_8h.html#a008718826e1d0a254b39079e81374e7c">stopLSS</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="lss_8h.html#a776582e482d994eceac17dcf8e152a08">  177</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="lss_8h.html#a776582e482d994eceac17dcf8e152a08">sendLSS</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">command</a>,<span class="keywordtype">void</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">dat1</a>, <span class="keywordtype">void</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">dat2</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="lss_8h.html#a4d4e8fbd77a4e86a9200624078d417c7">  186</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="lss_8h.html#a4d4e8fbd77a4e86a9200624078d417c7">sendLSSMessage</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">command</a>,  <span class="keywordtype">void</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">dat1</a>, <span class="keywordtype">void</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">dat2</a>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="lss_8h.html#a38d8342305fee25062c8bd7c3ce60944">  193</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="lss_8h.html#a38d8342305fee25062c8bd7c3ce60944">proceedLSS_Master</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_struct" href="struct_message.html">Message</a>* m );</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="lss_8h.html#abd7df6d861bb0a073a15184ae77283a2">  199</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="lss_8h.html#abd7df6d861bb0a073a15184ae77283a2">proceedLSS_Slave</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_struct" href="struct_message.html">Message</a>* m );</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">//UNS8 configNetworkNode(CO_Data* d, UNS8 command, void *dat1, void* dat2);</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="group__lss.html#ga88780ce51fe501d91bd4d31b93db6efd">  220</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="group__lss.html#ga88780ce51fe501d91bd4d31b93db6efd">configNetworkNode</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">command</a>, <span class="keywordtype">void</span> *<a class="code hl_variable" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">dat1</a>, <span class="keywordtype">void</span>* <a class="code hl_variable" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">dat2</a>, <a class="code hl_typedef" href="lss_8h.html#a1f2cdfadf85f9b16c7d919ab5097e105">LSSCallback_t</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#a63213ca93d8ef01ae59b67060ba1ef0f">Callback</a>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="group__lss.html#ga2e7b6e9eacc026eee748120a54adbe14">  242</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="group__lss.html#ga2e7b6e9eacc026eee748120a54adbe14">getConfigResultNetworkNode</a> (<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_variable" href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">command</a>, <a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>* <a class="code hl_variable" href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">dat1</a>, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>* <a class="code hl_variable" href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">dat2</a>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5528eeccf214bfe021532622d78c6a96"><div class="ttname"><a href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a></div><div class="ttdeci">#define UNS16</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00043">applicfg.h:43</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a7ef59f941603c6680e74fc335523f17e"><div class="ttname"><a href="applicfg_8h.html#a7ef59f941603c6680e74fc335523f17e">CAN_PORT</a></div><div class="ttdeci">void * CAN_PORT</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00087">applicfg.h:87</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a889a782714194ae2f780002d25d6e0be"><div class="ttname"><a href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a></div><div class="ttdeci">#define UNS32</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00044">applicfg.h:44</a></div></div>
+<div class="ttc" id="acanopen__timer_8h_html_a146f546340de2a44ab2f63681d40de95"><div class="ttname"><a href="canopen__timer_8h.html#a146f546340de2a44ab2f63681d40de95">TIMER_HANDLE</a></div><div class="ttdeci">#define TIMER_HANDLE</div><div class="ttdef"><b>Definition:</b> <a href="canopen__timer_8h_source.html#l00029">canopen_timer.h:29</a></div></div>
+<div class="ttc" id="agroup__lss_html_ga2e7b6e9eacc026eee748120a54adbe14"><div class="ttname"><a href="group__lss.html#ga2e7b6e9eacc026eee748120a54adbe14">getConfigResultNetworkNode</a></div><div class="ttdeci">UNS8 getConfigResultNetworkNode(CO_Data *d, UNS8 command, UNS32 *dat1, UNS8 *dat2)</div><div class="ttdoc">Use this function after a configNetworkNode or configNetworkNodeCallBack to get the result.</div></div>
+<div class="ttc" id="agroup__lss_html_ga88780ce51fe501d91bd4d31b93db6efd"><div class="ttname"><a href="group__lss.html#ga88780ce51fe501d91bd4d31b93db6efd">configNetworkNode</a></div><div class="ttdeci">UNS8 configNetworkNode(CO_Data *d, UNS8 command, void *dat1, void *dat2, LSSCallback_t Callback)</div><div class="ttdoc">Used by the Master application to send a LSS command, WITHOUT response, to the slave.</div></div>
+<div class="ttc" id="alss_8h_html_a008718826e1d0a254b39079e81374e7c"><div class="ttname"><a href="lss_8h.html#a008718826e1d0a254b39079e81374e7c">stopLSS</a></div><div class="ttdeci">void stopLSS(CO_Data *d)</div></div>
+<div class="ttc" id="alss_8h_html_a1dae0a7172d0e22200aabe315f8b03c1"><div class="ttname"><a href="lss_8h.html#a1dae0a7172d0e22200aabe315f8b03c1">startLSS</a></div><div class="ttdeci">void startLSS(CO_Data *d)</div></div>
+<div class="ttc" id="alss_8h_html_a1f2cdfadf85f9b16c7d919ab5097e105"><div class="ttname"><a href="lss_8h.html#a1f2cdfadf85f9b16c7d919ab5097e105">LSSCallback_t</a></div><div class="ttdeci">void(* LSSCallback_t)(CO_Data *d, UNS8 command)</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00083">lss.h:83</a></div></div>
+<div class="ttc" id="alss_8h_html_a38d8342305fee25062c8bd7c3ce60944"><div class="ttname"><a href="lss_8h.html#a38d8342305fee25062c8bd7c3ce60944">proceedLSS_Master</a></div><div class="ttdeci">UNS8 proceedLSS_Master(CO_Data *d, Message *m)</div><div class="ttdoc">This function is called when the node is receiving a Master LSS message (cob-id = 0x7E5).</div></div>
+<div class="ttc" id="alss_8h_html_a4d4e8fbd77a4e86a9200624078d417c7"><div class="ttname"><a href="lss_8h.html#a4d4e8fbd77a4e86a9200624078d417c7">sendLSSMessage</a></div><div class="ttdeci">UNS8 sendLSSMessage(CO_Data *d, UNS8 command, void *dat1, void *dat2)</div><div class="ttdoc">transmit a LSS message on CAN bus comamnd is the LSS command specifier bus_id is MLSS_ADRESS or SLSS_...</div></div>
+<div class="ttc" id="alss_8h_html_a5162e1386ac632e15ad3f93af9607171"><div class="ttname"><a href="lss_8h.html#a5162e1386ac632e15ad3f93af9607171">lss_transfer_t</a></div><div class="ttdeci">UNS8 lss_transfer_t</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00163">lss.h:163</a></div></div>
+<div class="ttc" id="alss_8h_html_a776582e482d994eceac17dcf8e152a08"><div class="ttname"><a href="lss_8h.html#a776582e482d994eceac17dcf8e152a08">sendLSS</a></div><div class="ttdeci">UNS8 sendLSS(CO_Data *d, UNS8 command, void *dat1, void *dat2)</div><div class="ttdoc">transmit a LSS message command is the LSS command specifier dat1 and dat2 are pointers to optional da...</div></div>
+<div class="ttc" id="alss_8h_html_abd7df6d861bb0a073a15184ae77283a2"><div class="ttname"><a href="lss_8h.html#abd7df6d861bb0a073a15184ae77283a2">proceedLSS_Slave</a></div><div class="ttdeci">UNS8 proceedLSS_Slave(CO_Data *d, Message *m)</div><div class="ttdoc">This function is called when the node is receiving a Slave LSS message (cob-id = 0x7E4).</div></div>
+<div class="ttc" id="alss_8h_html_ace495c1cdd42a6522c479f884719b690"><div class="ttname"><a href="lss_8h.html#ace495c1cdd42a6522c479f884719b690">lss_StoreConfiguration_t</a></div><div class="ttdeci">void(* lss_StoreConfiguration_t)(CO_Data *d, UNS8 *, UNS8 *)</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00085">lss.h:85</a></div></div>
+<div class="ttc" id="astruct_message_html"><div class="ttname"><a href="struct_message.html">Message</a></div><div class="ttdoc">The CAN message structure</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00032">canoepn_can.h:32</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html"><div class="ttname"><a href="structstruct___c_o___data.html">struct_CO_Data</a></div><div class="ttdoc">This structure contains all necessary informations to define a CANOpen node</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00056">data.h:56</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html"><div class="ttname"><a href="structstruct__lss__transfer.html">struct_lss_transfer</a></div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00109">lss.h:109</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a01a16e42c29501f50cf3052cae1656d0"><div class="ttname"><a href="structstruct__lss__transfer.html#a01a16e42c29501f50cf3052cae1656d0">struct_lss_transfer::dat1</a></div><div class="ttdeci">UNS32 dat1</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00114">lss.h:114</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a2a640b075a0d5e96468240ffcd67d4ea"><div class="ttname"><a href="structstruct__lss__transfer.html#a2a640b075a0d5e96468240ffcd67d4ea">struct_lss_transfer::LSSanswer</a></div><div class="ttdeci">UNS8 LSSanswer</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00140">lss.h:140</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a34f0bf2defd9d580a3cfdaf1c6a45689"><div class="ttname"><a href="structstruct__lss__transfer.html#a34f0bf2defd9d580a3cfdaf1c6a45689">struct_lss_transfer::dat2</a></div><div class="ttdeci">UNS8 dat2</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00115">lss.h:115</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a3d611e73706a35ac7e79b9539ce9d5f6"><div class="ttname"><a href="structstruct__lss__transfer.html#a3d611e73706a35ac7e79b9539ce9d5f6">struct_lss_transfer::addr_sel_match</a></div><div class="ttdeci">UNS8 addr_sel_match</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00118">lss.h:118</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a60ba5775587423ab25b629b59b34bced"><div class="ttname"><a href="structstruct__lss__transfer.html#a60ba5775587423ab25b629b59b34bced">struct_lss_transfer::addr_ident_match</a></div><div class="ttdeci">UNS8 addr_ident_match</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00119">lss.h:119</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a6135d0d0ab3a074c1060dfb91aa6c20e"><div class="ttname"><a href="structstruct__lss__transfer.html#a6135d0d0ab3a074c1060dfb91aa6c20e">struct_lss_transfer::timerSDELAY</a></div><div class="ttdeci">TIMER_HANDLE timerSDELAY</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00133">lss.h:133</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a63213ca93d8ef01ae59b67060ba1ef0f"><div class="ttname"><a href="structstruct__lss__transfer.html#a63213ca93d8ef01ae59b67060ba1ef0f">struct_lss_transfer::Callback</a></div><div class="ttdeci">LSSCallback_t Callback</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00138">lss.h:138</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a7459cd0f080c8038a8816b62d6322238"><div class="ttname"><a href="structstruct__lss__transfer.html#a7459cd0f080c8038a8816b62d6322238">struct_lss_transfer::timerMSG</a></div><div class="ttdeci">TIMER_HANDLE timerMSG</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00128">lss.h:128</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a7794a183263db285e3c04d2cbcdfba40"><div class="ttname"><a href="structstruct__lss__transfer.html#a7794a183263db285e3c04d2cbcdfba40">struct_lss_transfer::state</a></div><div class="ttdeci">UNS8 state</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00110">lss.h:110</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a86af7e97f258e93671cad44c89e8de20"><div class="ttname"><a href="structstruct__lss__transfer.html#a86af7e97f258e93671cad44c89e8de20">struct_lss_transfer::switchDelayState</a></div><div class="ttdeci">UNS8 switchDelayState</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00124">lss.h:124</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_a9dd9ea7dc373a8889ced79283dc1e95b"><div class="ttname"><a href="structstruct__lss__transfer.html#a9dd9ea7dc373a8889ced79283dc1e95b">struct_lss_transfer::baudRate</a></div><div class="ttdeci">char * baudRate</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00121">lss.h:121</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_ac187180bd2b9671aa74c89b084e23d1e"><div class="ttname"><a href="structstruct__lss__transfer.html#ac187180bd2b9671aa74c89b084e23d1e">struct_lss_transfer::command</a></div><div class="ttdeci">UNS8 command</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00111">lss.h:111</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_ac3285299c5c2973809f20bdfa79667c6"><div class="ttname"><a href="structstruct__lss__transfer.html#ac3285299c5c2973809f20bdfa79667c6">struct_lss_transfer::mode</a></div><div class="ttdeci">UNS8 mode</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00112">lss.h:112</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_ad2ec1a7dfd10c65ba911fb86c9d0972e"><div class="ttname"><a href="structstruct__lss__transfer.html#ad2ec1a7dfd10c65ba911fb86c9d0972e">struct_lss_transfer::nodeID</a></div><div class="ttdeci">UNS8 nodeID</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00117">lss.h:117</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_aeb8bf55bded280e0b7997a09aac16b09"><div class="ttname"><a href="structstruct__lss__transfer.html#aeb8bf55bded280e0b7997a09aac16b09">struct_lss_transfer::switchDelay</a></div><div class="ttdeci">UNS16 switchDelay</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00123">lss.h:123</a></div></div>
+<div class="ttc" id="astructstruct__lss__transfer_html_aec0ae7a31c32b844a449eb9f5558edf6"><div class="ttname"><a href="structstruct__lss__transfer.html#aec0ae7a31c32b844a449eb9f5558edf6">struct_lss_transfer::canHandle_t</a></div><div class="ttdeci">CAN_PORT canHandle_t</div><div class="ttdef"><b>Definition:</b> <a href="lss_8h_source.html#l00125">lss.h:125</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_e0597e218f81c4f883e099b6dc79c2af.html">inc</a></li><li class="navelem"><a class="el" href="lss_8h.html">lss.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

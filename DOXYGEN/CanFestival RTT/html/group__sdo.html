@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: Service Data Object (SDO)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__sdo.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Service Data Object (SDO)<div class="ingroups"><a class="el" href="group__comobj.html">Communication Objects</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>SDOs provide the access to entries in the CANopen Object Dictionary.  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gabf3dd0fbf1353159d74956a8021b267f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">resetClientSDOLineFromNodeId</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</td></tr>
+<tr class="memdesc:gabf3dd0fbf1353159d74956a8021b267f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the SDO client line used to communicate with the server nodeId Mustbe called after getRead/WriteResultNetworkDict in case of error  <a href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">更多...</a><br /></td></tr>
+<tr class="separator:gabf3dd0fbf1353159d74956a8021b267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">writeNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write the data at the index and subIndex indicated  <a href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">更多...</a><br /></td></tr>
+<tr class="separator:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gaa1d75a97706ef2db3bd63d8e05a515a7">writeNetworkDictCallBack</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write in a distant node dictionnary.  <a href="group__sdo.html#gaa1d75a97706ef2db3bd63d8e05a515a7">更多...</a><br /></td></tr>
+<tr class="separator:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">writeNetworkDictCallBackAI</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> endianize, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write in a distant node dictionnary.  <a href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">更多...</a><br /></td></tr>
+<tr class="separator:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4feff8e0b1f69e315f768661e0d818ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">readNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga4feff8e0b1f69e315f768661e0d818ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read.  <a href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">更多...</a><br /></td></tr>
+<tr class="separator:ga4feff8e0b1f69e315f768661e0d818ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga6b3b00106c4babb78e84c307ecc3d73c">readNetworkDictCallback</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read in a distant node dictionnary.  <a href="group__sdo.html#ga6b3b00106c4babb78e84c307ecc3d73c">更多...</a><br /></td></tr>
+<tr class="separator:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1dde1086506324c8b8c0386f142fba40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">readNetworkDictCallbackAI</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga1dde1086506324c8b8c0386f142fba40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read in a distant node dictionnary.  <a href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">更多...</a><br /></td></tr>
+<tr class="separator:ga1dde1086506324c8b8c0386f142fba40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8a362443447b15446e516130ececfe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, void *data, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *size, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *abortCode)</td></tr>
+<tr class="memdesc:gab8a362443447b15446e516130ececfe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this function after calling readNetworkDict to get the result.  <a href="group__sdo.html#gab8a362443447b15446e516130ececfe4">更多...</a><br /></td></tr>
+<tr class="separator:gab8a362443447b15446e516130ececfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8671e306873f19362c60bb50ab930d1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *abortCode)</td></tr>
+<tr class="memdesc:ga8671e306873f19362c60bb50ab930d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this function after calling writeNetworkDict function to get the result of the write.  <a href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">更多...</a><br /></td></tr>
+<tr class="separator:ga8671e306873f19362c60bb50ab930d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p >SDOs provide the access to entries in the CANopen Object Dictionary. </p>
+<p >An SDO is made up of at least two CAN messages with different identifiers. SDO s are always confirmed point-to-point communications services. </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="gab8a362443447b15446e516130ececfe4" name="gab8a362443447b15446e516130ececfe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8a362443447b15446e516130ececfe4">&#9670;&#160;</a></span>getReadResultNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getReadResultNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>abortCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Use this function after calling readNetworkDict to get the result. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">*data</td><td>Pointer to the buffer to get the data </td></tr>
+    <tr><td class="paramname">*size</td><td>Pointer to the size : MUST contain the size of the buffer before calling The function set it to the actual number of written bytes </td></tr>
+    <tr><td class="paramname">*abortCode</td><td>Pointer to the abortcode. (0 = not available. Else : SDO abort code. (received if return SDO_ABORTED_RCV)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>SDO_FINISHED // datas are available</li>
+<li>SDO_ABORTED_RCV // Transfer failed (abort SDO received)</li>
+<li>SDO_ABORTED_INTERNAL // Transfer failed (internal abort)</li>
+<li>SDO_UPLOAD_IN_PROGRESS // Datas are not yet available</li>
+<li>SDO_DOWNLOAD_IN_PROGRESS // Download is in progress</li>
+<li>SDO_PROVIDED_BUFFER_TOO_SMALL //The value *size is not enough to store the received data <br  />
+<br  />
+example : <div class="fragment"><div class="line"><a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> data;</div>
+<div class="line"><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> size;</div>
+<div class="line"><a class="code hl_function" href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">readNetworkDict</a>(0, 0x05, 0x1016, 1, 0) <span class="comment">// get the data index 1016 subindex 1 of node 5</span></div>
+<div class="line">while (<a class="code hl_function" href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a> (0, 0x05, &amp;data, &amp;size) == <a class="code hl_define" href="def_8h.html#af05e95a564b579b94d14a218264d13e1">SDO_UPLOAD_IN_PROGRESS</a>);</div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a889a782714194ae2f780002d25d6e0be"><div class="ttname"><a href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a></div><div class="ttdeci">#define UNS32</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00044">applicfg.h:44</a></div></div>
+<div class="ttc" id="adef_8h_html_af05e95a564b579b94d14a218264d13e1"><div class="ttname"><a href="def_8h.html#af05e95a564b579b94d14a218264d13e1">SDO_UPLOAD_IN_PROGRESS</a></div><div class="ttdeci">#define SDO_UPLOAD_IN_PROGRESS</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00080">def.h:80</a></div></div>
+<div class="ttc" id="agroup__sdo_html_ga4feff8e0b1f69e315f768661e0d818ba"><div class="ttname"><a href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">readNetworkDict</a></div><div class="ttdeci">UNS8 readNetworkDict(CO_Data *d, UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS8 dataType, UNS8 useBlockMode)</div><div class="ttdoc">Used to send a SDO request frame to read.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02226">sdo.c:2226</a></div></div>
+<div class="ttc" id="agroup__sdo_html_gab8a362443447b15446e516130ececfe4"><div class="ttname"><a href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a></div><div class="ttdeci">UNS8 getReadResultNetworkDict(CO_Data *d, UNS8 nodeId, void *data, UNS32 *size, UNS32 *abortCode)</div><div class="ttdoc">Use this function after calling readNetworkDict to get the result.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02312">sdo.c:2312</a></div></div>
+</div><!-- fragment --></li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">size</td><td>: *size MUST contain the size of *data buffer before calling The function set it to the actual number of written bytes </td></tr>
+    <tr><td class="paramname">abortCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>SDO_PROVIDED_BUFFER_TOO_SMALL if *data is not big enough or any transmission status value. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02312">2312</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga8671e306873f19362c60bb50ab930d1d" name="ga8671e306873f19362c60bb50ab930d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8671e306873f19362c60bb50ab930d1d">&#9670;&#160;</a></span>getWriteResultNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getWriteResultNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>abortCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Use this function after calling writeNetworkDict function to get the result of the write. </p>
+<p >It is mandatory to call this function because it is releasing the line used for the transfer. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">*abortCode</td><td>Pointer to the abortcode<ul>
+<li>0 = not available.</li>
+<li>SDO abort code (received if return SDO_ABORTED_RCV)</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>:<ul>
+<li>SDO_FINISHED // datas are available</li>
+<li>SDO_ABORTED_RCV // Transfer failed (abort SDO received)</li>
+<li>SDO_ABORTED_INTERNAL // Transfer failed (Internal abort)</li>
+<li>SDO_DOWNLOAD_IN_PROGRESS // Datas are not yet available</li>
+<li>SDO_UPLOAD_IN_PROGRESS // Upload in progress <br  />
+<br  />
+example : <div class="fragment"><div class="line"><a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> data = 0x50;</div>
+<div class="line"><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> size;</div>
+<div class="line"><a class="code hl_define" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> abortCode;</div>
+<div class="line"><a class="code hl_function" href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">writeNetworkDict</a>(0, 0x05, 0x1016, 1, size, &amp;data) <span class="comment">// write the data index 1016 subindex 1 of node 5</span></div>
+<div class="line"><span class="keywordflow">while</span> (<a class="code hl_function" href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a> (0, 0x05, &amp;abortCode) == <a class="code hl_define" href="def_8h.html#a749536d7d8c9a60beb8d3c8d1210b6d2">SDO_DOWNLOAD_IN_PROGRESS</a>);</div>
+<div class="ttc" id="adef_8h_html_a749536d7d8c9a60beb8d3c8d1210b6d2"><div class="ttname"><a href="def_8h.html#a749536d7d8c9a60beb8d3c8d1210b6d2">SDO_DOWNLOAD_IN_PROGRESS</a></div><div class="ttdeci">#define SDO_DOWNLOAD_IN_PROGRESS</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00079">def.h:79</a></div></div>
+<div class="ttc" id="agroup__sdo_html_ga6a056a111cd07ce8fbb430d3d81cbb99"><div class="ttname"><a href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">writeNetworkDict</a></div><div class="ttdeci">UNS8 writeNetworkDict(CO_Data *d, UNS8 nodeId, UNS16 index, UNS8 subIndex, UNS32 count, UNS8 dataType, void *data, UNS8 useBlockMode)</div><div class="ttdoc">Used to send a SDO request frame to write the data at the index and subIndex indicated</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02057">sdo.c:2057</a></div></div>
+<div class="ttc" id="agroup__sdo_html_ga8671e306873f19362c60bb50ab930d1d"><div class="ttname"><a href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a></div><div class="ttdeci">UNS8 getWriteResultNetworkDict(CO_Data *d, UNS8 nodeId, UNS32 *abortCode)</div><div class="ttdoc">Use this function after calling writeNetworkDict function to get the result of the write.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l02403">sdo.c:2403</a></div></div>
+</div><!-- fragment --></li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">abortCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02403">2403</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga4feff8e0b1f69e315f768661e0d818ba" name="ga4feff8e0b1f69e315f768661e0d818ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4feff8e0b1f69e315f768661e0d818ba">&#9670;&#160;</a></span>readNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> readNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to read. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFE is returned when no sdo client to communicate with node.</li>
+<li>0xFF is returned when error occurs.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02226">2226</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga6b3b00106c4babb78e84c307ecc3d73c" name="ga6b3b00106c4babb78e84c307ecc3d73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b3b00106c4babb78e84c307ecc3d73c">&#9670;&#160;</a></span>readNetworkDictCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> readNetworkDictCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to read in a distant node dictionnary. </p>
+<p >The function Callback which must be defined in the user code is called at the end of the exchange. (on succes or abort). </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+    <tr><td class="paramname">Callback</td><td>Callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFE is returned when no sdo client to communicate with node.</li>
+<li>0xFF is returned when error occurs.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02244">2244</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga1dde1086506324c8b8c0386f142fba40" name="ga1dde1086506324c8b8c0386f142fba40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1dde1086506324c8b8c0386f142fba40">&#9670;&#160;</a></span>readNetworkDictCallbackAI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> readNetworkDictCallbackAI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to read in a distant node dictionnary. </p>
+<p >The function Callback which must be defined in the user code is called at the end of the exchange. (on succes or abort). First free SDO client parameter is automatically initialized for specific node if not already defined. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+    <tr><td class="paramname">Callback</td><td>Callback function </td></tr>
+    <tr><td class="paramname">useBlockMode</td><td>use block mode transfer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFF is returned when error occurs. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02249">2249</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gabf3dd0fbf1353159d74956a8021b267f" name="gabf3dd0fbf1353159d74956a8021b267f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf3dd0fbf1353159d74956a8021b267f">&#9670;&#160;</a></span>resetClientSDOLineFromNodeId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetClientSDOLineFromNodeId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Reset the SDO client line used to communicate with the server nodeId Mustbe called after getRead/WriteResultNetworkDict in case of error </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l01887">1887</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ga6a056a111cd07ce8fbb430d3d81cbb99" name="ga6a056a111cd07ce8fbb430d3d81cbb99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a056a111cd07ce8fbb430d3d81cbb99">&#9670;&#160;</a></span>writeNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> writeNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to write the data at the index and subIndex indicated </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">count</td><td>number of bytes to write in the dictionnary. </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+    <tr><td class="paramname">*data</td><td>Pointer to data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFE is returned when no sdo client to communicate with node.</li>
+<li>0xFF is returned when error occurs.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">count</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02057">2057</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gaa1d75a97706ef2db3bd63d8e05a515a7" name="gaa1d75a97706ef2db3bd63d8e05a515a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1d75a97706ef2db3bd63d8e05a515a7">&#9670;&#160;</a></span>writeNetworkDictCallBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> writeNetworkDictCallBack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to write in a distant node dictionnary. </p>
+<p >The function Callback which must be defined in the user code is called at the end of the exchange. (on succes or abort). </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">count</td><td>number of bytes to write in the dictionnary. </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+    <tr><td class="paramname">*data</td><td>Pointer to data </td></tr>
+    <tr><td class="paramname">Callback</td><td>Callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFE is returned when no sdo client to communicate with node.</li>
+<li>0xFF is returned when error occurs.</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">count</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02078">2078</a> 行定义.</p>
+
+</div>
+</div>
+<a id="gad7766666a4917fa5ddea3f0c9f60ae99" name="gad7766666a4917fa5ddea3f0c9f60ae99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7766666a4917fa5ddea3f0c9f60ae99">&#9670;&#160;</a></span>writeNetworkDictCallBackAI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> writeNetworkDictCallBackAI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>endianize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="sdo_8h.html">C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/sdo.h</a>&gt;</code></p>
+
+<p>Used to send a SDO request frame to write in a distant node dictionnary. </p>
+<p >The function Callback which must be defined in the user code is called at the end of the exchange. (on succes or abort). First free SDO client parameter is automatically initialized for specific node if not already defined. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer to a CAN object data structure </td></tr>
+    <tr><td class="paramname">nodeId</td><td>Node Id of the slave </td></tr>
+    <tr><td class="paramname">index</td><td>At index indicated </td></tr>
+    <tr><td class="paramname">subIndex</td><td>At subIndex indicated </td></tr>
+    <tr><td class="paramname">count</td><td>number of bytes to write in the dictionnary. </td></tr>
+    <tr><td class="paramname">dataType</td><td>(defined in <a class="el" href="objdictdef_8h.html">objdictdef.h</a>) : put "visible_string" for strings, 0 for integers or reals or other value. </td></tr>
+    <tr><td class="paramname">*data</td><td>Pointer to data </td></tr>
+    <tr><td class="paramname">Callback</td><td>Callback function </td></tr>
+    <tr><td class="paramname">endianize</td><td>When not 0, data is endianized into network byte order when 0, data is not endianized and copied in machine native endianness </td></tr>
+    <tr><td class="paramname">useBlockMode</td><td>true if block mode transfer is used </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><ul>
+<li>0 is returned upon success.</li>
+<li>0xFF is returned when error occurs. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02084">2084</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>
