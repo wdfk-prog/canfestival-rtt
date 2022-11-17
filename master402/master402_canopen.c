@@ -27,18 +27,25 @@
 
 #include "motor_control.h"
 /* Private typedef -----------------------------------------------------------*/
-/* 节点配置状态结构体
- * err_code:配置参数错误代码 0xff,配置未发送,本地字典出错。
-                             0x03,配置回复未响应，节点字典出错
-                             0X01,节点重新上线
+/* 
+ * 节点链表
 */
-typedef struct 
+typedef struct
 {
   uint8_t nodeID;
   char name[RT_NAME_MAX];
+  e_nodeState *nmt_state;
+}node_list;
+/* 
+ * 节点配置状态结构体
+*/
+typedef struct 
+{
+  node_list *list;
 	uint8_t state;
 	uint8_t try_cnt;
-  uint8_t err_code;
+  uint16_t err_code;
+  uint8_t errSpec[5];
   struct rt_semaphore finish_sem;
 }node_config_state;
 /* Private define ------------------------------------------------------------*/
@@ -61,12 +68,15 @@ typedef struct
 #define SYNC_ENANBLE(NodeID) ((1 << 30) | (NodeID))
 /* Private variables ---------------------------------------------------------*/
 CO_Data *OD_Data = &master402_Data;
-static s_BOARD agv_board  = {CANFESTIVAL_CAN_DEVICE_NAME,"1M"};//没用,兼容CANFESTIVAL
-static node_config_state node_conf[MAX_NODE_COUNT - 2] = 
+static node_list can_node[MAX_NODE_COUNT - 1] = 
 {
-  {SERVO_NODEID_1,"walk",},
-  {SERVO_NODEID_2,"turn",},
-};//配置状态
+  {MASTER_NODEID,   "master",},
+  {SERVO_NODEID_1,    "walk",},
+  {SERVO_NODEID_2,    "turn",},
+};
+
+static s_BOARD agv_board  = {CANFESTIVAL_CAN_DEVICE_NAME,"1M"};//没用,兼容CANFESTIVAL
+static node_config_state slave_conf[MAX_NODE_COUNT - 2];//配置状态
 /* Private function prototypes -----------------------------------------------*/
 static void config_node_param(uint8_t nodeId, node_config_state *conf);
 /***********************初始化操作状态函数**************************************************/
@@ -78,7 +88,7 @@ static void config_node_param(uint8_t nodeId, node_config_state *conf);
 */
 static void InitNodes(CO_Data* d, UNS32 id)
 {
-	setNodeId(OD_Data,CONTROLLER_NODEID);
+	setNodeId(OD_Data,MASTER_NODEID);
 	setState(OD_Data, Initialisation);
 }
 /**
@@ -107,10 +117,17 @@ static int canopen_init(void)
 
 	// Start timer thread
 	StartTimerLoop(&InitNodes);
-	
-	return 0;
+  //挂钩相关指针
+  for(uint8_t i = 0; i < MAX_NODE_COUNT - 2; i++)
+  {
+     slave_conf[i].list = &can_node[i+1];
+     can_node[i+1].nmt_state = &OD_Data->NMTable[i+2];
+  }
+  can_node[0].nmt_state = &OD_Data->nodeState;
+
+	return RT_EOK;
 }
-//INIT_APP_EXPORT(canopen_init);
+INIT_APP_EXPORT(canopen_init);
 /**
   * @brief  None
   * @param  None
@@ -121,6 +138,130 @@ static void Exit(CO_Data* d, UNS32 id)
 {
 
 }
+/************************外部调用函数********************************************************/
+/**
+  * @brief  获取节点名称
+  * @param  des:目标地址
+  * @param  nodeID:节点ID
+  * @retval des:目标地址
+  * @note   若输入节点ID不正确，将返回空指针
+*/
+char *nodeID_get_name(char* des,uint8_t nodeID)
+{
+  char* r = des;
+
+  if(des == NULL)
+    return RT_NULL;
+
+  if(nodeID == can_node[nodeID - 1].nodeID)
+  {
+    rt_memcpy(des,can_node[nodeID - 1].name,RT_NAME_MAX);
+    return des;
+  }
+  else
+    return RT_NULL;
+}
+/**
+  * @brief  获取节点NMT状态
+  * @param  nodeID:节点ID
+  * @retval 返回NMT状态
+  * @note   若输入节点ID不正确，将返回0XFF
+*/
+e_nodeState nodeID_get_nmt(uint8_t nodeID)
+{
+  if(nodeID >= MAX_NODE_COUNT)
+    return 0XFF;
+  if(nodeID == can_node[nodeID - 1].nodeID)
+    return *can_node[nodeID - 1].nmt_state;
+  else
+    return 0XFF;
+}
+/**
+  * @brief  设置节点错误代码.
+  * @param  nodeID:节点ID
+  * @param  errcode:错误代码
+  * @retval 成功返回RT_EOK，失败返回-RT_ERROR.
+  * @note   None.
+*/
+UNS8 nodeID_set_errcode(uint8_t nodeID,uint16_t errcode)
+{
+  if(nodeID >= MAX_NODE_COUNT)
+  {
+    return -RT_ERROR;
+  }
+  else
+  {
+    slave_conf[nodeID - 2].err_code = errcode;
+    return RT_EOK;
+  }
+}
+/**
+  * @brief  查看节点错误代码.
+  * @param  nodeID:节点ID
+  * @retval 成功返回节点错误代码.失败返回0
+  * @note   None.
+*/
+uint16_t nodeID_get_errcode(uint8_t nodeID)
+{
+  if(nodeID >= MAX_NODE_COUNT)
+    return 0;
+  if(nodeID == MASTER_NODEID)
+    return 0;
+  else
+    return slave_conf[nodeID - 2].err_code;
+}
+/**
+  * @brief  设置节点具体错误
+  * @param  nodeID:节点ID
+  * @param  errSpec:具体错误
+  * @retval 成功返回RT_EOK,失败返回-RT_ERROR
+  * @note   None.
+*/
+UNS8 nodeID_set_errSpec(uint8_t nodeID,const uint8_t errSpec[5])
+{
+  if(nodeID >= MAX_NODE_COUNT)
+  {
+    return -RT_ERROR;
+  }
+  else
+  {
+    rt_memcpy(slave_conf[nodeID - 2].errSpec,errSpec,5);
+    return RT_EOK;
+  }
+}
+/**
+  * @brief  获取节点具体错误
+  * @param  des:目标地址
+  * @param  nodeID:节点ID
+  * @retval des:目标地址,失败返回RT_NULL
+  * @note   None.
+*/
+char* nodeID_get_errSpec(char* des,uint8_t nodeID)
+{
+  char* r = des;
+
+  if(des == NULL)
+    return RT_NULL;
+
+  if(nodeID == MASTER_NODEID || nodeID > MAX_NODE_COUNT || nodeID == 0)
+  {
+    return RT_NULL;
+  }
+  else
+  {
+    if(slave_conf[nodeID - 2].errSpec[0] + slave_conf[nodeID - 2].errSpec[1] + \
+       slave_conf[nodeID - 2].errSpec[2] + slave_conf[nodeID - 2].errSpec[3] + 
+       slave_conf[nodeID - 2].errSpec[4])
+    {
+      rt_memcpy(des,slave_conf[nodeID - 2].errSpec,5);
+      return des;
+    }
+    else
+    {
+      return RT_NULL;
+    }
+  }
+}
 #ifdef RT_USING_MSH
 /**
   * @brief  打印节点状态
@@ -128,7 +269,7 @@ static void Exit(CO_Data* d, UNS32 id)
   * @retval None.
   * @note   None.
 */
-void printf_state(e_nodeState state)
+static void printf_state(e_nodeState state)
 {
   switch(state)
   {
@@ -167,7 +308,6 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
 #define NMT_CMD_GET                     1
 #define NMT_CMD_SLAVE_SET               2
 #define NMT_CMD_PRE                     NMT_CMD_SLAVE_SET+2
-  size_t i = 0;
 
   const char* help_info[] =
     {
@@ -181,11 +321,12 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
     if (argc < 2)
     {
         rt_kprintf("Usage:\n");
-        for (i = 0; i < sizeof(help_info) / sizeof(char*); i++)
+        for (size_t i = 0; i < sizeof(help_info) / sizeof(char*); i++)
         {
             rt_kprintf("%s\n", help_info[i]);
         }
         rt_kprintf("\n");
+        return;
     }
     else
     {
@@ -197,14 +338,10 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
 
           rt_kprintf("%-*.*s nodeID  status\n",maxlen,maxlen,item_title);
           rt_kprintf("-------- ------  -------\n");
-          rt_kprintf("%-*.*s 0X%02X    ",maxlen,maxlen,"master",CONTROLLER_NODEID);
-          printf_state(getState(OD_Data));
-          rt_kprintf("\n");
-
-          for(UNS8 i = 0; i < MAX_NODE_COUNT - 2; i++)
+          for(UNS8 i = 0; i < MAX_NODE_COUNT - 1; i++)
           {
-              rt_kprintf("%-*.*s 0X%02X    ",maxlen,maxlen,node_conf[i].name,node_conf[i].nodeID);
-              printf_state(getNodeState(OD_Data,i+ 2));
+              rt_kprintf("%-*.*s 0X%02X    ",maxlen,maxlen,can_node[i].name,can_node[i].nodeID);
+              printf_state(*can_node[i].nmt_state);
               rt_kprintf("\n");
           }
         }
@@ -216,20 +353,10 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
               return;
           }
           uint8_t nodeid = atoi(argv[2]);
-          if(nodeid == CONTROLLER_NODEID)
-          {
-            rt_kprintf("Master NodeID:%2X  ",CONTROLLER_NODEID);
-            rt_kprintf("nodeID state is ");
-            printf_state(getState(OD_Data));     
-            rt_kprintf("\r\n");       
-          }
-          else
-          {
-            rt_kprintf("Slave  NodeID:%2X  ",nodeid);
-            rt_kprintf("nodeID state is ");
-            printf_state(getNodeState(OD_Data,nodeid));
-            rt_kprintf("\n");
-          }
+          rt_kprintf("%s 0X%02X    ",can_node[nodeid - 1].name,can_node[nodeid - 1].nodeID);
+          rt_kprintf("nodeID state is ");
+          printf_state(*can_node[nodeid - 1].nmt_state);
+          rt_kprintf("\n");       
         }
         else if (!strcmp(operator, "s"))//从机设置NMT
         {
@@ -311,11 +438,12 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
         else
         {
           rt_kprintf("Usage:\n");
-          for (i = 0; i < sizeof(help_info) / sizeof(char*); i++)
+          for (size_t i = 0; i < sizeof(help_info) / sizeof(char*); i++)
           {
               rt_kprintf("%s\n", help_info[i]);
           }
           rt_kprintf("\n");
+          return;
         }
     }
 }
@@ -334,7 +462,7 @@ static void config_node_param_cb(CO_Data* d, UNS8 nodeId)
 	UNS8 res;
 	node_config_state *conf;
 
-	conf = &node_conf[nodeId - 2];
+	conf = &slave_conf[nodeId - 2];
 	res = getWriteResultNetworkDict(OD_Data, nodeId, &abortCode);
 	closeSDOtransfer(OD_Data, nodeId, SDO_CLIENT);
 	if(res != SDO_FINISHED)
@@ -350,13 +478,13 @@ static void config_node_param_cb(CO_Data* d, UNS8 nodeId)
 			rt_sem_release(&(conf->finish_sem));
 			conf->state = 0;
 			conf->try_cnt = 0;
-      conf->err_code = 0x03;
+      conf->err_code = NODEID_CONFIG_NO_RESPOND;
 			LOG_E("SDO config try count > 3, config failed!,error = %d",conf->err_code);
 		}
 	}
 	else
 	{
-    conf->err_code = 0;
+    conf->err_code = NODEID_CONFIG_SUCCESS;
 		conf->state++;
 		conf->try_cnt = 0;
 		config_node_param(nodeId, conf);
@@ -373,36 +501,37 @@ void config_node(uint8_t nodeId)
   if(Write_SLAVE_control_word(nodeId,0x80) == 0xFF)//初始化进行错误重置
   {
       LOG_E("nodeId:%d,Failed to clear error.The current node is not in operation",nodeId);
-      rt_sem_init(&(node_conf[nodeId - 2].finish_sem), "servocnf", 0, RT_IPC_FLAG_FIFO);
-      if(rt_sem_take(&(node_conf[nodeId - 2].finish_sem), SDO_REPLY_TIMEOUT) != RT_EOK)
+      rt_sem_init(&(slave_conf[nodeId - 2].finish_sem), "servocnf", 0, RT_IPC_FLAG_FIFO);
+      if(rt_sem_take(&(slave_conf[nodeId - 2].finish_sem), SDO_REPLY_TIMEOUT) != RT_EOK)
       {
+        slave_conf[nodeId - 2].err_code = NODEID_CONFIG_NO_RESPOND;
         //掉线情况执行，重新上电情况无需处理
         LOG_W("Waiting for the repair to complete, CAN communication is currently unavailable");
         master402_fix_config_err(OD_Data,nodeId);
       }
-      rt_sem_detach(&(node_conf[nodeId - 2].finish_sem));
+      rt_sem_detach(&(slave_conf[nodeId - 2].finish_sem));
   }
   else
   {
-      node_conf[nodeId - 2].state = 0;
-      node_conf[nodeId - 2].try_cnt = 0;
-      rt_sem_init(&(node_conf[nodeId - 2].finish_sem), "servocnf", 0, RT_IPC_FLAG_FIFO);
+      slave_conf[nodeId - 2].state = 0;
+      slave_conf[nodeId - 2].try_cnt = 0;
+      rt_sem_init(&(slave_conf[nodeId - 2].finish_sem), "servocnf", 0, RT_IPC_FLAG_FIFO);
 
       EnterMutex();
       LOG_I("The configuration starts for node %d",nodeId);
-      config_node_param(nodeId, &node_conf[nodeId - 2]);
+      config_node_param(nodeId, &slave_conf[nodeId - 2]);
       LeaveMutex();
-      rt_sem_take(&(node_conf[nodeId - 2].finish_sem), RT_WAITING_FOREVER);
-      rt_sem_detach(&(node_conf[nodeId - 2].finish_sem));
+      rt_sem_take(&(slave_conf[nodeId - 2].finish_sem), RT_WAITING_FOREVER);
+      rt_sem_detach(&(slave_conf[nodeId - 2].finish_sem));
 
-      if(node_conf[nodeId - 2].err_code != 0X00)//因配置错误导致的退出
+      if(slave_conf[nodeId - 2].err_code != 0X00)//因配置错误导致的退出
       {
         LOG_E("Failed to configure the dictionary for node %d",nodeId);
-        if(node_conf[nodeId - 2].err_code == 0XFF)
+        if(slave_conf[nodeId - 2].err_code == NODEID_CONFIG_NO_SEND)
         {
           LOG_E("The configuration was not sent because the local dictionary failed");
         }
-        else if(node_conf[nodeId - 2].err_code == 0X03)
+        else if(slave_conf[nodeId - 2].err_code == NODEID_CONFIG_NO_RESPOND)
         {
           LOG_E("The configuration reply did not respond, and the node dictionary failed");
         }
@@ -460,10 +589,10 @@ static void slaveBootupHdl(CO_Data* d, UNS8 nodeId)
 	rt_thread_t tid;
   LOG_I("Node %d has gone online",nodeId);
   //判断信号量是否初始化
-  if(!rt_list_isempty(&node_conf[nodeId - 2].finish_sem.parent.suspend_thread))
+  if(!rt_list_isempty(&slave_conf[nodeId - 2].finish_sem.parent.suspend_thread))
   {
     LOG_I("Node %d is powered on before the MCU",nodeId);
-    rt_sem_release(&(node_conf[nodeId - 2].finish_sem));
+    rt_sem_release(&(slave_conf[nodeId - 2].finish_sem));
   }
   else
   {
@@ -495,7 +624,7 @@ void canopen_start_thread_entry(void *parameter)
 //  UNS8 i = 0;//调试取消注释这行，注释下行。用来单节点初始化
   for (UNS8 i = 0; i < MAX_NODE_COUNT - 2; i++)
   {
-    config_node(node_conf[i].nodeID);//初始化时使用此配置，减少sem初始化与删除操作
+    config_node(slave_conf[i].list->nodeID);//初始化时使用此配置，减少sem初始化与删除操作
   }
   /*写入本地字典*/
 	d->post_SlaveBootup = slaveBootupHdl;
@@ -544,7 +673,7 @@ void canopen_start_thread_entry(void *parameter)
 */
 static void writeNetworkDictSyncCb(CO_Data* d, UNS8 nodeId) 
 {
-    node_config_state *conf = &node_conf[nodeId - 2];
+    node_config_state *conf = &slave_conf[nodeId - 2];
     rt_sem_release(&conf->finish_sem);
 }
 /**
@@ -564,7 +693,7 @@ static bool writeNetworkDictSync (CO_Data* d, UNS8 nodeId, UNS16 index,
     }
 
     int try_cnt = 3;
-    node_config_state* conf = &node_conf[nodeId - 2];
+    node_config_state* conf = &slave_conf[nodeId - 2];
     rt_sem_init(&conf->finish_sem, "servocnf", 0, RT_IPC_FLAG_FIFO);
     
     while(try_cnt--) 
@@ -1177,7 +1306,7 @@ static UNS8 NODE2_Write_SLAVE_P_heartbeat(uint8_t nodeId)
 static UNS8 NODE2_Write_SLAVE_C_heartbeat(uint8_t nodeId)
 {
   //需要本地字典写入生产者心跳时间，不然驱动器报错
-  UNS32 consumer_heartbeat_time = HEARTBEAT_FORMAT(CONTROLLER_NODEID,CONSUMER_HEARTBEAT_TIME);//写入节点1的心跳时间
+  UNS32 consumer_heartbeat_time = HEARTBEAT_FORMAT(MASTER_NODEID,CONSUMER_HEARTBEAT_TIME);//写入节点1的心跳时间
   return writeNetworkDictCallBack(OD_Data, nodeId, 0x1016, 1, 
     4, uint16, &consumer_heartbeat_time, config_node_param_cb, 0);
 }
@@ -1199,7 +1328,7 @@ static UNS8 NODE2_Write_SLAVE_S_Move(uint8_t nodeId)
 static UNS8 NODE2_MotorCFG_Done(uint8_t nodeId)
 {
 	node_config_state *conf;
-	conf = &node_conf[nodeId - 2];
+	conf = &slave_conf[nodeId - 2];
   rt_sem_release(&(conf->finish_sem));
   return 0;
 }
@@ -1450,7 +1579,7 @@ static UNS8 NODE3_Write_SLAVE_P_heartbeat(uint8_t nodeId)
 static UNS8 NODE3_Write_SLAVE_C_heartbeat(uint8_t nodeId)
 {
   //需要本地字典写入生产者心跳时间，不然驱动器报错
-  UNS32 consumer_heartbeat_time = HEARTBEAT_FORMAT(CONTROLLER_NODEID,CONSUMER_HEARTBEAT_TIME);//写入节点1的心跳时间
+  UNS32 consumer_heartbeat_time = HEARTBEAT_FORMAT(MASTER_NODEID,CONSUMER_HEARTBEAT_TIME);//写入节点1的心跳时间
   return writeNetworkDictCallBack(OD_Data, nodeId, 0x1016, 1, 
     4, uint16, &consumer_heartbeat_time, config_node_param_cb, 0);
 }
@@ -1472,7 +1601,7 @@ static UNS8 NODE3_Write_SLAVE_S_Move(uint8_t nodeId)
 static UNS8 NODE3_MotorCFG_Done(uint8_t nodeId)
 {
 	node_config_state *conf;
-	conf = &node_conf[nodeId - 2];
+	conf = &slave_conf[nodeId - 2];
   rt_sem_release(&(conf->finish_sem));
   return 0;
 }
@@ -1560,6 +1689,6 @@ static void config_node_param(uint8_t nodeId, node_config_state *conf)
   }
   else
   {
-    conf->err_code = 0;
+    conf->err_code = NODEID_CONFIG_SUCCESS;
   }
 }

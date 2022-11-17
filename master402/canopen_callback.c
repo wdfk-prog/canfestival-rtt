@@ -227,10 +227,12 @@ void master402_post_emcy(CO_Data* d, UNS8 nodeID, UNS16 errCode, UNS8 errReg, co
       }
       else
       {
+        nodeID_set_errcode(nodeID,errCode);
         LOG_E("received EMCY message. Node: %2.2x  ErrorCode: %4.4x  ErrorRegister: %2.2x", nodeID, errCode, errReg);
         if(errSpec[0]+errSpec[1]+errSpec[2]+errSpec[3]+errSpec[4])
         {
-          LOG_E("Manufacturer Specific: 0X%X %2.2X %2.2X %2.2X %2.2X",errSpec[0],errSpec[1],errSpec[2],errSpec[3],errSpec[4]);
+          nodeID_set_errSpec(nodeID,errSpec);
+          LOG_E("Manufacturer Specific: 0X%2.2X %2.2X %2.2X %2.2X %2.2X",errSpec[0],errSpec[1],errSpec[2],errSpec[3],errSpec[4]);
         }
       }
   }
@@ -258,9 +260,7 @@ void master_resume_start(CO_Data *d,UNS8 nodeId)
     LOG_W("The master station enters the operation state from the stop state");
     setState(d, Operational);//转入Operational状态
   }
-  masterSendNMTstateChange(d,nodeId,NMT_Start_Node);
 }
-
 /**
   * @brief  修复节点NMT异常
   * @param  None.
@@ -291,6 +291,7 @@ static void master402_fix_node_Disconnected(void* parameter)
 			else if(now == Pre_operational)
 			{
         master_resume_start(OD_Data,heartbeatID);
+        masterSendNMTstateChange(OD_Data,heartbeatID,NMT_Start_Node);
 				LOG_I("nodeID:%d,Determines that the line is restored and switches the slave machine to operation mode, deleting the current thread",heartbeatID);
         node[heartbeatID - 2].lock = 0;
 				return;//退出线程
@@ -332,20 +333,8 @@ static void master402_fix_config_err_thread_entry(void* parameter)
     }
     else if(now == Pre_operational)//通信恢复
     {
-      if(getState(OD_Data) != Operational || getState(OD_Data) != Pre_operational)
-      {
-        //Stop状态时会删除生产者心跳定时器
-        if (*OD_Data->ProducerHeartBeatTime)//恢复到OP状态时检查是否有生产者心跳时间
-        {
-          TIMEVAL time = *OD_Data->ProducerHeartBeatTime;
-          extern void ProducerHeartbeatAlarm(CO_Data* d, UNS32 id);
-          //设置生产者时间定时器，并设置定时回调
-          LOG_W("Restart the producer heartbeat");
-          OD_Data->ProducerHeartBeatTimer = SetAlarm(OD_Data, 0, &ProducerHeartbeatAlarm, MS_TO_TIMEVAL(time), MS_TO_TIMEVAL(time));
-        }
-        LOG_W("The master station enters the operation state from the stop state");
-        setState(OD_Data, Operational);//转入Operational状态
-      }
+      master_resume_start(OD_Data,nodeId);
+      masterSendNMTstateChange(OD_Data,nodeId,NMT_Start_Node);
       config_node(nodeId);
       LOG_I("nodeID:%d,The line comm.unication of the node is restored",nodeId);
       return; //删除线程

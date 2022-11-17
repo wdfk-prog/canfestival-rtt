@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/inc/objacces.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('objacces_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">objacces.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Responsible for accessing the object dictionary.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="applicfg_8h_source.html">applicfg.h</a>&gt;</code><br />
+</div>
+<p><a href="objacces_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga5037225cd0afc2ec716a36992f9b272f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__od.html#ga5037225cd0afc2ec716a36992f9b272f">getODentry</a>(OD,  wIndex,  bSubindex,  pDestData,  pExpectedSize,  pDataType,  checkAccess)</td></tr>
+<tr class="memdesc:ga5037225cd0afc2ec716a36992f9b272f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__od.html#ga5037225cd0afc2ec716a36992f9b272f" title="getODentry() to read from object and endianize">getODentry()</a> to read from object and endianize  <a href="group__od.html#ga5037225cd0afc2ec716a36992f9b272f">更多...</a><br /></td></tr>
+<tr class="separator:ga5037225cd0afc2ec716a36992f9b272f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22c02071867c7a11f898f66aa83b6da6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__od.html#ga22c02071867c7a11f898f66aa83b6da6">readLocalDict</a>(OD,  wIndex,  bSubindex,  pDestData,  pExpectedSize,  pDataType,  checkAccess)</td></tr>
+<tr class="memdesc:ga22c02071867c7a11f898f66aa83b6da6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__od.html#ga22c02071867c7a11f898f66aa83b6da6" title="readLocalDict() reads an entry from the object dictionary, but in contrast to getODentry(),...">readLocalDict()</a> reads an entry from the object dictionary, but in contrast to <a class="el" href="group__od.html#ga5037225cd0afc2ec716a36992f9b272f" title="getODentry() to read from object and endianize">getODentry()</a>, <a class="el" href="group__od.html#ga22c02071867c7a11f898f66aa83b6da6" title="readLocalDict() reads an entry from the object dictionary, but in contrast to getODentry(),...">readLocalDict()</a> doesn't endianize entry and reads entry in machine native endianness.  <a href="group__od.html#ga22c02071867c7a11f898f66aa83b6da6">更多...</a><br /></td></tr>
+<tr class="separator:ga22c02071867c7a11f898f66aa83b6da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3417b8ecd54a73528afc30b77f7d464c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__od.html#ga3417b8ecd54a73528afc30b77f7d464c">setODentry</a>(d,  wIndex,  bSubindex,  pSourceData,  pExpectedSize,  checkAccess)</td></tr>
+<tr class="memdesc:ga3417b8ecd54a73528afc30b77f7d464c"><td class="mdescLeft">&#160;</td><td class="mdescRight">setODentry converts SourceData from network byte order to machine native format, and writes that to OD.  <a href="group__od.html#ga3417b8ecd54a73528afc30b77f7d464c">更多...</a><br /></td></tr>
+<tr class="separator:ga3417b8ecd54a73528afc30b77f7d464c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga869daf1627b3e7a2ec207a0818ad046e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__od.html#ga869daf1627b3e7a2ec207a0818ad046e">writeLocalDict</a>(d,  wIndex,  bSubindex,  pSourceData,  pExpectedSize,  checkAccess)</td></tr>
+<tr class="memdesc:ga869daf1627b3e7a2ec207a0818ad046e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes machine native SourceData to OD.  <a href="group__od.html#ga869daf1627b3e7a2ec207a0818ad046e">更多...</a><br /></td></tr>
+<tr class="separator:ga869daf1627b3e7a2ec207a0818ad046e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aef570aa33389ec903752361dc79cfbbf"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#aef570aa33389ec903752361dc79cfbbf">valueRangeTest_t</a>) (<a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> typeValue, void *Value)</td></tr>
+<tr class="separator:aef570aa33389ec903752361dc79cfbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe545dabce4fc8c90b90624e3f82d638"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#afe545dabce4fc8c90b90624e3f82d638">storeODSubIndex_t</a>) (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex)</td></tr>
+<tr class="separator:afe545dabce4fc8c90b90624e3f82d638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ae871a6602bcffcfd69a59c0449a3b2e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#ae871a6602bcffcfd69a59c0449a3b2e5">_storeODSubIndex</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex)</td></tr>
+<tr class="separator:ae871a6602bcffcfd69a59c0449a3b2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6f04b4f979b6418b5dac98a4948144"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#afe6f04b4f979b6418b5dac98a4948144">accessDictionaryError</a> (<a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> sizeDataDict, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> sizeDataGiven, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> code)</td></tr>
+<tr class="memdesc:afe6f04b4f979b6418b5dac98a4948144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print MSG_WAR (s) if error to the access to the object dictionary occurs.  <a href="objacces_8h.html#afe6f04b4f979b6418b5dac98a4948144">更多...</a><br /></td></tr>
+<tr class="separator:afe6f04b4f979b6418b5dac98a4948144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb32a7243bf91379de849ae32236d615"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#adb32a7243bf91379de849ae32236d615">_getODentry</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex, void *pDestData, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *pExpectedSize, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *pDataType, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> checkAccess, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> endianize)</td></tr>
+<tr class="separator:adb32a7243bf91379de849ae32236d615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bfa4af368bc01bc7b759ccc698d958"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#a37bfa4af368bc01bc7b759ccc698d958">_setODentry</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex, void *pSourceData, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *pExpectedSize, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> checkAccess, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> endianize)</td></tr>
+<tr class="separator:a37bfa4af368bc01bc7b759ccc698d958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514e7b9c13835a86446b1cd38fa34049"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objacces_8h.html#a514e7b9c13835a86446b1cd38fa34049">RegisterSetODentryCallBack</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex, <a class="el" href="objdictdef_8h.html#aab1ff42f4581733b6c8ebac71f961958">ODCallback_t</a> Callback)</td></tr>
+<tr class="separator:a514e7b9c13835a86446b1cd38fa34049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >Responsible for accessing the object dictionary. </p>
+<p >This file contains functions for accessing the object dictionary and variables that are contained by the object dictionary. Accessing the object dictionary contains setting local variables as PDOs and accessing (read/write) all entries of the object dictionary </p><dl class="section warning"><dt>警告</dt><dd>Only the basic entries of an object dictionary are included at the moment. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="objacces_8h_source.html">objacces.h</a> 中定义.</p>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a id="afe545dabce4fc8c90b90624e3f82d638" name="afe545dabce4fc8c90b90624e3f82d638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe545dabce4fc8c90b90624e3f82d638">&#9670;&#160;</a></span>storeODSubIndex_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>(* storeODSubIndex_t) (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> wIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8h_source.html">objacces.h</a> 第 <a class="el" href="objacces_8h_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aef570aa33389ec903752361dc79cfbbf" name="aef570aa33389ec903752361dc79cfbbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef570aa33389ec903752361dc79cfbbf">&#9670;&#160;</a></span>valueRangeTest_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>(* valueRangeTest_t) (<a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> typeValue, void *Value)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8h_source.html">objacces.h</a> 第 <a class="el" href="objacces_8h_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="adb32a7243bf91379de849ae32236d615" name="adb32a7243bf91379de849ae32236d615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb32a7243bf91379de849ae32236d615">&#9670;&#160;</a></span>_getODentry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> _getODentry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>wIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>bSubindex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pDestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>pExpectedSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>pDataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>checkAccess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>endianize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8c_source.html">objacces.c</a> 第 <a class="el" href="objacces_8c_source.html#l00082">82</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a37bfa4af368bc01bc7b759ccc698d958" name="a37bfa4af368bc01bc7b759ccc698d958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bfa4af368bc01bc7b759ccc698d958">&#9670;&#160;</a></span>_setODentry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> _setODentry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>wIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>bSubindex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pSourceData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>pExpectedSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>checkAccess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>endianize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8c_source.html">objacces.c</a> 第 <a class="el" href="objacces_8c_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae871a6602bcffcfd69a59c0449a3b2e5" name="ae871a6602bcffcfd69a59c0449a3b2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae871a6602bcffcfd69a59c0449a3b2e5">&#9670;&#160;</a></span>_storeODSubIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> _storeODSubIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>wIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>bSubindex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8c_source.html">objacces.c</a> 第 <a class="el" href="objacces_8c_source.html#l00269">269</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afe6f04b4f979b6418b5dac98a4948144" name="afe6f04b4f979b6418b5dac98a4948144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6f04b4f979b6418b5dac98a4948144">&#9670;&#160;</a></span>accessDictionaryError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> accessDictionaryError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>sizeDataDict</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>sizeDataGiven</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print MSG_WAR (s) if error to the access to the object dictionary occurs. </p>
+<p >You must uncomment the lines in the file objaccess.c :<br  />
+//#define DEBUG_CAN<br  />
+//#define DEBUG_WAR_CONSOLE_ON<br  />
+//#define DEBUG_ERR_CONSOLE_ON<br  />
+<br  />
+Beware that sometimes, we force the sizeDataDict or sizeDataGiven to 0, when we wants to use this function but we do not have the access to the right value. One example is getSDOerror(). So do not take attention to these variables if they are null. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">sizeDataDict</td><td>Size of the data defined in the dictionary </td></tr>
+    <tr><td class="paramname">sizeDataGiven</td><td>Size data given by the user. </td></tr>
+    <tr><td class="paramname">code</td><td>error code to print. (SDO abort code. See file <a class="el" href="def_8h.html">def.h</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="objacces_8c_source.html">objacces.c</a> 第 <a class="el" href="objacces_8c_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a514e7b9c13835a86446b1cd38fa34049" name="a514e7b9c13835a86446b1cd38fa34049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514e7b9c13835a86446b1cd38fa34049">&#9670;&#160;</a></span>RegisterSetODentryCallBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> RegisterSetODentryCallBack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>wIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>bSubindex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="objdictdef_8h.html#aab1ff42f4581733b6c8ebac71f961958">ODCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="objacces_8c_source.html">objacces.c</a> 第 <a class="el" href="objacces_8c_source.html#l00258">258</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_e0597e218f81c4f883e099b6dc79c2af.html">inc</a></li><li class="navelem"><a class="el" href="objacces_8h.html">objacces.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

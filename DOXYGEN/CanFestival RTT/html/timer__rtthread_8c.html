@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/timer_rtthread.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('timer__rtthread_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">timer_rtthread.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>:  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="canfestival_8h_source.html">canfestival.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="canopen__timer_8h_source.html">canopen_timer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timers__driver_8h_source.html">timers_driver.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;rtthread.h&gt;</code><br />
+<code>#include &lt;rtdevice.h&gt;</code><br />
+<code>#include &lt;main.h&gt;</code><br />
+</div>
+<p><a href="timer__rtthread_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstm32__hwtimer.html">stm32_hwtimer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ad918ca939d6feb90791380688d0cc4fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#ad918ca939d6feb90791380688d0cc4fa">THREAD_PRIORITY</a>&#160;&#160;&#160;CANFESTIVAL_TIMER_THREAD_PRIO</td></tr>
+<tr class="separator:ad918ca939d6feb90791380688d0cc4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f75497b2f366ac16fb4a9afdb537897"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a2f75497b2f366ac16fb4a9afdb537897">THREAD_TIMESLICE</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a2f75497b2f366ac16fb4a9afdb537897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b7a8cb7bc3fdbd98014a3e15ee6e9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a90b7a8cb7bc3fdbd98014a3e15ee6e9a">THREAD_STACK_SIZE</a>&#160;&#160;&#160;2048</td></tr>
+<tr class="separator:a90b7a8cb7bc3fdbd98014a3e15ee6e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gab8d05dee70f04b5c5190ab00e84da106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gab8d05dee70f04b5c5190ab00e84da106">setTimer</a> (<a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a> value)</td></tr>
+<tr class="memdesc:gab8d05dee70f04b5c5190ab00e84da106"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置定时器  <a href="group__timer.html#gab8d05dee70f04b5c5190ab00e84da106">更多...</a><br /></td></tr>
+<tr class="separator:gab8d05dee70f04b5c5190ab00e84da106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dccc204d52176bd547ab34d6858f5ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#ga4dccc204d52176bd547ab34d6858f5ba">getElapsedTime</a> (void)</td></tr>
+<tr class="memdesc:ga4dccc204d52176bd547ab34d6858f5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前运行时间.  <a href="group__timer.html#ga4dccc204d52176bd547ab34d6858f5ba">更多...</a><br /></td></tr>
+<tr class="separator:ga4dccc204d52176bd547ab34d6858f5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e02e5aca4235b6bb0a0ac93f1aaa4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#ab0e02e5aca4235b6bb0a0ac93f1aaa4c">canopen_timer_thread_entry</a> (void *parameter)</td></tr>
+<tr class="memdesc:ab0e02e5aca4235b6bb0a0ac93f1aaa4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器线程.  <a href="timer__rtthread_8c.html#ab0e02e5aca4235b6bb0a0ac93f1aaa4c">更多...</a><br /></td></tr>
+<tr class="separator:ab0e02e5aca4235b6bb0a0ac93f1aaa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f4b7762154f09dc73b2cacce6fbdcd"><td class="memItemLeft" align="right" valign="top">static rt_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a43f4b7762154f09dc73b2cacce6fbdcd">timer_timeout_cb</a> (rt_device_t dev, rt_size_t size)</td></tr>
+<tr class="memdesc:a43f4b7762154f09dc73b2cacce6fbdcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器回调函数.  <a href="timer__rtthread_8c.html#a43f4b7762154f09dc73b2cacce6fbdcd">更多...</a><br /></td></tr>
+<tr class="separator:a43f4b7762154f09dc73b2cacce6fbdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02922529b60419a94afe8f369dda070b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a02922529b60419a94afe8f369dda070b">initTimer</a> (void)</td></tr>
+<tr class="memdesc:a02922529b60419a94afe8f369dda070b"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化定时器.  <a href="timer__rtthread_8c.html#a02922529b60419a94afe8f369dda070b">更多...</a><br /></td></tr>
+<tr class="separator:a02922529b60419a94afe8f369dda070b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae860b50d4fca892db5127b5e7e9a586e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__timer.html#gae860b50d4fca892db5127b5e7e9a586e">StartTimerLoop</a> (<a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a> _init_callback)</td></tr>
+<tr class="memdesc:gae860b50d4fca892db5127b5e7e9a586e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the timer task  <a href="group__timer.html#gae860b50d4fca892db5127b5e7e9a586e">更多...</a><br /></td></tr>
+<tr class="separator:gae860b50d4fca892db5127b5e7e9a586e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:af9d92dd0730d70138d663f7672f0f996"><td class="memItemLeft" align="right" valign="top">static rt_sem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#af9d92dd0730d70138d663f7672f0f996">canfstvl_timer_sem</a> = RT_NULL</td></tr>
+<tr class="separator:af9d92dd0730d70138d663f7672f0f996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8316d05e088d9582228944472cad0e28"><td class="memItemLeft" align="right" valign="top">static rt_device_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a8316d05e088d9582228944472cad0e28">canfstvl_timer_dev</a> =RT_NULL</td></tr>
+<tr class="separator:a8316d05e088d9582228944472cad0e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24658ff3938d7cad6a26832d5edf2cb2"><td class="memItemLeft" align="right" valign="top">static rt_hwtimerval_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a24658ff3938d7cad6a26832d5edf2cb2">last_timer_val</a></td></tr>
+<tr class="separator:a24658ff3938d7cad6a26832d5edf2cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b861e6df5db5d64f696dbcdfdfaf89f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer__rtthread_8c.html#a4b861e6df5db5d64f696dbcdfdfaf89f">init_callback</a></td></tr>
+<tr class="memdesc:a4b861e6df5db5d64f696dbcdfdfaf89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启定时器循环.  <a href="timer__rtthread_8c.html#a4b861e6df5db5d64f696dbcdfdfaf89f">更多...</a><br /></td></tr>
+<tr class="separator:a4b861e6df5db5d64f696dbcdfdfaf89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >: </p>
+<dl class="section date"><dt>日期</dt><dd>:</dd></dl>
+<dl class="section attention"><dt>注意</dt><dd></dd></dl>
+<dl class="section author"><dt>作者</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="ad918ca939d6feb90791380688d0cc4fa" name="ad918ca939d6feb90791380688d0cc4fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad918ca939d6feb90791380688d0cc4fa">&#9670;&#160;</a></span>THREAD_PRIORITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THREAD_PRIORITY&#160;&#160;&#160;CANFESTIVAL_TIMER_THREAD_PRIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a90b7a8cb7bc3fdbd98014a3e15ee6e9a" name="a90b7a8cb7bc3fdbd98014a3e15ee6e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90b7a8cb7bc3fdbd98014a3e15ee6e9a">&#9670;&#160;</a></span>THREAD_STACK_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THREAD_STACK_SIZE&#160;&#160;&#160;2048</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2f75497b2f366ac16fb4a9afdb537897" name="a2f75497b2f366ac16fb4a9afdb537897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f75497b2f366ac16fb4a9afdb537897">&#9670;&#160;</a></span>THREAD_TIMESLICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THREAD_TIMESLICE&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ab0e02e5aca4235b6bb0a0ac93f1aaa4c" name="ab0e02e5aca4235b6bb0a0ac93f1aaa4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e02e5aca4235b6bb0a0ac93f1aaa4c">&#9670;&#160;</a></span>canopen_timer_thread_entry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void canopen_timer_thread_entry </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>定时器线程. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a02922529b60419a94afe8f369dda070b" name="a02922529b60419a94afe8f369dda070b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02922529b60419a94afe8f369dda070b">&#9670;&#160;</a></span>initTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initTimer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化定时器. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00132">132</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a43f4b7762154f09dc73b2cacce6fbdcd" name="a43f4b7762154f09dc73b2cacce6fbdcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f4b7762154f09dc73b2cacce6fbdcd">&#9670;&#160;</a></span>timer_timeout_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static rt_err_t timer_timeout_cb </td>
+          <td>(</td>
+          <td class="paramtype">rt_device_t&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rt_size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>定时器回调函数. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>到点释放信号量. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00120">120</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a8316d05e088d9582228944472cad0e28" name="a8316d05e088d9582228944472cad0e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8316d05e088d9582228944472cad0e28">&#9670;&#160;</a></span>canfstvl_timer_dev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rt_device_t canfstvl_timer_dev =RT_NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af9d92dd0730d70138d663f7672f0f996" name="af9d92dd0730d70138d663f7672f0f996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9d92dd0730d70138d663f7672f0f996">&#9670;&#160;</a></span>canfstvl_timer_sem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rt_sem_t canfstvl_timer_sem = RT_NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00043">43</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b861e6df5db5d64f696dbcdfdfaf89f" name="a4b861e6df5db5d64f696dbcdfdfaf89f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b861e6df5db5d64f696dbcdfdfaf89f">&#9670;&#160;</a></span>init_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="canopen__timer_8h.html#a80a1990cdda36e9490c9ec1fc389ad8c">TimerCallback_t</a> init_callback</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开启定时器循环. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>None. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00177">177</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a24658ff3938d7cad6a26832d5edf2cb2" name="a24658ff3938d7cad6a26832d5edf2cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24658ff3938d7cad6a26832d5edf2cb2">&#9670;&#160;</a></span>last_timer_val</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rt_hwtimerval_t last_timer_val</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="timer__rtthread_8c_source.html">timer_rtthread.c</a> 第 <a class="el" href="timer__rtthread_8c_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="timer__rtthread_8c.html">timer_rtthread.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

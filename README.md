@@ -2,36 +2,59 @@ This is a package for RT-Thread operating system.
 
 Forked from the CanFestival-3 project https://bitbucket.org/Mongo/canfestival-3-asc
 
-# CanFestival
+# CanFestival -RTT
 
-## 1ã€ä»‹ç»
+## 1¡¢½éÉÜ
 
-æ­¤ package æ˜¯ Canfestival (ä¸€ä¸ªå¼€æºçš„ CANopen åè®®æ ˆ)åœ¨ RT-Thread ç³»ç»Ÿä¸Šçš„ç§»æ¤ã€‚ä½¿ç”¨äº†
- RT-Thread çš„ CAN é©±åŠ¨å’Œ hwtimer é©±åŠ¨ï¼Œä»è€Œå¯ä»¥è¿è¡Œäºæ‰€æœ‰æä¾›äº†è¿™ä¸¤ä¸ªé©±åŠ¨çš„å¹³å°ã€‚
-åŒæ—¶æä¾›äº† CANopen çš„ä¸€äº›ç¤ºä¾‹ï¼ŒåŠ›å›¾åšåˆ°å¼€ç®±å³ç”¨ã€‚
+- ¸ü¸Ä½éÉÜ
 
-### 1.1 ç›®å½•ç»“æ„
+  ¶ÔCanFestival -RTT×ö³öĞŞ¸Ä
 
-| åç§° | è¯´æ˜ |
+  1. canfestivalÔ´ÂëÔİÎ´³öÏÖbug£¬Ã»ÓĞ½øĞĞĞŞ¸Ä
+
+  2. canfestivalµÄ×ÖµäÉú³É¹¤¾ßÖĞ¶ÔÓÚDS402ÅäÖÃÎÄ¼ş²»È«Ãæ£¬ÒÑ×ö¸üĞÂ.
+
+  3. Master402ÖĞ½øĞĞĞŞ¸Ä´óÁ¿ĞŞ¸Ä
+
+     - µ¥¸öÖ§³ÖSDOÃüÁî£¬Ô´´úÂë½öÖ§³ÖswitchÑ­»·Ö´ĞĞ
+
+     - ¶Ô²»ĞèÒªÆµ·±¶ÁĞ´±äÁ¿¸ÄÓÃpdo´«Êä
+
+     - Ìí¼ÓDS402Ö§³ÖµÄÔË¶¯Ä£Ê½£¬PP,PV,HM
+     - Ôö¼ÓCMDÃüÁîÖ§³Ö½ÚµãNMT×´Ì¬²é¿´£¬µç»úÔË¶¯¿ØÖÆ¼°·´À¡
+     - ¶Ô½ÚµãµôÏß¡¢µôµç¡¢×ÜÏß¶ÏÏß¡¢¶ÌÂ·µÈÍ¨ĞÅÒì³£Çé¿ö½øĞĞ´¦Àí¡£±£Ö¤Í¨ĞÅÏµÍ³ÎÈ¶¨¡¢½Úµã¿ÉÖØĞÂ»Ö¸´Í¨ĞÅ
+     - Ìí¼ÓdoxygenÉú³ÉAPIÊÖ²á Â·¾¶£º\DOXYGEN\CanFestival RTT\html\index.html
+
+     
+
+- Ô´´úÂë½éÉÜ https://github.com/gbcwbz/canfestival-rtt
+
+´Ë package ÊÇ Canfestival (Ò»¸ö¿ªÔ´µÄ CANopen Ğ­ÒéÕ»)ÔÚ RT-Thread ÏµÍ³ÉÏµÄÒÆÖ²¡£Ê¹ÓÃÁË
+ RT-Thread µÄ CAN Çı¶¯ºÍ hwtimer Çı¶¯£¬´Ó¶ø¿ÉÒÔÔËĞĞÓÚËùÓĞÌá¹©ÁËÕâÁ½¸öÇı¶¯µÄÆ½Ì¨¡£
+Í¬Ê±Ìá¹©ÁË CANopen µÄÒ»Ğ©Ê¾Àı£¬Á¦Í¼×öµ½¿ªÏä¼´ÓÃ¡£
+
+### 1.1 Ä¿Â¼½á¹¹
+
+| Ãû³Æ | ËµÃ÷ |
 | ---- | ---- |
-| docs  | æ–‡æ¡£ç›®å½• |
-| examples | ä¾‹å­ç›®å½•ï¼ŒMaster402 ä¸º DS402 ä¸»ç«™ç¤ºä¾‹ï¼Œç”¨äºæ§åˆ¶ä¼ºæœç”µæœº|
-| inc  | å¤´æ–‡ä»¶ç›®å½• |
-| src  | æºä»£ç ç›®å½• |
+| docs  | ÎÄµµÄ¿Â¼ |
+| Master402 | DS402 Ö÷Õ¾£¬ÓÃÓÚ¿ØÖÆËÅ·şµç»ú |
+| inc  | Í·ÎÄ¼şÄ¿Â¼ |
+| src  | Ô´´úÂëÄ¿Â¼ |
 
-### 1.2 è®¸å¯è¯
+### 1.2 Ğí¿ÉÖ¤
 
-Canfestival package éµå¾ª LGPLv2.1 è®¸å¯ï¼Œè¯¦è§ `LICENSE` æ–‡ä»¶ã€‚
+Canfestival package ×ñÑ­ LGPLv2.1 Ğí¿É£¬Ïê¼û `LICENSE` ÎÄ¼ş¡£
 
-### 1.3 ä¾èµ–
+### 1.3 ÒÀÀµ
 
 - RT-Thread 3.0+
-- CAN é©±åŠ¨
-- hwtimer é©±åŠ¨
+- CAN Çı¶¯
+- hwtimer Çı¶¯
 
-## 2ã€å¦‚ä½•æ‰“å¼€ CanFestival
+## 2¡¢ÈçºÎ´ò¿ª CanFestival
 
-ä½¿ç”¨ CanFestival package éœ€è¦åœ¨ RT-Thread çš„åŒ…ç®¡ç†å™¨ä¸­é€‰æ‹©å®ƒï¼Œå…·ä½“è·¯å¾„å¦‚ä¸‹ï¼š
+Ê¹ÓÃ CanFestival package ĞèÒªÔÚ RT-Thread µÄ°ü¹ÜÀíÆ÷ÖĞÑ¡ÔñËü£¬¾ßÌåÂ·¾¶ÈçÏÂ£º
 
 ```
 RT-Thread online packages
@@ -39,12 +62,12 @@ RT-Thread online packages
         [*] CanFestival: A free software CANopen framework
 ```
 
-ç„¶åè®© RT-Thread çš„åŒ…ç®¡ç†å™¨è‡ªåŠ¨æ›´æ–°ï¼Œæˆ–è€…ä½¿ç”¨ `pkgs --update` å‘½ä»¤æ›´æ–°åŒ…åˆ° BSP ä¸­ã€‚
+È»ºóÈÃ RT-Thread µÄ°ü¹ÜÀíÆ÷×Ô¶¯¸üĞÂ£¬»òÕßÊ¹ÓÃ `pkgs --update` ÃüÁî¸üĞÂ°üµ½ BSP ÖĞ¡£
 
-## 3ã€ä½¿ç”¨ Canfestival
+## 3¡¢Ê¹ÓÃ Canfestival
 
-åœ¨ menuconfig ä¸­æ‰“å¼€ CAN é©±åŠ¨å’Œ hwtimeré©±åŠ¨
-å¹¶ä¸”åœ¨  CanFestival config ä¸­é…ç½®å¥½ CAN é©±åŠ¨çš„ device name, ä»¥åŠ hwtimer é©±åŠ¨çš„ device name
+ÔÚ menuconfig ÖĞ´ò¿ª CAN Çı¶¯ºÍ hwtimerÇı¶¯
+²¢ÇÒÔÚ  CanFestival config ÖĞÅäÖÃºÃ CAN Çı¶¯µÄ device name, ÒÔ¼° hwtimer Çı¶¯µÄ device name
 ```
 (can1) CAN device name for CanFestival
 (timer1) hwtimer device name for CanFestival
@@ -52,12 +75,17 @@ RT-Thread online packages
 (10) The priority level value of timer thread
 [*] Enable Cia402 Master example
 ```
-æ ¹æ®éœ€è¦é…ç½® can æ¥æ”¶çº¿ç¨‹ï¼Œå’Œæ—¶é’Ÿçº¿ç¨‹çš„ä¼˜å…ˆçº§ã€‚
-é€‰æ‹©éœ€è¦ä½¿ç”¨çš„ä¾‹å­ã€‚
+¸ù¾İĞèÒªÅäÖÃ can ½ÓÊÕÏß³Ì£¬ºÍÊ±ÖÓÏß³ÌµÄÓÅÏÈ¼¶¡£
+Ñ¡ÔñĞèÒªÊ¹ÓÃµÄÀı×Ó¡£
 
-åœ¨æ‰“å¼€ Canfestival package åï¼Œå½“è¿›è¡Œ bsp ç¼–è¯‘æ—¶ï¼Œå®ƒä¼šè¢«åŠ å…¥åˆ° bsp å·¥ç¨‹ä¸­è¿›è¡Œç¼–è¯‘ã€‚
+ÔÚ´ò¿ª Canfestival package ºó£¬µ±½øĞĞ bsp ±àÒëÊ±£¬Ëü»á±»¼ÓÈëµ½ bsp ¹¤³ÌÖĞ½øĞĞ±àÒë¡£
 
-## 5ã€è”ç³»æ–¹å¼ & æ„Ÿè°¢
+## 5¡¢ÁªÏµ·½Ê½ & ¸ĞĞ»
 
-* ç»´æŠ¤ï¼šgbcwbz
-* ä¸»é¡µï¼šhttps://github.com/gbcwbz/canfestival-rtt
+* ¸ĞĞ»£ºgbcwbz 
+
+  https://github.com/gbcwbz/canfestival-rtt
+
+* Î¬»¤£ºwdfk-prog 
+
+  https://github.com/wdfk-prog/canfestival-rtt

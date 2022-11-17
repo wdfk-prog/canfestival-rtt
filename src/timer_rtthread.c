@@ -11,15 +11,14 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
+#include "canfestival.h"
+#include "canopen_timer.h"
+#include "timers_driver.h"
 /* Private includes ----------------------------------------------------------*/
 #include <stdbool.h>
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <main.h>
-#include "canfestival.h"
-#include "timer.h"
-#include "timers_driver.h"
 //#define DBG_TAG "app.CANopen"
 //#define DBG_LVL DBG_LOG
 //#include <rtdbg.h>

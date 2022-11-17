@@ -1,0 +1,25 @@
+var structstruct__s__transfer =
+[
+    [ "abortCode", "structstruct__s__transfer.html#a923831084548068cc4533f2b04c9704b", null ],
+    [ "ackseq", "structstruct__s__transfer.html#a87f551ba9fffd186644d8a2ada90605e", null ],
+    [ "blksize", "structstruct__s__transfer.html#af2926540be92f5ac1ea1827ff41bb1f9", null ],
+    [ "Callback", "structstruct__s__transfer.html#a585ccc30747e7b3c11321b22445634f0", null ],
+    [ "CliServNbr", "structstruct__s__transfer.html#ad10f2a8026cb0ceb5d62a72cf9752e68", null ],
+    [ "count", "structstruct__s__transfer.html#ac5cea2c2592f78691d7542b964d7b5e0", null ],
+    [ "data", "structstruct__s__transfer.html#a8551c4428723866b67a9c44c16b4c8c6", null ],
+    [ "dataType", "structstruct__s__transfer.html#a0ebd4ef398d922123779a7b96cc171ca", null ],
+    [ "endfield", "structstruct__s__transfer.html#aafb345850ff67fbda4603e30055b6eb7", null ],
+    [ "index", "structstruct__s__transfer.html#a97238c141b38cb63fc300a99f59770c0", null ],
+    [ "lastblockoffset", "structstruct__s__transfer.html#a359c7834b68b68c499522aa5bcef1722", null ],
+    [ "objsize", "structstruct__s__transfer.html#ad4eaf35be738c40c2e202ed7b92f1489", null ],
+    [ "offset", "structstruct__s__transfer.html#ac53f76636913d52d6b8689478f425894", null ],
+    [ "peerCRCsupport", "structstruct__s__transfer.html#aa7bcfe40eb3ba41c76dd06fb78b25359", null ],
+    [ "rxstep", "structstruct__s__transfer.html#ac583d007f09c1d1a95f5610911106b2b", null ],
+    [ "seqno", "structstruct__s__transfer.html#aeb8128acb6471da6c2b364878489d6ad", null ],
+    [ "state", "structstruct__s__transfer.html#a7794a183263db285e3c04d2cbcdfba40", null ],
+    [ "subIndex", "structstruct__s__transfer.html#a8626332d74fe945106c166d5b6b2637d", null ],
+    [ "timer", "structstruct__s__transfer.html#af918b78d7df04724549df7ef81bfcf8c", null ],
+    [ "tmpData", "structstruct__s__transfer.html#a38d8e1f86d228ace776513df05f3d99d", null ],
+    [ "toggle", "structstruct__s__transfer.html#a6404f924c6deb762f617da6a1dbe4d7f", null ],
+    [ "whoami", "structstruct__s__transfer.html#acbe33a0e6ad3e8e6567a7b1e2769b63a", null ]
+];

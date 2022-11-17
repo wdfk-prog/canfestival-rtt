@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: README</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md__c___users__administrator__desktop__s_t_m32_f4__r_t_t_v5_0_packages__can_festival_latest__r_e_a_d_m_e.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">README </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >This is a package for RT-Thread operating system.</p>
+<p >Forked from the CanFestival-3 project <a href="https://bitbucket.org/Mongo/canfestival-3-asc">https://bitbucket.org/Mongo/canfestival-3-asc</a></p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+CanFestival</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+1、介绍</h2>
+<p >此 package 是 Canfestival (一个开源的 CANopen 协议栈)在 RT-Thread 系统上的移植。使用了 RT-Thread 的 CAN 驱动和 hwtimer 驱动，从而可以运行于所有提供了这两个驱动的平台。 同时提供了 CANopen 的一些示例，力图做到开箱即用。</p>
+<h3><a class="anchor" id="autotoc_md2"></a>
+1.1 目录结构</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">名称   </th><th class="markdownTableHeadNone">说明    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">docs   </td><td class="markdownTableBodyNone">文档目录    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">examples   </td><td class="markdownTableBodyNone">例子目录，Master402 为 DS402 主站示例，用于控制伺服电机    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">inc   </td><td class="markdownTableBodyNone">头文件目录    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">src   </td><td class="markdownTableBodyNone">源代码目录   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md3"></a>
+1.2 许可证</h3>
+<p >Canfestival package 遵循 LGPLv2.1 许可，详见 <code>LICENSE</code> 文件。</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+1.3 依赖</h3>
+<ul>
+<li>RT-Thread 3.0+</li>
+<li>CAN 驱动</li>
+<li>hwtimer 驱动</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+2、如何打开 CanFestival</h2>
+<p >使用 CanFestival package 需要在 RT-Thread 的包管理器中选择它，具体路径如下：</p>
+<div class="fragment"><div class="line">RT-Thread online packages</div>
+<div class="line">    miscellaneous packages ---&gt;</div>
+<div class="line">        [*] CanFestival: A free software CANopen framework</div>
+</div><!-- fragment --><p >然后让 RT-Thread 的包管理器自动更新，或者使用 <code>pkgs --update</code> 命令更新包到 BSP 中。</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+3、使用 Canfestival</h2>
+<p >在 menuconfig 中打开 CAN 驱动和 hwtimer驱动 并且在 CanFestival config 中配置好 CAN 驱动的 device name, 以及 hwtimer 驱动的 device name </p><div class="fragment"><div class="line">(can1) CAN device name for CanFestival</div>
+<div class="line">(timer1) hwtimer device name for CanFestival</div>
+<div class="line">(9) The priority level value of can receive thread</div>
+<div class="line">(10) The priority level value of timer thread</div>
+<div class="line">[*] Enable Cia402 Master example</div>
+</div><!-- fragment --><p> 根据需要配置 can 接收线程，和时钟线程的优先级。 选择需要使用的例子。</p>
+<p >在打开 Canfestival package 后，当进行 bsp 编译时，它会被加入到 bsp 工程中进行编译。</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+5、联系方式 &amp; 感谢</h2>
+<ul>
+<li>维护：gbcwbz</li>
+<li>主页：https://github.com/gbcwbz/canfestival-rtt </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

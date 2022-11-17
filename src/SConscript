@@ -11,7 +11,7 @@ pdo.c
 sdo.c
 states.c
 sync.c
-timer.c
+canopen_timer.c
 can_rtthread.c
 timer_rtthread.c
 """)

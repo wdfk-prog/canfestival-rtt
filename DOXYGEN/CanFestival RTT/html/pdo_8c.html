@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/pdo.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('pdo_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">pdo.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="pdo_8h_source.html">pdo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="objacces_8h_source.html">objacces.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="canfestival_8h_source.html">canfestival.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sysdep_8h_source.html">sysdep.h</a>&quot;</code><br />
+</div>
+<p><a href="pdo_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a889902163641f6fc8039550cb11ec320"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a889902163641f6fc8039550cb11ec320">buildPDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> numPdo, <a class="el" href="struct_message.html">Message</a> *pdo)</td></tr>
+<tr class="memdesc:a889902163641f6fc8039550cb11ec320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy all the data to transmit in process_var Prepare the PDO defined at index to be sent *pwCobId : returns the value of the cobid.  <a href="pdo_8c.html#a889902163641f6fc8039550cb11ec320">更多...</a><br /></td></tr>
+<tr class="separator:a889902163641f6fc8039550cb11ec320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fdcdb094e5d1a48b8033ebb9f968605"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pdo.html#ga7fdcdb094e5d1a48b8033ebb9f968605">sendPDOrequest</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> RPDOIndex)</td></tr>
+<tr class="memdesc:ga7fdcdb094e5d1a48b8033ebb9f968605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a PDO request frame on the network to the slave.  <a href="group__pdo.html#ga7fdcdb094e5d1a48b8033ebb9f968605">更多...</a><br /></td></tr>
+<tr class="separator:ga7fdcdb094e5d1a48b8033ebb9f968605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7d661cd3ef7adf93a0d08fdb15b7f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#aae7d661cd3ef7adf93a0d08fdb15b7f2">proceedPDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="struct_message.html">Message</a> *m)</td></tr>
+<tr class="memdesc:aae7d661cd3ef7adf93a0d08fdb15b7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a PDO frame reception bus_id is hardware dependant  <a href="pdo_8c.html#aae7d661cd3ef7adf93a0d08fdb15b7f2">更多...</a><br /></td></tr>
+<tr class="separator:aae7d661cd3ef7adf93a0d08fdb15b7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae468510c9f77f502207d961d26389918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#ae468510c9f77f502207d961d26389918">CopyBits</a> (<a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> NbBits, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *SrcByteIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> SrcBitIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> SrcBigEndian, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *DestByteIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> DestBitIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> DestBigEndian)</td></tr>
+<tr class="separator:ae468510c9f77f502207d961d26389918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3b44e169459e212309ef0c31079ec8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a1d3b44e169459e212309ef0c31079ec8">sendPdo</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> pdoNum, <a class="el" href="struct_message.html">Message</a> *pdo)</td></tr>
+<tr class="separator:a1d3b44e169459e212309ef0c31079ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac121b9c4eca3646cdd02e1ad7b0a44ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#ac121b9c4eca3646cdd02e1ad7b0a44ae">sendPDOevent</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:ac121b9c4eca3646cdd02e1ad7b0a44ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by the application to signal changes in process data that could be mapped to some TPDO.  <a href="pdo_8c.html#ac121b9c4eca3646cdd02e1ad7b0a44ae">更多...</a><br /></td></tr>
+<tr class="separator:ac121b9c4eca3646cdd02e1ad7b0a44ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb4142c9cc6970fe1148a6c77c61391"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a5cb4142c9cc6970fe1148a6c77c61391">sendOnePDOevent</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> pdoNum)</td></tr>
+<tr class="separator:a5cb4142c9cc6970fe1148a6c77c61391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae983f9075bd04d0afff7391891a0d7c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pdo.html#gae983f9075bd04d0afff7391891a0d7c3">PDOEventTimerAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> pdoNum)</td></tr>
+<tr class="memdesc:gae983f9075bd04d0afff7391891a0d7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set timer for PDO event  <a href="group__pdo.html#gae983f9075bd04d0afff7391891a0d7c3">更多...</a><br /></td></tr>
+<tr class="separator:gae983f9075bd04d0afff7391891a0d7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6eac02502a8822815b8324fdb9cbb6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pdo.html#ga6eac02502a8822815b8324fdb9cbb6dd">PDOInhibitTimerAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> pdoNum)</td></tr>
+<tr class="memdesc:ga6eac02502a8822815b8324fdb9cbb6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inhibit timer for PDO event  <a href="group__pdo.html#ga6eac02502a8822815b8324fdb9cbb6dd">更多...</a><br /></td></tr>
+<tr class="separator:ga6eac02502a8822815b8324fdb9cbb6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf438cc19c158fadb0c2cbcae0acf258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#adf438cc19c158fadb0c2cbcae0acf258">_RxPDO_EventTimers_Handler</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> pdoNum)</td></tr>
+<tr class="separator:adf438cc19c158fadb0c2cbcae0acf258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95c3686cda4e9e6f7c847d2d0bb88fe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pdo.html#ga95c3686cda4e9e6f7c847d2d0bb88fe8">_sendPDOevent</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> isSyncEvent)</td></tr>
+<tr class="memdesc:ga95c3686cda4e9e6f7c847d2d0bb88fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function iterates on all TPDO and look TPDO transmit type and content change before sending it.  <a href="group__pdo.html#ga95c3686cda4e9e6f7c847d2d0bb88fe8">更多...</a><br /></td></tr>
+<tr class="separator:ga95c3686cda4e9e6f7c847d2d0bb88fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9718d5f111be6a018a94c681f7ba07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a3e9718d5f111be6a018a94c681f7ba07">TPDO_Communication_Parameter_Callback</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *OD_entry, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> bSubindex)</td></tr>
+<tr class="separator:a3e9718d5f111be6a018a94c681f7ba07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474688163fc6e1ffe47d56143a051714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a474688163fc6e1ffe47d56143a051714">PDOInit</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:a474688163fc6e1ffe47d56143a051714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize PDO feature  <a href="pdo_8c.html#a474688163fc6e1ffe47d56143a051714">更多...</a><br /></td></tr>
+<tr class="separator:a474688163fc6e1ffe47d56143a051714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a745aea83aebbc1ec052a98f18586cb35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a745aea83aebbc1ec052a98f18586cb35">PDOStop</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:a745aea83aebbc1ec052a98f18586cb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop PDO feature  <a href="pdo_8c.html#a745aea83aebbc1ec052a98f18586cb35">更多...</a><br /></td></tr>
+<tr class="separator:a745aea83aebbc1ec052a98f18586cb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e65a8f349acf883ce144d8a747cc07c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#a2e65a8f349acf883ce144d8a747cc07c">PDOEnable</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> pdoNum)</td></tr>
+<tr class="memdesc:a2e65a8f349acf883ce144d8a747cc07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a PDO by setting to 0 the bit 32 of the COB-ID parameter  <a href="pdo_8c.html#a2e65a8f349acf883ce144d8a747cc07c">更多...</a><br /></td></tr>
+<tr class="separator:a2e65a8f349acf883ce144d8a747cc07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92c9f69fbf1a76a8120317d4d15a1be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdo_8c.html#ae92c9f69fbf1a76a8120317d4d15a1be">PDODisable</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> pdoNum)</td></tr>
+<tr class="memdesc:ae92c9f69fbf1a76a8120317d4d15a1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a PDO by setting to 1 the bit 32 of the COB-ID parameter  <a href="pdo_8c.html#ae92c9f69fbf1a76a8120317d4d15a1be">更多...</a><br /></td></tr>
+<tr class="separator:ae92c9f69fbf1a76a8120317d4d15a1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Edouard TISSERANT and Francis DUPIN </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>Tue Jun 5 09:32:32 2007 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="adf438cc19c158fadb0c2cbcae0acf258" name="adf438cc19c158fadb0c2cbcae0acf258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf438cc19c158fadb0c2cbcae0acf258">&#9670;&#160;</a></span>_RxPDO_EventTimers_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _RxPDO_EventTimers_Handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>pdoNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00610">610</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a889902163641f6fc8039550cb11ec320" name="a889902163641f6fc8039550cb11ec320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889902163641f6fc8039550cb11ec320">&#9670;&#160;</a></span>buildPDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> buildPDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>numPdo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_message.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>pdo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy all the data to transmit in process_var Prepare the PDO defined at index to be sent *pwCobId : returns the value of the cobid. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">numPdo</td><td>The PDO index </td></tr>
+    <tr><td class="paramname">pdo</td><td>pointer to can message to be filled</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae468510c9f77f502207d961d26389918" name="ae468510c9f77f502207d961d26389918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae468510c9f77f502207d961d26389918">&#9670;&#160;</a></span>CopyBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CopyBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>NbBits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>SrcByteIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>SrcBitIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>SrcBigEndian</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>DestByteIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>DestBitIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>DestBigEndian</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NbBits</td><td></td></tr>
+    <tr><td class="paramname">SrcByteIndex</td><td></td></tr>
+    <tr><td class="paramname">SrcBitIndex</td><td></td></tr>
+    <tr><td class="paramname">SrcBigEndian</td><td></td></tr>
+    <tr><td class="paramname">DestByteIndex</td><td></td></tr>
+    <tr><td class="paramname">DestBitIndex</td><td></td></tr>
+    <tr><td class="paramname">DestBigEndian</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00428">428</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae92c9f69fbf1a76a8120317d4d15a1be" name="ae92c9f69fbf1a76a8120317d4d15a1be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae92c9f69fbf1a76a8120317d4d15a1be">&#9670;&#160;</a></span>PDODisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PDODisable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>pdoNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable a PDO by setting to 1 the bit 32 of the COB-ID parameter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">pdoNum</td><td>The PDO number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00858">858</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2e65a8f349acf883ce144d8a747cc07c" name="a2e65a8f349acf883ce144d8a747cc07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e65a8f349acf883ce144d8a747cc07c">&#9670;&#160;</a></span>PDOEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PDOEnable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>pdoNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable a PDO by setting to 0 the bit 32 of the COB-ID parameter </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+    <tr><td class="paramname">pdoNum</td><td>The PDO number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00848">848</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a474688163fc6e1ffe47d56143a051714" name="a474688163fc6e1ffe47d56143a051714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474688163fc6e1ffe47d56143a051714">&#9670;&#160;</a></span>PDOInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PDOInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize PDO feature </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00793">793</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a745aea83aebbc1ec052a98f18586cb35" name="a745aea83aebbc1ec052a98f18586cb35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745aea83aebbc1ec052a98f18586cb35">&#9670;&#160;</a></span>PDOStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PDOStop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop PDO feature </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*d</td><td>Pointer on a CAN object data structure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00825">825</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aae7d661cd3ef7adf93a0d08fdb15b7f2" name="aae7d661cd3ef7adf93a0d08fdb15b7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae7d661cd3ef7adf93a0d08fdb15b7f2">&#9670;&#160;</a></span>proceedPDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> proceedPDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_message.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute a PDO frame reception bus_id is hardware dependant </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">m</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00170">170</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5cb4142c9cc6970fe1148a6c77c61391" name="a5cb4142c9cc6970fe1148a6c77c61391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb4142c9cc6970fe1148a6c77c61391">&#9670;&#160;</a></span>sendOnePDOevent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> sendOnePDOevent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>pdoNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00510">510</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1d3b44e169459e212309ef0c31079ec8" name="a1d3b44e169459e212309ef0c31079ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d3b44e169459e212309ef0c31079ec8">&#9670;&#160;</a></span>sendPdo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void sendPdo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>pdoNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_message.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>pdo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00483">483</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac121b9c4eca3646cdd02e1ad7b0a44ae" name="ac121b9c4eca3646cdd02e1ad7b0a44ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac121b9c4eca3646cdd02e1ad7b0a44ae">&#9670;&#160;</a></span>sendPDOevent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> sendPDOevent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Used by the application to signal changes in process data that could be mapped to some TPDO. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00503">503</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3e9718d5f111be6a018a94c681f7ba07" name="a3e9718d5f111be6a018a94c681f7ba07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e9718d5f111be6a018a94c681f7ba07">&#9670;&#160;</a></span>TPDO_Communication_Parameter_Callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> TPDO_Communication_Parameter_Callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="objdictdef_8h.html#acd05cef26afde599867f00ba1d48dc45">indextable</a> *&#160;</td>
+          <td class="paramname"><em>OD_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>bSubindex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">OD_entry</td><td></td></tr>
+    <tr><td class="paramname">bSubindex</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>always 0 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="pdo_8c_source.html">pdo.c</a> 第 <a class="el" href="pdo_8c_source.html#l00760">760</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="pdo_8c.html">pdo.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

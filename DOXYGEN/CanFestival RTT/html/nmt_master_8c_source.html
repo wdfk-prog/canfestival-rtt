@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/nmtMaster.c 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('nmt_master_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">nmtMaster.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="nmt_master_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  This file is part of CanFestival, a library implementing CanOpen</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  Stack.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  Copyright (C): Edouard TISSERANT and Francis DUPIN</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  See COPYING file for copyrights details.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"></span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  modify it under the terms of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  License as published by the Free Software Foundation; either</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  version 2.1 of the License, or (at your option) any later version.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  Lesser General Public License for more details.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"></span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  You should have received a copy of the GNU Lesser General Public</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  License along with this library; if not, write to the Free Software</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  USA</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="nmt_master_8h.html">nmtMaster.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="canfestival_8h.html">canfestival.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="sysdep_8h.html">sysdep.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">   46</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">masterSendNMTstateChange</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> cs)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_struct" href="struct_message.html">Message</a> m;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3501, <span class="stringliteral">&quot;Send_NMT cs : &quot;</span>, cs);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3502, <span class="stringliteral">&quot;    to node : &quot;</span>, nodeId);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">/* message configuration */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  m.<a class="code hl_variable" href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">cob_id</a> = 0x0000; <span class="comment">/*(NMT) &lt;&lt; 7*/</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  m.<a class="code hl_variable" href="struct_message.html#af71454c0a19256996c9591ceec70de93">rtr</a> = <a class="code hl_define" href="def_8h.html#a0c43b00ce49efc3586ad17dd80d73940">NOT_A_REQUEST</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  m.<a class="code hl_variable" href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">len</a> = 2;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  m.<a class="code hl_variable" href="struct_message.html#a8997a9e04f31c31c31e80c08b0efe12d">data</a>[0] = cs;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  m.<a class="code hl_variable" href="struct_message.html#a8997a9e04f31c31c31e80c08b0efe12d">data</a>[1] = nodeId;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="can__driver_8h.html#a27e197147f76a261f75d153734499873">canSend</a>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#ac0b528e9b4eb105a5dc61e1dcce8511d">canHandle</a>,&amp;m);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group__nmtmaster.html#gaf63689baeabb15103c2b7afe8885c5c4">   71</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="group__nmtmaster.html#gaf63689baeabb15103c2b7afe8885c5c4">masterSendNMTnodeguard</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_struct" href="struct_message.html">Message</a> m;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">/* message configuration */</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_define" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> tmp = nodeId | (<a class="code hl_define" href="def_8h.html#a78d5d3f71db9f360c9e3d3953707b0c1">NODE_GUARD</a> &lt;&lt; 7); </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  m.<a class="code hl_variable" href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">cob_id</a> = <a class="code hl_define" href="sysdep_8h.html#a7a262e4934564880db4adc361da54d59">UNS16_LE</a>(tmp);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  m.<a class="code hl_variable" href="struct_message.html#af71454c0a19256996c9591ceec70de93">rtr</a> = <a class="code hl_define" href="def_8h.html#a6baece8be8f9ab55223d41b535511b6f">REQUEST</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  m.<a class="code hl_variable" href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">len</a> = 0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3503, <span class="stringliteral">&quot;Send_NODE_GUARD to node : &quot;</span>, nodeId);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="can__driver_8h.html#a27e197147f76a261f75d153734499873">canSend</a>(d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#ac0b528e9b4eb105a5dc61e1dcce8511d">canHandle</a>,&amp;m);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group__nmtmaster.html#ga447ac9b39f8e5188692d240adaa7cdd1">   94</a></span><a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> <a class="code hl_function" href="group__nmtmaster.html#ga447ac9b39f8e5188692d240adaa7cdd1">masterRequestNodeState</a>(<a class="code hl_struct" href="structstruct___c_o___data.html">CO_Data</a>* d, <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">/* FIXME: should warn for bad toggle bit. */</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">/* NMTable configuration to indicate that the master is waiting</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">    for a Node_Guard frame from the slave whose node_id is ID</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">  */</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[nodeId] = <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a>; <span class="comment">/* A state that does not exist</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">                                       */</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordflow">if</span> (nodeId == 0) { <span class="comment">/* NMT broadcast */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_define" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> i = 0;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">for</span> (i = 0 ; i &lt; <a class="code hl_define" href="config_8h.html#a89f774dfdb67cc1f78c7e7d457a16fdc">NMT_MAX_NODE_ID</a> ; i++) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      d-&gt;<a class="code hl_variable" href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">NMTable</a>[i] = <a class="code hl_enumvalue" href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="group__nmtmaster.html#gaf63689baeabb15103c2b7afe8885c5c4">masterSendNMTnodeguard</a>(d,nodeId);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="ttc" id="aapplicfg_8h_html_a539234687760592d01a8b0d3357bc00e"><div class="ttname"><a href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a></div><div class="ttdeci">#define UNS8</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00042">applicfg.h:42</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5528eeccf214bfe021532622d78c6a96"><div class="ttname"><a href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a></div><div class="ttdeci">#define UNS16</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00043">applicfg.h:43</a></div></div>
+<div class="ttc" id="aapplicfg_8h_html_a5f4e5133c4c3113931684d3aba518bba"><div class="ttname"><a href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a></div><div class="ttdeci">#define MSG_WAR(num, str, val)</div><div class="ttdoc">Definition of MSG_WAR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00082">applicfg.h:82</a></div></div>
+<div class="ttc" id="acan__driver_8h_html_a27e197147f76a261f75d153734499873"><div class="ttname"><a href="can__driver_8h.html#a27e197147f76a261f75d153734499873">canSend</a></div><div class="ttdeci">UNS8 DLL_CALL() canSend(CAN_HANDLE, Message const *) FCT_PTR_INIT</div></div>
+<div class="ttc" id="acanfestival_8h_html"><div class="ttname"><a href="canfestival_8h.html">canfestival.h</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a89f774dfdb67cc1f78c7e7d457a16fdc"><div class="ttname"><a href="config_8h.html#a89f774dfdb67cc1f78c7e7d457a16fdc">NMT_MAX_NODE_ID</a></div><div class="ttdeci">#define NMT_MAX_NODE_ID</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00034">config.h:34</a></div></div>
+<div class="ttc" id="adef_8h_html_a0c43b00ce49efc3586ad17dd80d73940"><div class="ttname"><a href="def_8h.html#a0c43b00ce49efc3586ad17dd80d73940">NOT_A_REQUEST</a></div><div class="ttdeci">#define NOT_A_REQUEST</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00059">def.h:59</a></div></div>
+<div class="ttc" id="adef_8h_html_a6baece8be8f9ab55223d41b535511b6f"><div class="ttname"><a href="def_8h.html#a6baece8be8f9ab55223d41b535511b6f">REQUEST</a></div><div class="ttdeci">#define REQUEST</div><div class="ttdoc">Constantes which permit to define if a PDO frame is a request one or a data one</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00058">def.h:58</a></div></div>
+<div class="ttc" id="adef_8h_html_a78d5d3f71db9f360c9e3d3953707b0c1"><div class="ttname"><a href="def_8h.html#a78d5d3f71db9f360c9e3d3953707b0c1">NODE_GUARD</a></div><div class="ttdeci">#define NODE_GUARD</div><div class="ttdef"><b>Definition:</b> <a href="def_8h_source.html#l00147">def.h:147</a></div></div>
+<div class="ttc" id="agroup__nmtmaster_html_ga447ac9b39f8e5188692d240adaa7cdd1"><div class="ttname"><a href="group__nmtmaster.html#ga447ac9b39f8e5188692d240adaa7cdd1">masterRequestNodeState</a></div><div class="ttdeci">UNS8 masterRequestNodeState(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Ask the state of the slave node whose nodeId is node Id.</div><div class="ttdef"><b>Definition:</b> <a href="nmt_master_8c_source.html#l00094">nmtMaster.c:94</a></div></div>
+<div class="ttc" id="agroup__nmtmaster_html_ga7c6150ad7ae50e0c30edeb9f9913f7a7"><div class="ttname"><a href="group__nmtmaster.html#ga7c6150ad7ae50e0c30edeb9f9913f7a7">masterSendNMTstateChange</a></div><div class="ttdeci">UNS8 masterSendNMTstateChange(CO_Data *d, UNS8 nodeId, UNS8 cs)</div><div class="ttdoc">Transmit a NMT message on the network to the slave whose nodeId is node ID.</div><div class="ttdef"><b>Definition:</b> <a href="nmt_master_8c_source.html#l00046">nmtMaster.c:46</a></div></div>
+<div class="ttc" id="agroup__nmtmaster_html_gaf63689baeabb15103c2b7afe8885c5c4"><div class="ttname"><a href="group__nmtmaster.html#gaf63689baeabb15103c2b7afe8885c5c4">masterSendNMTnodeguard</a></div><div class="ttdeci">UNS8 masterSendNMTnodeguard(CO_Data *d, UNS8 nodeId)</div><div class="ttdoc">Transmit a NodeGuard message on the network to the slave whose nodeId is node ID</div><div class="ttdef"><b>Definition:</b> <a href="nmt_master_8c_source.html#l00071">nmtMaster.c:71</a></div></div>
+<div class="ttc" id="anmt_master_8h_html"><div class="ttname"><a href="nmt_master_8h.html">nmtMaster.h</a></div></div>
+<div class="ttc" id="astates_8h_html_a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59"><div class="ttname"><a href="states_8h.html#a3136d2815abe9d284f985e0a7ec68646acb4b5cb64be091d76f846380eb0afe59">Unknown_state</a></div><div class="ttdeci">@ Unknown_state</div><div class="ttdef"><b>Definition:</b> <a href="states_8h_source.html#l00048">states.h:47</a></div></div>
+<div class="ttc" id="astruct_message_html"><div class="ttname"><a href="struct_message.html">Message</a></div><div class="ttdoc">The CAN message structure</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00032">canoepn_can.h:32</a></div></div>
+<div class="ttc" id="astruct_message_html_a293f605bccda3a182bb7f10b2d3fcafe"><div class="ttname"><a href="struct_message.html#a293f605bccda3a182bb7f10b2d3fcafe">Message::len</a></div><div class="ttdeci">UNS8 len</div><div class="ttdoc">message's length (0 to 8)</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00035">canoepn_can.h:35</a></div></div>
+<div class="ttc" id="astruct_message_html_a8997a9e04f31c31c31e80c08b0efe12d"><div class="ttname"><a href="struct_message.html#a8997a9e04f31c31c31e80c08b0efe12d">Message::data</a></div><div class="ttdeci">UNS8 data[8]</div><div class="ttdoc">message's datas</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00036">canoepn_can.h:36</a></div></div>
+<div class="ttc" id="astruct_message_html_abe845f0dbe8214540c329bd0bb5ba7e6"><div class="ttname"><a href="struct_message.html#abe845f0dbe8214540c329bd0bb5ba7e6">Message::cob_id</a></div><div class="ttdeci">UNS16 cob_id</div><div class="ttdoc">message's ID</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00033">canoepn_can.h:33</a></div></div>
+<div class="ttc" id="astruct_message_html_af71454c0a19256996c9591ceec70de93"><div class="ttname"><a href="struct_message.html#af71454c0a19256996c9591ceec70de93">Message::rtr</a></div><div class="ttdeci">UNS8 rtr</div><div class="ttdoc">remote transmission request.</div><div class="ttdef"><b>Definition:</b> <a href="canoepn__can_8h_source.html#l00034">canoepn_can.h:34</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html"><div class="ttname"><a href="structstruct___c_o___data.html">struct_CO_Data</a></div><div class="ttdoc">This structure contains all necessary informations to define a CANOpen node</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00056">data.h:56</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_a0c881bde97ec548c50fcc2198022e4f7"><div class="ttname"><a href="structstruct___c_o___data.html#a0c881bde97ec548c50fcc2198022e4f7">struct_CO_Data::NMTable</a></div><div class="ttdeci">e_nodeState NMTable[NMT_MAX_NODE_ID]</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00090">data.h:90</a></div></div>
+<div class="ttc" id="astructstruct___c_o___data_html_ac0b528e9b4eb105a5dc61e1dcce8511d"><div class="ttname"><a href="structstruct___c_o___data.html#ac0b528e9b4eb105a5dc61e1dcce8511d">struct_CO_Data::canHandle</a></div><div class="ttdeci">CAN_PORT canHandle</div><div class="ttdef"><b>Definition:</b> <a href="data_8h_source.html#l00112">data.h:112</a></div></div>
+<div class="ttc" id="asysdep_8h_html"><div class="ttname"><a href="sysdep_8h.html">sysdep.h</a></div></div>
+<div class="ttc" id="asysdep_8h_html_a7a262e4934564880db4adc361da54d59"><div class="ttname"><a href="sysdep_8h.html#a7a262e4934564880db4adc361da54d59">UNS16_LE</a></div><div class="ttdeci">#define UNS16_LE(v)</div><div class="ttdef"><b>Definition:</b> <a href="sysdep_8h_source.html#l00020">sysdep.h:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="nmt_master_8c.html">nmtMaster.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

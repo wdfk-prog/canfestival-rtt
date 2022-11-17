@@ -1,0 +1,1727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CanFestival RTT: C:/Users/Administrator/Desktop/STM32F4_RTT_v5.0/packages/CanFestival-latest/src/sdo.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="networkedit.ico"/></td>
+  <td id="projectalign">
+   <div id="projectname">CanFestival RTT<span id="projectnumber">&#160;V1.0.0</span>
+   </div>
+   <div id="projectbrief">CanFestival RTT</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('sdo_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">sdo.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sysdep_8h_source.html">sysdep.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="canfestival_8h_source.html">canfestival.h</a>&quot;</code><br />
+</div>
+<p><a href="sdo_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab5ce7bd7fe4169a9f709815f03f9870b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ab5ce7bd7fe4169a9f709815f03f9870b">NO_INLINE</a></td></tr>
+<tr class="separator:ab5ce7bd7fe4169a9f709815f03f9870b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></td></tr>
+<tr class="separator:a2eb6f9e0395b47b8d5e3eeae4fe0c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace5a1634ff4089db3b228cdd5010c321"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ace5a1634ff4089db3b228cdd5010c321">getSDOcs</a>(byte)&#160;&#160;&#160;(byte &gt;&gt; 5)</td></tr>
+<tr class="memdesc:ace5a1634ff4089db3b228cdd5010c321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the command specifier (cs, ccs, scs) from the first byte of the SDO  <a href="sdo_8c.html#ace5a1634ff4089db3b228cdd5010c321">更多...</a><br /></td></tr>
+<tr class="separator:ace5a1634ff4089db3b228cdd5010c321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd3877d80f6b903b491a115e587bd14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#adfd3877d80f6b903b491a115e587bd14">getSDOn2</a>(byte)&#160;&#160;&#160;((byte &gt;&gt; 2) &amp; 3)</td></tr>
+<tr class="memdesc:adfd3877d80f6b903b491a115e587bd14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes without data from the first byte of the SDO.  <a href="sdo_8c.html#adfd3877d80f6b903b491a115e587bd14">更多...</a><br /></td></tr>
+<tr class="separator:adfd3877d80f6b903b491a115e587bd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5677ca12bfb71b06cbd6e99e9be0955"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ae5677ca12bfb71b06cbd6e99e9be0955">getSDOn3</a>(byte)&#160;&#160;&#160;((byte &gt;&gt; 1) &amp; 7)</td></tr>
+<tr class="memdesc:ae5677ca12bfb71b06cbd6e99e9be0955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes without data from the first byte of the SDO.  <a href="sdo_8c.html#ae5677ca12bfb71b06cbd6e99e9be0955">更多...</a><br /></td></tr>
+<tr class="separator:ae5677ca12bfb71b06cbd6e99e9be0955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf60675f20de8746e279dce3a5c8e3c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#acf60675f20de8746e279dce3a5c8e3c6">getSDOe</a>(byte)&#160;&#160;&#160;((byte &gt;&gt; 1) &amp; 1)</td></tr>
+<tr class="memdesc:acf60675f20de8746e279dce3a5c8e3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the transfer type from the first byte of the SDO  <a href="sdo_8c.html#acf60675f20de8746e279dce3a5c8e3c6">更多...</a><br /></td></tr>
+<tr class="separator:acf60675f20de8746e279dce3a5c8e3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f9e9bc3d59c9772d4c767b199dcf89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#af7f9e9bc3d59c9772d4c767b199dcf89">getSDOs</a>(byte)&#160;&#160;&#160;(byte &amp; 1)</td></tr>
+<tr class="memdesc:af7f9e9bc3d59c9772d4c767b199dcf89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size indicator from the first byte of the SDO  <a href="sdo_8c.html#af7f9e9bc3d59c9772d4c767b199dcf89">更多...</a><br /></td></tr>
+<tr class="separator:af7f9e9bc3d59c9772d4c767b199dcf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a2dafe8497bff1fd88f881ea74414d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ae5a2dafe8497bff1fd88f881ea74414d">getSDOc</a>(byte)&#160;&#160;&#160;(byte &amp; 1)</td></tr>
+<tr class="memdesc:ae5a2dafe8497bff1fd88f881ea74414d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the indicator of end transmission from the first byte of the SDO  <a href="sdo_8c.html#ae5a2dafe8497bff1fd88f881ea74414d">更多...</a><br /></td></tr>
+<tr class="separator:ae5a2dafe8497bff1fd88f881ea74414d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464b29fd628d92426de0a841232bdd12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a464b29fd628d92426de0a841232bdd12">getSDOt</a>(byte)&#160;&#160;&#160;((byte &gt;&gt; 4) &amp; 1)</td></tr>
+<tr class="memdesc:a464b29fd628d92426de0a841232bdd12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the toggle from the first byte of the SDO  <a href="sdo_8c.html#a464b29fd628d92426de0a841232bdd12">更多...</a><br /></td></tr>
+<tr class="separator:a464b29fd628d92426de0a841232bdd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b34e26bf67f1251f3bb364756e17f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ad9b34e26bf67f1251f3bb364756e17f1">getSDOindex</a>(byte1,  byte2)&#160;&#160;&#160;(((<a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)byte2 &lt;&lt; 8) | ((<a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)byte1))</td></tr>
+<tr class="memdesc:ad9b34e26bf67f1251f3bb364756e17f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index from the bytes 1 and 2 of the SDO  <a href="sdo_8c.html#ad9b34e26bf67f1251f3bb364756e17f1">更多...</a><br /></td></tr>
+<tr class="separator:ad9b34e26bf67f1251f3bb364756e17f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a96f6fa6083f6b291133135b7155a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a52a96f6fa6083f6b291133135b7155a8">getSDOsubIndex</a>(byte3)&#160;&#160;&#160;(byte3)</td></tr>
+<tr class="memdesc:a52a96f6fa6083f6b291133135b7155a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subIndex from the byte 3 of the SDO  <a href="sdo_8c.html#a52a96f6fa6083f6b291133135b7155a8">更多...</a><br /></td></tr>
+<tr class="separator:a52a96f6fa6083f6b291133135b7155a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb365a327b1fd8fda7f9634832f231"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a80fb365a327b1fd8fda7f9634832f231">getSDOblockSC</a>(byte)&#160;&#160;&#160;(byte &amp; 3)</td></tr>
+<tr class="memdesc:a80fb365a327b1fd8fda7f9634832f231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subcommand in SDO block transfer  <a href="sdo_8c.html#a80fb365a327b1fd8fda7f9634832f231">更多...</a><br /></td></tr>
+<tr class="separator:a80fb365a327b1fd8fda7f9634832f231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90f05aac908e8eee39a34b3e21e0ea9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ab90f05aac908e8eee39a34b3e21e0ea9">StopSDO_TIMER</a>(id)</td></tr>
+<tr class="separator:ab90f05aac908e8eee39a34b3e21e0ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e9eb7a28803b958d298b6997cc60ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ac1e9eb7a28803b958d298b6997cc60ca">StartSDO_TIMER</a>(id)</td></tr>
+<tr class="separator:ac1e9eb7a28803b958d298b6997cc60ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3938a9884014e96cafc42aeee743c0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#ab3938a9884014e96cafc42aeee743c0f">RestartSDO_TIMER</a>(id)</td></tr>
+<tr class="separator:ab3938a9884014e96cafc42aeee743c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a83b35f348d36c23421eb1753df96fc33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a83b35f348d36c23421eb1753df96fc33">GetSDOClientFromNodeId</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</td></tr>
+<tr class="separator:a83b35f348d36c23421eb1753df96fc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f638cbd9aca7bb67056e0cda945651"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sdo_8c.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a77f638cbd9aca7bb67056e0cda945651">_writeNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> endianize, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="separator:a77f638cbd9aca7bb67056e0cda945651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb8bae9faa885c97486d84e951888e4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sdo_8c.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#aeb8bae9faa885c97486d84e951888e4a">_readNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="separator:aeb8bae9faa885c97486d84e951888e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9309025e29b59e09026abcd3b45a5b61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a9309025e29b59e09026abcd3b45a5b61">SDOTimeoutAlarm</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> id)</td></tr>
+<tr class="memdesc:a9309025e29b59e09026abcd3b45a5b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset of a SDO exchange on timeout.  <a href="sdo_8c.html#a9309025e29b59e09026abcd3b45a5b61">更多...</a><br /></td></tr>
+<tr class="separator:a9309025e29b59e09026abcd3b45a5b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4f07eccc4890a11ccf4f632da7740b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a1f4f07eccc4890a11ccf4f632da7740b">resetSDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d)</td></tr>
+<tr class="memdesc:a1f4f07eccc4890a11ccf4f632da7740b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all SDO buffers.  <a href="sdo_8c.html#a1f4f07eccc4890a11ccf4f632da7740b">更多...</a><br /></td></tr>
+<tr class="separator:a1f4f07eccc4890a11ccf4f632da7740b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb5309dca3a7363da5e5e7230b85d58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a2eb5309dca3a7363da5e5e7230b85d58">SDOlineToObjdict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line)</td></tr>
+<tr class="memdesc:a2eb5309dca3a7363da5e5e7230b85d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the data received from the SDO line transfer to the object dictionary.  <a href="sdo_8c.html#a2eb5309dca3a7363da5e5e7230b85d58">更多...</a><br /></td></tr>
+<tr class="separator:a2eb5309dca3a7363da5e5e7230b85d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29427a80fd1aeabff30bf0602fbc220f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a29427a80fd1aeabff30bf0602fbc220f">objdictToSDOline</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line)</td></tr>
+<tr class="memdesc:a29427a80fd1aeabff30bf0602fbc220f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the data from the object dictionary to the SDO line for a network transfer.  <a href="sdo_8c.html#a29427a80fd1aeabff30bf0602fbc220f">更多...</a><br /></td></tr>
+<tr class="separator:a29427a80fd1aeabff30bf0602fbc220f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b662491084d03f3ad43d280a45ef23e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a2b662491084d03f3ad43d280a45ef23e">lineToSDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> nbBytes, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *data)</td></tr>
+<tr class="memdesc:a2b662491084d03f3ad43d280a45ef23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy data from an existant line in the argument "* data"  <a href="sdo_8c.html#a2b662491084d03f3ad43d280a45ef23e">更多...</a><br /></td></tr>
+<tr class="separator:a2b662491084d03f3ad43d280a45ef23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5efdbb02d210aad29c6d162600d3ae55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a5efdbb02d210aad29c6d162600d3ae55">SDOtoLine</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> nbBytes, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *data)</td></tr>
+<tr class="memdesc:a5efdbb02d210aad29c6d162600d3ae55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add data to an existant line  <a href="sdo_8c.html#a5efdbb02d210aad29c6d162600d3ae55">更多...</a><br /></td></tr>
+<tr class="separator:a5efdbb02d210aad29c6d162600d3ae55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50665fc13aa385b1b523013cf9166523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a50665fc13aa385b1b523013cf9166523">failedSDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> abortCode)</td></tr>
+<tr class="memdesc:a50665fc13aa385b1b523013cf9166523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an internal SDO abort occurs.  <a href="sdo_8c.html#a50665fc13aa385b1b523013cf9166523">更多...</a><br /></td></tr>
+<tr class="separator:a50665fc13aa385b1b523013cf9166523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42d33be015d4c4c83c73f1f0e588f481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a42d33be015d4c4c83c73f1f0e588f481">resetSDOline</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line)</td></tr>
+<tr class="memdesc:a42d33be015d4c4c83c73f1f0e588f481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset an unused line.  <a href="sdo_8c.html#a42d33be015d4c4c83c73f1f0e588f481">更多...</a><br /></td></tr>
+<tr class="separator:a42d33be015d4c4c83c73f1f0e588f481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa570e2c8e69527298b428563a38ced9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#aa570e2c8e69527298b428563a38ced9f">initSDOline</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> state)</td></tr>
+<tr class="memdesc:aa570e2c8e69527298b428563a38ced9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize some fields of the structure.  <a href="sdo_8c.html#aa570e2c8e69527298b428563a38ced9f">更多...</a><br /></td></tr>
+<tr class="separator:aa570e2c8e69527298b428563a38ced9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d1f9691977617601beb9e5b4123252"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a58d1f9691977617601beb9e5b4123252">getSDOfreeLine</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *line)</td></tr>
+<tr class="memdesc:a58d1f9691977617601beb9e5b4123252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for an unused line in the transfers array to store a new SDO.  <a href="sdo_8c.html#a58d1f9691977617601beb9e5b4123252">更多...</a><br /></td></tr>
+<tr class="separator:a58d1f9691977617601beb9e5b4123252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6660620ea5fb37d311afc3d9a301c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a3a6660620ea5fb37d311afc3d9a301c2">getSDOlineOnUse</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *line)</td></tr>
+<tr class="memdesc:a3a6660620ea5fb37d311afc3d9a301c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for the line, in the transfers array, which contains the beginning of the reception of a fragmented SDO  <a href="sdo_8c.html#a3a6660620ea5fb37d311afc3d9a301c2">更多...</a><br /></td></tr>
+<tr class="separator:a3a6660620ea5fb37d311afc3d9a301c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306682ff5ce933d4db07547e467e9057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a306682ff5ce933d4db07547e467e9057">getSDOlineToClose</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *line)</td></tr>
+<tr class="memdesc:a306682ff5ce933d4db07547e467e9057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for the line, in the transfers array, which contains the beginning of the reception of a fragmented SDO  <a href="sdo_8c.html#a306682ff5ce933d4db07547e467e9057">更多...</a><br /></td></tr>
+<tr class="separator:a306682ff5ce933d4db07547e467e9057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a555a772d3a88a29c495f33513f8b2d58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a555a772d3a88a29c495f33513f8b2d58">closeSDOtransfer</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami)</td></tr>
+<tr class="memdesc:a555a772d3a88a29c495f33513f8b2d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a transmission.  <a href="sdo_8c.html#a555a772d3a88a29c495f33513f8b2d58">更多...</a><br /></td></tr>
+<tr class="separator:a555a772d3a88a29c495f33513f8b2d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7654021041675c1389fd2d1b590ff7cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a7654021041675c1389fd2d1b590ff7cb">getSDOlineRestBytes</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *nbBytes)</td></tr>
+<tr class="memdesc:a7654021041675c1389fd2d1b590ff7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes in the line structure which must be transmited (or received)  <a href="sdo_8c.html#a7654021041675c1389fd2d1b590ff7cb">更多...</a><br /></td></tr>
+<tr class="separator:a7654021041675c1389fd2d1b590ff7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca56a650c5daaa24c89370f3b3d7bb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a7ca56a650c5daaa24c89370f3b3d7bb0">setSDOlineRestBytes</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> line, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> nbBytes)</td></tr>
+<tr class="memdesc:a7ca56a650c5daaa24c89370f3b3d7bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store in the line structure the nb of bytes which must be transmited (or received)  <a href="sdo_8c.html#a7ca56a650c5daaa24c89370f3b3d7bb0">更多...</a><br /></td></tr>
+<tr class="separator:a7ca56a650c5daaa24c89370f3b3d7bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f61d90737fb951b4b33c05e9b9810d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a2f61d90737fb951b4b33c05e9b9810d7">sendSDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *pData)</td></tr>
+<tr class="memdesc:a2f61d90737fb951b4b33c05e9b9810d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a SDO frame on the bus bus_id  <a href="sdo_8c.html#a2f61d90737fb951b4b33c05e9b9810d7">更多...</a><br /></td></tr>
+<tr class="separator:a2f61d90737fb951b4b33c05e9b9810d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0032d382891d6804947e9514fe3720"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a8d0032d382891d6804947e9514fe3720">sendSDOabort</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> whoami, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> CliServNbr, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> abortCode)</td></tr>
+<tr class="memdesc:a8d0032d382891d6804947e9514fe3720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a SDO error to the client.  <a href="sdo_8c.html#a8d0032d382891d6804947e9514fe3720">更多...</a><br /></td></tr>
+<tr class="separator:a8d0032d382891d6804947e9514fe3720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a93a7c780472b1d8666d89aa270f661"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdo_8c.html#a2a93a7c780472b1d8666d89aa270f661">proceedSDO</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="struct_message.html">Message</a> *m)</td></tr>
+<tr class="memdesc:a2a93a7c780472b1d8666d89aa270f661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Treat a SDO frame reception call the function sendSDO  <a href="sdo_8c.html#a2a93a7c780472b1d8666d89aa270f661">更多...</a><br /></td></tr>
+<tr class="separator:a2a93a7c780472b1d8666d89aa270f661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf3dd0fbf1353159d74956a8021b267f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">resetClientSDOLineFromNodeId</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId)</td></tr>
+<tr class="memdesc:gabf3dd0fbf1353159d74956a8021b267f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the SDO client line used to communicate with the server nodeId Mustbe called after getRead/WriteResultNetworkDict in case of error  <a href="group__sdo.html#gabf3dd0fbf1353159d74956a8021b267f">更多...</a><br /></td></tr>
+<tr class="separator:gabf3dd0fbf1353159d74956a8021b267f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">writeNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write the data at the index and subIndex indicated  <a href="group__sdo.html#ga6a056a111cd07ce8fbb430d3d81cbb99">更多...</a><br /></td></tr>
+<tr class="separator:ga6a056a111cd07ce8fbb430d3d81cbb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gaa1d75a97706ef2db3bd63d8e05a515a7">writeNetworkDictCallBack</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write in a distant node dictionnary.  <a href="group__sdo.html#gaa1d75a97706ef2db3bd63d8e05a515a7">更多...</a><br /></td></tr>
+<tr class="separator:gaa1d75a97706ef2db3bd63d8e05a515a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">writeNetworkDictCallBackAI</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> count, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, void *data, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> endianize, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to write in a distant node dictionnary.  <a href="group__sdo.html#gad7766666a4917fa5ddea3f0c9f60ae99">更多...</a><br /></td></tr>
+<tr class="separator:gad7766666a4917fa5ddea3f0c9f60ae99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4feff8e0b1f69e315f768661e0d818ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">readNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga4feff8e0b1f69e315f768661e0d818ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read.  <a href="group__sdo.html#ga4feff8e0b1f69e315f768661e0d818ba">更多...</a><br /></td></tr>
+<tr class="separator:ga4feff8e0b1f69e315f768661e0d818ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga6b3b00106c4babb78e84c307ecc3d73c">readNetworkDictCallback</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read in a distant node dictionnary.  <a href="group__sdo.html#ga6b3b00106c4babb78e84c307ecc3d73c">更多...</a><br /></td></tr>
+<tr class="separator:ga6b3b00106c4babb78e84c307ecc3d73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1dde1086506324c8b8c0386f142fba40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">readNetworkDictCallbackAI</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a> index, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> subIndex, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> dataType, <a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a> Callback, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> useBlockMode)</td></tr>
+<tr class="memdesc:ga1dde1086506324c8b8c0386f142fba40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to send a SDO request frame to read in a distant node dictionnary.  <a href="group__sdo.html#ga1dde1086506324c8b8c0386f142fba40">更多...</a><br /></td></tr>
+<tr class="separator:ga1dde1086506324c8b8c0386f142fba40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8a362443447b15446e516130ececfe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#gab8a362443447b15446e516130ececfe4">getReadResultNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, void *data, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *size, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *abortCode)</td></tr>
+<tr class="memdesc:gab8a362443447b15446e516130ececfe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this function after calling readNetworkDict to get the result.  <a href="group__sdo.html#gab8a362443447b15446e516130ececfe4">更多...</a><br /></td></tr>
+<tr class="separator:gab8a362443447b15446e516130ececfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8671e306873f19362c60bb50ab930d1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">getWriteResultNetworkDict</a> (<a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *d, <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> nodeId, <a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *abortCode)</td></tr>
+<tr class="memdesc:ga8671e306873f19362c60bb50ab930d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this function after calling writeNetworkDict function to get the result of the write.  <a href="group__sdo.html#ga8671e306873f19362c60bb50ab930d1d">更多...</a><br /></td></tr>
+<tr class="separator:ga8671e306873f19362c60bb50ab930d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><dl class="section author"><dt>作者</dt><dd>Edouard TISSERANT and Francis DUPIN </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>Tue Jun 5 09:32:32 2007 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a80fb365a327b1fd8fda7f9634832f231" name="a80fb365a327b1fd8fda7f9634832f231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb365a327b1fd8fda7f9634832f231">&#9670;&#160;</a></span>getSDOblockSC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOblockSC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;(byte &amp; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the subcommand in SDO block transfer </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00130">130</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae5a2dafe8497bff1fd88f881ea74414d" name="ae5a2dafe8497bff1fd88f881ea74414d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a2dafe8497bff1fd88f881ea74414d">&#9670;&#160;</a></span>getSDOc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOc</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;(byte &amp; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the indicator of end transmission from the first byte of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00114">114</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ace5a1634ff4089db3b228cdd5010c321" name="ace5a1634ff4089db3b228cdd5010c321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace5a1634ff4089db3b228cdd5010c321">&#9670;&#160;</a></span>getSDOcs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOcs</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;(byte &gt;&gt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the command specifier (cs, ccs, scs) from the first byte of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00094">94</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acf60675f20de8746e279dce3a5c8e3c6" name="acf60675f20de8746e279dce3a5c8e3c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf60675f20de8746e279dce3a5c8e3c6">&#9670;&#160;</a></span>getSDOe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOe</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;((byte &gt;&gt; 1) &amp; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the transfer type from the first byte of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00106">106</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad9b34e26bf67f1251f3bb364756e17f1" name="ad9b34e26bf67f1251f3bb364756e17f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b34e26bf67f1251f3bb364756e17f1">&#9670;&#160;</a></span>getSDOindex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOindex</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((<a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)byte2 &lt;&lt; 8) | ((<a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>)byte1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the index from the bytes 1 and 2 of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adfd3877d80f6b903b491a115e587bd14" name="adfd3877d80f6b903b491a115e587bd14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd3877d80f6b903b491a115e587bd14">&#9670;&#160;</a></span>getSDOn2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOn2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;((byte &gt;&gt; 2) &amp; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of bytes without data from the first byte of the SDO. </p>
+<p >Coded in 2 bits </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00098">98</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae5677ca12bfb71b06cbd6e99e9be0955" name="ae5677ca12bfb71b06cbd6e99e9be0955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5677ca12bfb71b06cbd6e99e9be0955">&#9670;&#160;</a></span>getSDOn3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOn3</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;((byte &gt;&gt; 1) &amp; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of bytes without data from the first byte of the SDO. </p>
+<p >Coded in 3 bits </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00102">102</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af7f9e9bc3d59c9772d4c767b199dcf89" name="af7f9e9bc3d59c9772d4c767b199dcf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f9e9bc3d59c9772d4c767b199dcf89">&#9670;&#160;</a></span>getSDOs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOs</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;(byte &amp; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the size indicator from the first byte of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00110">110</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a52a96f6fa6083f6b291133135b7155a8" name="a52a96f6fa6083f6b291133135b7155a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a96f6fa6083f6b291133135b7155a8">&#9670;&#160;</a></span>getSDOsubIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOsubIndex</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte3</td><td>)</td>
+          <td>&#160;&#160;&#160;(byte3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the subIndex from the byte 3 of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00126">126</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a464b29fd628d92426de0a841232bdd12" name="a464b29fd628d92426de0a841232bdd12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464b29fd628d92426de0a841232bdd12">&#9670;&#160;</a></span>getSDOt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getSDOt</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">byte</td><td>)</td>
+          <td>&#160;&#160;&#160;((byte &gt;&gt; 4) &amp; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the toggle from the first byte of the SDO </p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2eb6f9e0395b47b8d5e3eeae4fe0c116" name="a2eb6f9e0395b47b8d5e3eeae4fe0c116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb6f9e0395b47b8d5e3eeae4fe0c116">&#9670;&#160;</a></span>INLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INLINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab5ce7bd7fe4169a9f709815f03f9870b" name="ab5ce7bd7fe4169a9f709815f03f9870b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ce7bd7fe4169a9f709815f03f9870b">&#9670;&#160;</a></span>NO_INLINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_INLINE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab3938a9884014e96cafc42aeee743c0f" name="ab3938a9884014e96cafc42aeee743c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3938a9884014e96cafc42aeee743c0f">&#9670;&#160;</a></span>RestartSDO_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RestartSDO_TIMER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">id</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3A07, <span class="stringliteral">&quot;restartSDO_TIMER for line : &quot;</span>, line);\</div>
+<div class="line">if(d-&gt;transfers[<span class="keywordtype">id</span>].timer != <a class="code hl_define" href="canopen__timer_8h.html#a2b6cb9007fdee0da2241b4b622110858">TIMER_NONE</a>) { <a class="code hl_define" href="sdo_8c.html#ab90f05aac908e8eee39a34b3e21e0ea9">StopSDO_TIMER</a>(<span class="keywordtype">id</span>) <a class="code hl_define" href="sdo_8c.html#ac1e9eb7a28803b958d298b6997cc60ca">StartSDO_TIMER</a>(<span class="keywordtype">id</span>) }</div>
+<div class="ttc" id="aapplicfg_8h_html_a5f4e5133c4c3113931684d3aba518bba"><div class="ttname"><a href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a></div><div class="ttdeci">#define MSG_WAR(num, str, val)</div><div class="ttdoc">Definition of MSG_WAR</div><div class="ttdef"><b>Definition:</b> <a href="applicfg_8h_source.html#l00082">applicfg.h:82</a></div></div>
+<div class="ttc" id="acanopen__timer_8h_html_a2b6cb9007fdee0da2241b4b622110858"><div class="ttname"><a href="canopen__timer_8h.html#a2b6cb9007fdee0da2241b4b622110858">TIMER_NONE</a></div><div class="ttdeci">#define TIMER_NONE</div><div class="ttdef"><b>Definition:</b> <a href="canopen__timer_8h_source.html#l00039">canopen_timer.h:39</a></div></div>
+<div class="ttc" id="asdo_8c_html_ab90f05aac908e8eee39a34b3e21e0ea9"><div class="ttname"><a href="sdo_8c.html#ab90f05aac908e8eee39a34b3e21e0ea9">StopSDO_TIMER</a></div><div class="ttdeci">#define StopSDO_TIMER(id)</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l00171">sdo.c:171</a></div></div>
+<div class="ttc" id="asdo_8c_html_ac1e9eb7a28803b958d298b6997cc60ca"><div class="ttname"><a href="sdo_8c.html#ac1e9eb7a28803b958d298b6997cc60ca">StartSDO_TIMER</a></div><div class="ttdeci">#define StartSDO_TIMER(id)</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l00175">sdo.c:175</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00179">179</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac1e9eb7a28803b958d298b6997cc60ca" name="ac1e9eb7a28803b958d298b6997cc60ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e9eb7a28803b958d298b6997cc60ca">&#9670;&#160;</a></span>StartSDO_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define StartSDO_TIMER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">id</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3A06, <span class="stringliteral">&quot;StartSDO_TIMER for line : &quot;</span>, line);\</div>
+<div class="line">d-&gt;transfers[id].timer = <a class="code hl_function" href="group__timer.html#ga11c2616d78f06ed9144ef662f757b128">SetAlarm</a>(d,<span class="keywordtype">id</span>,&amp;<a class="code hl_function" href="sdo_8c.html#a9309025e29b59e09026abcd3b45a5b61">SDOTimeoutAlarm</a>,(<a class="code hl_define" href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a>)<a class="code hl_define" href="timerscfg_8h.html#aee85d2eeabff670269ebc2e00251ac6d">MS_TO_TIMEVAL</a>(<a class="code hl_define" href="config_8h.html#a956e31a1db6da1196b002038478a5b15">SDO_TIMEOUT_MS</a>),0);</div>
+<div class="ttc" id="aconfig_8h_html_a956e31a1db6da1196b002038478a5b15"><div class="ttname"><a href="config_8h.html#a956e31a1db6da1196b002038478a5b15">SDO_TIMEOUT_MS</a></div><div class="ttdeci">#define SDO_TIMEOUT_MS</div><div class="ttdef"><b>Definition:</b> <a href="config_8h_source.html#l00035">config.h:35</a></div></div>
+<div class="ttc" id="agroup__timer_html_ga11c2616d78f06ed9144ef662f757b128"><div class="ttname"><a href="group__timer.html#ga11c2616d78f06ed9144ef662f757b128">SetAlarm</a></div><div class="ttdeci">TIMER_HANDLE SetAlarm(CO_Data *d, UNS32 id, TimerCallback_t callback, TIMEVAL value, TIMEVAL period)</div><div class="ttdoc">Set an alarm to execute a callback function when expired.</div><div class="ttdef"><b>Definition:</b> <a href="canopen__timer_8c_source.html#l00057">canopen_timer.c:57</a></div></div>
+<div class="ttc" id="asdo_8c_html_a9309025e29b59e09026abcd3b45a5b61"><div class="ttname"><a href="sdo_8c.html#a9309025e29b59e09026abcd3b45a5b61">SDOTimeoutAlarm</a></div><div class="ttdeci">void SDOTimeoutAlarm(CO_Data *d, UNS32 id)</div><div class="ttdoc">Reset of a SDO exchange on timeout.</div><div class="ttdef"><b>Definition:</b> <a href="sdo_8c_source.html#l00139">sdo.c:139</a></div></div>
+<div class="ttc" id="atimerscfg_8h_html_a6ae11f09e1ebf40f3562857272fab8bf"><div class="ttname"><a href="timerscfg_8h.html#a6ae11f09e1ebf40f3562857272fab8bf">TIMEVAL</a></div><div class="ttdeci">#define TIMEVAL</div><div class="ttdef"><b>Definition:</b> <a href="timerscfg_8h_source.html#l00029">timerscfg.h:29</a></div></div>
+<div class="ttc" id="atimerscfg_8h_html_aee85d2eeabff670269ebc2e00251ac6d"><div class="ttname"><a href="timerscfg_8h.html#aee85d2eeabff670269ebc2e00251ac6d">MS_TO_TIMEVAL</a></div><div class="ttdeci">#define MS_TO_TIMEVAL(ms)</div><div class="ttdef"><b>Definition:</b> <a href="timerscfg_8h_source.html#l00035">timerscfg.h:35</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00175">175</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab90f05aac908e8eee39a34b3e21e0ea9" name="ab90f05aac908e8eee39a34b3e21e0ea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90f05aac908e8eee39a34b3e21e0ea9">&#9670;&#160;</a></span>StopSDO_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define StopSDO_TIMER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">id</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="applicfg_8h.html#a5f4e5133c4c3113931684d3aba518bba">MSG_WAR</a>(0x3A05, <span class="stringliteral">&quot;StopSDO_TIMER for line : &quot;</span>, line);\</div>
+<div class="line">d-&gt;transfers[id].timer = <a class="code hl_function" href="group__timer.html#ga991b3cfaac2f201b14d5530f75985c21">DelAlarm</a>(d-&gt;transfers[<span class="keywordtype">id</span>].timer);</div>
+<div class="ttc" id="agroup__timer_html_ga991b3cfaac2f201b14d5530f75985c21"><div class="ttname"><a href="group__timer.html#ga991b3cfaac2f201b14d5530f75985c21">DelAlarm</a></div><div class="ttdeci">TIMER_HANDLE DelAlarm(TIMER_HANDLE handle)</div><div class="ttdoc">Delete an alarm before expiring.</div><div class="ttdef"><b>Definition:</b> <a href="canopen__timer_8c_source.html#l00103">canopen_timer.c:103</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00171">171</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aeb8bae9faa885c97486d84e951888e4a" name="aeb8bae9faa885c97486d84e951888e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb8bae9faa885c97486d84e951888e4a">&#9670;&#160;</a></span>_readNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sdo_8c.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> _readNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Called by readNetworkDict</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l02147">2147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a77f638cbd9aca7bb67056e0cda945651" name="a77f638cbd9aca7bb67056e0cda945651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f638cbd9aca7bb67056e0cda945651">&#9670;&#160;</a></span>_writeNetworkDict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sdo_8c.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> _writeNetworkDict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>dataType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sdo_8h.html#ad99740725693d0dbd1567df584d5ab6c">SDOCallback_t</a>&#160;</td>
+          <td class="paramname"><em>Callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>endianize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>useBlockMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Called by writeNetworkDict</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">count</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">endianize</td><td></td></tr>
+    <tr><td class="paramname">useBlockMode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">count</td><td></td></tr>
+    <tr><td class="paramname">dataType</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">Callback</td><td></td></tr>
+    <tr><td class="paramname">endianize</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+<p >Normal transfer</p>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l01917">1917</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a555a772d3a88a29c495f33513f8b2d58" name="a555a772d3a88a29c495f33513f8b2d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a555a772d3a88a29c495f33513f8b2d58">&#9670;&#160;</a></span>closeSDOtransfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> closeSDOtransfer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close a transmission. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00596">596</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a50665fc13aa385b1b523013cf9166523" name="a50665fc13aa385b1b523013cf9166523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50665fc13aa385b1b523013cf9166523">&#9670;&#160;</a></span>failedSDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> failedSDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>abortCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called when an internal SDO abort occurs. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">abortCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00418">418</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a83b35f348d36c23421eb1753df96fc33" name="a83b35f348d36c23421eb1753df96fc33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b35f348d36c23421eb1753df96fc33">&#9670;&#160;</a></span>GetSDOClientFromNodeId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> GetSDOClientFromNodeId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>nodeId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">nodeId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>0xFF : No SDO client available 0xFE : Not found otherwise : SDO client number </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l01841">1841</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a58d1f9691977617601beb9e5b4123252" name="a58d1f9691977617601beb9e5b4123252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d1f9691977617601beb9e5b4123252">&#9670;&#160;</a></span>getSDOfreeLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getSDOfreeLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for an unused line in the transfers array to store a new SDO. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00517">517</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3a6660620ea5fb37d311afc3d9a301c2" name="a3a6660620ea5fb37d311afc3d9a301c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6660620ea5fb37d311afc3d9a301c2">&#9670;&#160;</a></span>getSDOlineOnUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getSDOlineOnUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for the line, in the transfers array, which contains the beginning of the reception of a fragmented SDO </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00543">543</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7654021041675c1389fd2d1b590ff7cb" name="a7654021041675c1389fd2d1b590ff7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7654021041675c1389fd2d1b590ff7cb">&#9670;&#160;</a></span>getSDOlineRestBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getSDOlineRestBytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> *&#160;</td>
+          <td class="paramname"><em>nbBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bytes in the line structure which must be transmited (or received) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">nbBytes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00623">623</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a306682ff5ce933d4db07547e467e9057" name="a306682ff5ce933d4db07547e467e9057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306682ff5ce933d4db07547e467e9057">&#9670;&#160;</a></span>getSDOlineToClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> getSDOlineToClose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for the line, in the transfers array, which contains the beginning of the reception of a fragmented SDO </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00570">570</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa570e2c8e69527298b428563a38ced9f" name="aa570e2c8e69527298b428563a38ced9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa570e2c8e69527298b428563a38ced9f">&#9670;&#160;</a></span>initSDOline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> initSDOline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize some fields of the structure. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">state</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00474">474</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2b662491084d03f3ad43d280a45ef23e" name="a2b662491084d03f3ad43d280a45ef23e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b662491084d03f3ad43d280a45ef23e">&#9670;&#160;</a></span>lineToSDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> lineToSDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>nbBytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy data from an existant line in the argument "* data" </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">nbBytes</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00304">304</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a29427a80fd1aeabff30bf0602fbc220f" name="a29427a80fd1aeabff30bf0602fbc220f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29427a80fd1aeabff30bf0602fbc220f">&#9670;&#160;</a></span>objdictToSDOline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> objdictToSDOline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy the data from the object dictionary to the SDO line for a network transfer. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00246">246</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a93a7c780472b1d8666d89aa270f661" name="a2a93a7c780472b1d8666d89aa270f661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a93a7c780472b1d8666d89aa270f661">&#9670;&#160;</a></span>proceedSDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> proceedSDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_message.html">Message</a> *&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Treat a SDO frame reception call the function sendSDO </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">m</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00749">749</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1f4f07eccc4890a11ccf4f632da7740b" name="a1f4f07eccc4890a11ccf4f632da7740b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4f07eccc4890a11ccf4f632da7740b">&#9670;&#160;</a></span>resetSDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetSDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset all SDO buffers. </p>
+<p >Reset all sdo buffers</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00188">188</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a42d33be015d4c4c83c73f1f0e588f481" name="a42d33be015d4c4c83c73f1f0e588f481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d33be015d4c4c83c73f1f0e588f481">&#9670;&#160;</a></span>resetSDOline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetSDOline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset an unused line. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00451">451</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2eb5309dca3a7363da5e5e7230b85d58" name="a2eb5309dca3a7363da5e5e7230b85d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb5309dca3a7363da5e5e7230b85d58">&#9670;&#160;</a></span>SDOlineToObjdict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a> SDOlineToObjdict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy the data received from the SDO line transfer to the object dictionary. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00205">205</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9309025e29b59e09026abcd3b45a5b61" name="a9309025e29b59e09026abcd3b45a5b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9309025e29b59e09026abcd3b45a5b61">&#9670;&#160;</a></span>SDOTimeoutAlarm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDOTimeoutAlarm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset of a SDO exchange on timeout. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00139">139</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5efdbb02d210aad29c6d162600d3ae55" name="a5efdbb02d210aad29c6d162600d3ae55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5efdbb02d210aad29c6d162600d3ae55">&#9670;&#160;</a></span>SDOtoLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> SDOtoLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>nbBytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add data to an existant line </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">nbBytes</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00354">354</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2f61d90737fb951b4b33c05e9b9810d7" name="a2f61d90737fb951b4b33c05e9b9810d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f61d90737fb951b4b33c05e9b9810d7">&#9670;&#160;</a></span>sendSDO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> sendSDO </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> *&#160;</td>
+          <td class="paramname"><em>pData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit a SDO frame on the bus bus_id </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">pData</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00665">665</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8d0032d382891d6804947e9514fe3720" name="a8d0032d382891d6804947e9514fe3720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d0032d382891d6804947e9514fe3720">&#9670;&#160;</a></span>sendSDOabort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> sendSDOabort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>whoami</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>CliServNbr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a5528eeccf214bfe021532622d78c6a96">UNS16</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>subIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>abortCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transmit a SDO error to the client. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">whoami</td><td></td></tr>
+    <tr><td class="paramname">CliServNbr</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">subIndex</td><td></td></tr>
+    <tr><td class="paramname">abortCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00719">719</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7ca56a650c5daaa24c89370f3b3d7bb0" name="a7ca56a650c5daaa24c89370f3b3d7bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca56a650c5daaa24c89370f3b3d7bb0">&#9670;&#160;</a></span>setSDOlineRestBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a> setSDOlineRestBytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data_8h.html#ab5cf1318d7813273cd91a7af56f62142">CO_Data</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a539234687760592d01a8b0d3357bc00e">UNS8</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="applicfg_8h.html#a889a782714194ae2f780002d25d6e0be">UNS32</a>&#160;</td>
+          <td class="paramname"><em>nbBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store in the line structure the nb of bytes which must be transmited (or received) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+    <tr><td class="paramname">line</td><td></td></tr>
+    <tr><td class="paramname">nbBytes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="sdo_8c_source.html">sdo.c</a> 第 <a class="el" href="sdo_8c_source.html#l00642">642</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93501a11e921083efbd154e0cdff5f10.html">packages</a></li><li class="navelem"><a class="el" href="dir_363345b8bff490e1be0f4547894d47a3.html">CanFestival-latest</a></li><li class="navelem"><a class="el" href="dir_d4632e1bc918d1c5a7dfb2721d48edba.html">src</a></li><li class="navelem"><a class="el" href="sdo_8c.html">sdo.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

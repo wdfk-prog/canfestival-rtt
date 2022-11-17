@@ -61,7 +61,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "motor_control.h"
 /* Private includes ----------------------------------------------------------*/
-#include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
 #include <rtthread.h>
@@ -76,100 +75,14 @@
 #include "master402_canopen.h"
 
 /* Private typedef -----------------------------------------------------------*/
-/*0x6040控制指令 Controlword 状态位定义*/
-typedef enum
-{
-  WRITE_SWITCH_ON             = 1 << 0,//按下开关
-  EN_VOLTAGE                  = 1 << 1,//使能电源
-  QUICK_STOP                  = 1 << 2,//急停
-  EN_OPERATION                = 1 << 3,//操作使能
-  FAULT_RESET                 = 1 << 7,//错误重置
-  HALT                        = 1 << 8,//暂停
-}CONTROL_WORD;
-/*0x6041状态位 Statusword定义*/
-typedef enum
-{
-  READY_TO_SWITCH_ON          = 0,//准备功能启动
-  READ_SWITCH_ON              = 1,//伺服准备完成
-  OPERATION_ENABLED           = 2,//伺服使能
-  FAULT                       = 3,//异常信号
-  VOLTAGE_ENABLED             = 4,//伺服输入侧已供电
-  READ_QUICK_STOP             = 5,//紧急停止 [0:开启急停 1:关闭急停]
-  SWITCH_ON_DISABLED          = 6,//伺服准备功能关闭
-  WARNING                     = 7,//警告信号
-  REMOTE                      = 9,//远程控制
-  TARGET_REACHED              = 10,//目标到达
-  POSITIVE_LIMIT              = 14,//正向运转禁止极限
-  NEGATIVE_LIMIT              = 15,//负向运转禁止极限
-}STATUS_WORD;
-/*0X6060 模式设定Modes of operation定义*/
-typedef enum
-{
-  PROFILE_POSITION_MODE       = 1,//位置规划模式
-  PROFILE_VELOCITY_MODE       = 3,//速度规划模式
-  PROFILE_TORQUE_MODE         = 4,//扭矩规划模式
-  HOMING_MODE                 = 6,//原点复归模式
-  INTERPOLATED_POSITION_MODE  = 7,//插补位置模式
-}MODE_OPERATION;
-/*位置规划模式下Controlword操作模式特定位*/
-typedef enum
-{
-  NEW_SET_POINT               = 1 << 4,//命令触发(正缘触发)
-  CHANGE_SET_IMMEDIATELY      = 1 << 5,//命令立即生效指令  设为 0，关闭命令立即生效指令
-  ABS_REL                     = 1 << 6,//更改为绝对定位或相对定位  0，目标位置是一个绝对值 1，目标位置是一个相对值
-}PROFILE_POSITION_CONTROLWORD;
-/*位置规划模式下Statusword定义*/
-typedef enum
-{
-  SET_POINT_ACKNOWLEDGE       = 12,//伺服收到命令信号
-  FOLLOWING_ERROR             = 13,//追随错误
-}PROFILE_POSITION_STATUSWORD;
-/*插补位置模式下Controlword操作模式特定位
-  Name          Value   Description
-Enable ip mode    0     Interpolated position mode inactive 
-                  1     Interpolated position mode active*/
-typedef enum
-{
-   ENABLE_IP_MODE             = 1 << 4,//使能IP模式
-}Interpolated_Position_CONTROLWORD;
-/*插补位置模式下Statusword定义
-    Name        Value   Description
-ip mode active    1     Interpolated position mode active
-*/
-typedef enum
-{
-  IP_MODE_ACTIVE              = 12,//插补位置模式是否生效
-}Interpolated_Position_STATUSWORD;
-/*原点复归模式下Controlword操作模式特定位
-  Name          Value   Description
-Homing          0       Homing mode inactive
-operation       0 → 1  Start homing mode
-star            1       Homing mode active
-                1 → 0  Interrupt homing mode*/
-typedef enum
-{
-  HOMING_OPERATION_STAR       = 1 << 4,//使能IP模式
-}HOMING_CONTROLWORD;
-/*原点复归模式下Statusword定义
-    Name          Value   Description
-Homing attained    0      Homing mode not yet completed.
-                   1      Homing mode carried out successfully
 
-Homing error       0      No homing error
-                   1      Homing error occurred;Homing mode carried out not successfully;The error cause is found by reading the error code
-*/
-typedef enum
-{
-  HOMING_ATTAINED              = 12,//回到原点
-  HOMING_ERROR                 = 13,//回原错误
-}HOMING_STATUSWORD;
 /* Private define ------------------------------------------------------------*/
 /*使用命令延迟去更改操作，不能保证命令已经更改
 更改操作模式，可以使用0X6061查看模式读取保证更改成功
 阻塞线程，判断超时。恢复运行
 */
 #define SYNC_DELAY            rt_thread_mdelay(20)//命令延时
-#define MAX_WAIT_TIME         50                                    //ms
+#define MAX_WAIT_TIME         5000                //ms
 
 /*0X6040 控制指令 Controlword 状态宏*/
 //伺服 Servo Off
@@ -216,7 +129,7 @@ Map_Val_INTEGER32 Position_actual_value_Node[] = {
 {&Position_actual_value,0x6064},
 {&NODE3_Position_actual_value_6064,0x2004},};		/* Mapped at index 0x6064, subindex 0x00*/
 Map_Val_INTEGER32 Velocity_actual_value_Node[] = {
-{&Velocity_actual_value,0x6064},
+{&Velocity_actual_value,0x606C},
 {&NODE3_Velocity_actual_value_0x606C,0x2005},};		/* Mapped at index 0x606C, subindex 0x00 */
 /* Private function prototypes -----------------------------------------------*/
 /**
@@ -255,7 +168,7 @@ static UNS8 block_query_BIT_change(UNS16 *value,UNS8 bit,uint16_t timeout,uint16
   * @retval 成功返回0X00,失败返回0XFF
   * @note   None
 */
-static UNS8 motor_on_profile_position(UNS8 nodeId)
+UNS8 motor_on_profile_position(UNS8 nodeId)
 {
   NODE_DECISION;
   *Target_position_Node[nodeId - 2].map_val = 0;
@@ -274,7 +187,7 @@ static UNS8 motor_on_profile_position(UNS8 nodeId)
   * @retval 成功返回0X00,失败返回0XFF
   * @note   None
 */
-static UNS8 motor_on_interpolated_position(UNS8 nodeId)
+UNS8 motor_on_interpolated_position(UNS8 nodeId)
 {
   NODE_DECISION;
   pos_cmd1 = *Position_actual_value_Node[nodeId - 2].map_val;
@@ -298,7 +211,7 @@ static UNS8 motor_on_interpolated_position(UNS8 nodeId)
   * @retval 成功返回0X00,失败返回0XFF
   * @note   None
 */
-static UNS8 motor_on_homing_mode(int32_t offset,uint8_t method,float switch_speed,float zero_speed,UNS8 nodeId)
+UNS8 motor_on_homing_mode(int32_t offset,uint8_t method,float switch_speed,float zero_speed,UNS8 nodeId)
 {
   NODE_DECISION;
   FAILED_EXIT(Write_SLAVE_Modes_of_operation(nodeId,HOMING_MODE));
@@ -306,7 +219,7 @@ static UNS8 motor_on_homing_mode(int32_t offset,uint8_t method,float switch_spee
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SHUTDOWN | FAULT_RESET));
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SWITCH_ON));
 	FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION));
-
+  SYNC_DELAY;//延时给驱动器响应时间，以免太快发送触发命令导致驱动器未响应
   return 0x00;
 }
 /**
@@ -325,7 +238,7 @@ rfg unlock      0     Ramp output value is locked to current output value.
                 1     Ramp output value follows ramp input value.
 rfg use ref     0     Ramp input value is set to zero.
                 1     Ramp input value accords to ramp reference.*/
-static UNS8 motor_on_profile_velocity(UNS8 nodeId)
+UNS8 motor_on_profile_velocity(UNS8 nodeId)
 {
   NODE_DECISION;
   *Target_velocity_Node[nodeId - 2].map_val = 0;
@@ -346,7 +259,7 @@ static UNS8 motor_on_profile_velocity(UNS8 nodeId)
   * @param  abs_rel:    运动模式。 设为0，绝对运动模式；设为1，相对运动模式
   * @param  immediately:命令立即生效指令。 设为 0，关闭命令立即生效指令 1，立刻生效，即未到达目标位置也可执行下次运动
   * @param  nodeId:节点ID
-  * @retval 成功返回0X00,失败返回0XFF
+  * @retval 成功返回0X00,模式错误返回0XFF.超时返回0XFE
   * @note   可以重复此函数用来控制电机运动不同位置。 置一od 0x2124开启S型加减速
   最大速度限制      607Fh 默认值 3000rpm
   软件正向极限      607Dh 默认值 2147483647
@@ -365,13 +278,13 @@ static UNS8 motor_on_profile_velocity(UNS8 nodeId)
   当位置误差 (60F4h) 超过此设定范围时，伺服即跳异警 AL009位置误差过大。 
   位置误差警告条件  6065h:默认值50331648PUU //50331648 / 16777216 = 3
   */
-static UNS8 motor_profile_position(int32_t position,uint32_t speed,bool abs_rel,bool immediately,UNS8 nodeId)
+UNS8 motor_profile_position(int32_t position,int16_t speed,bool abs_rel,bool immediately,UNS8 nodeId)
 {
   NODE_DECISION;
   UNS16 value = 0;
   if(*Modes_of_operation_Node[nodeId - 2].map_val != PROFILE_POSITION_MODE)
   {
-    LOG_W("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
+    LOG_D("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
     return 0XFF;
   }
 
@@ -401,7 +314,17 @@ static UNS8 motor_profile_position(int32_t position,uint32_t speed,bool abs_rel,
 
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,value));
 
-  return 0X00;
+  *Statusword_Node[nodeId - 2].map_val = 0;//清除本地数据
+  if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,TARGET_REACHED,MAX_WAIT_TIME,1) != 0x00)
+  {
+    LOG_W("Motor runing time out");
+    return 0XFE;
+  }
+  else
+  {
+    LOG_I("Completion of motor movement");
+    return 0X00;
+  }
 }
 /**
   * @brief  控制电机以插补位置模式运动
@@ -409,12 +332,12 @@ static UNS8 motor_profile_position(int32_t position,uint32_t speed,bool abs_rel,
   * @retval 成功返回0X00,失败返回0XFF.
   * @note   None
 */
-static UNS8 motor_interpolation_position (UNS8 nodeId)
+UNS8 motor_interpolation_position (UNS8 nodeId)
 {
   NODE_DECISION;
   if(*Modes_of_operation_Node[nodeId - 2].map_val != INTERPOLATED_POSITION_MODE)
   {
-    LOG_W("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
+    LOG_D("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
     return 0XFF;
   }
   /* State Transition 3: IP-MODE INACTIVE => IP-MODE ACTIVE
@@ -428,48 +351,60 @@ static UNS8 motor_interpolation_position (UNS8 nodeId)
 /**
   * @brief  控制电机进入原点复归模式
   * @param  zero_flag：0，无需返回0点位置。 zero_flag：1，返回0点位置
+  * @param  speed: 回零速度    单位RPM
   * @param  nodeId:节点ID
-  * @retval 成功返回0X00,失败返回0XFF.
+  * @retval 成功返回0X00,
+  * 模式错误返回0XFF.
+  * 超时返回0XFE.
+  * 设置回零未设置偏移值返回0XFD
   * @note   None
 */
-static UNS8 motor_homing_mode (bool zero_flag,UNS8 nodeId)
+UNS8 motor_homing_mode (bool zero_flag,int16_t speed,UNS8 nodeId)
 {
   NODE_DECISION;
   if(*Modes_of_operation_Node[nodeId - 2].map_val != HOMING_MODE)
   {
-    LOG_W("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
+    LOG_D("Motion mode selection error, the current motion mode is %d",*Modes_of_operation_Node[nodeId - 2].map_val);
     return 0xFF;
   }
   //由于命令触发是正缘触发，因此必须先将 Bit 4切为 off
-  FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION));
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION | NEW_SET_POINT));//由于命令触发是正缘触发，Bit 4切为再切至 on。 
   LOG_I("Motor runing homing");
-  if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,HOMING_ATTAINED,5000,1) != 0x00)
+
+  *Statusword_Node[nodeId - 2].map_val = 0;//清除本地数据
+  if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,HOMING_ATTAINED,MAX_WAIT_TIME,1) != 0x00)
   {
     LOG_W("Motor runing homing time out");
-    return 0XFF;
+    return 0XFE;
   }
   else
   {
     LOG_I("Motor return to home is complete");
   }
-  //回到零点
+
   if(zero_flag == true && Home_offset != 0)
   {
     LOG_I("The motor is returning to zero");
     motor_on_profile_position(nodeId);
-    FAILED_EXIT(motor_profile_position(0,60,0,0,nodeId));
+    FAILED_EXIT(motor_profile_position(0,speed,0,0,nodeId));
 
-    if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,TARGET_REACHED,5000,1) != 0x00)
+    *Statusword_Node[nodeId - 2].map_val = 0;//清除本地数据
+    if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,TARGET_REACHED,MAX_WAIT_TIME,1) != 0x00)
     {
       LOG_W("Motor runing zero time out");
+      return 0XFE;
     }
     else
     {
       LOG_I("Motor return to zero is complete");
     }
   }
-  
+  else if (zero_flag == true && Home_offset == 0)
+  {
+      LOG_W("The offset value is not set");
+      return 0XFD;
+  }
+
   return 0;
 }
 /**
@@ -479,7 +414,7 @@ static UNS8 motor_homing_mode (bool zero_flag,UNS8 nodeId)
   * @retval 成功返回0X00,失败返回0XFF
   * @note   可以重复此函数用来控制电机运动不同位置。 置一od 0x2124开启S型加减速
   */
-static UNS8 motor_profile_velocity(uint32_t speed,UNS8 nodeId)
+UNS8 motor_profile_velocity(int16_t speed,UNS8 nodeId)
 {
   NODE_DECISION;
   UNS16 value = 0;
@@ -501,13 +436,85 @@ static UNS8 motor_profile_velocity(uint32_t speed,UNS8 nodeId)
   * @note   可以用来急停
   急停减速时间斜率  6085h 默认值 200ms [3000 rpm减速到 0    rpm所需要的时间]
 */
-static UNS8 motor_off(UNS8 nodeId)
+UNS8 motor_off(UNS8 nodeId)
 {
   NODE_DECISION;
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SHUTDOWN | FAULT_RESET));
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_DISABLE_VOLTAGE));
   FAILED_EXIT(Write_SLAVE_Modes_of_operation(nodeId,0));//清除模式选择
   return 0x00;
+}
+/**
+  * @brief  获取当前节点电机控制指令Controlword
+  * @param  nodeId:节点ID
+  * @retval 获取成功返回Controlword，失败返回0。
+  * @note   None.
+*/
+UNS16 motor_get_controlword(UNS8 nodeId)
+{
+  if(nodeId == MASTER_NODEID || nodeId > MAX_NODE_COUNT || nodeId == 0)
+  {
+    return 0;
+  }
+  return *Controlword_Node[nodeId - 2].map_val;
+}
+/**
+  * @brief  获取当前节点电机状态位statusword
+  * @param  nodeId:节点ID
+  * @retval 获取成功返回statusword，失败返回0。
+  * @note   None.
+*/
+UNS16 motor_get_statusword(UNS8 nodeId)
+{
+  if(nodeId == MASTER_NODEID || nodeId > MAX_NODE_COUNT || nodeId == 0)
+  {
+    return 0;
+  }
+  return *Statusword_Node[nodeId - 2].map_val;
+}
+/**
+  * @brief  获取当前节点电机反馈位置
+  * @param  des:目标地址
+  * @param  nodeId:节点ID
+  * @retval 目标地址
+  * @note   若输入节点ID不正确，将返回空指针
+*/
+INTEGER32 *motor_get_position(INTEGER32* des,UNS8 nodeId)
+{ 
+  if(des == NULL)
+    return RT_NULL;
+
+  if(nodeId == MASTER_NODEID || nodeId > MAX_NODE_COUNT || nodeId == 0)
+  {
+    return RT_NULL;
+  }
+  else
+  {
+    *des = *Position_actual_value_Node[nodeId - 2].map_val;
+    return des;
+  }
+}
+/**
+  * @brief  获取当前节点电机反馈速度
+  * @param  des:目标地址
+  * @param  nodeId:节点ID
+  * @retval 目标地址
+  * @note   若输入节点ID不正确，将返回空指针
+*/
+INTEGER32 *motor_get_velocity(INTEGER32* des,UNS8 nodeId)
+{
+  if(des == NULL)
+    return RT_NULL;
+
+  if(nodeId == MASTER_NODEID || nodeId > MAX_NODE_COUNT || nodeId == 0)
+  {
+    return RT_NULL;
+  }
+  else
+  {
+    *des = *Velocity_actual_value_Node[nodeId - 2].map_val;
+    return des;
+  }
 }
 /**
   * @brief  查询电机状态.
@@ -528,8 +535,8 @@ static UNS8 motor_off(UNS8 nodeId)
 static void motor_state(UNS8 nodeId)
 {
   LOG_I("Mode operation:%d",*Modes_of_operation_Node[nodeId - 2].map_val);
-	LOG_I("ControlWord 0x%0X", *Controlword_Node[nodeId - 2].map_val);
-  LOG_I("StatusWord 0x%0X", *Statusword_Node[nodeId - 2].map_val);
+	LOG_I("ControlWord 0x%4.4X", *Controlword_Node[nodeId - 2].map_val);
+  LOG_I("StatusWord 0x%4.4X", *Statusword_Node[nodeId - 2].map_val);
   
   if(CANOPEN_GET_BIT(*Statusword_Node[nodeId - 2].map_val , FAULT))
     LOG_E("motor fault!");
@@ -726,7 +733,7 @@ static void cmd_motor(uint8_t argc, char **argv)
                 immediately = atoi(argv[6]);
             }
 
-            rt_kprintf("move to position: %d, speed: %d\n", position, speed);
+            rt_kprintf("nodeId %d,move to position: %d, speed: %d\n",nodeId, position, speed);
             rt_kprintf("abs_rel: %d, immediately: %d\n", abs_rel, immediately);
             motor_profile_position(position,speed,abs_rel,immediately,nodeId);
         }
@@ -743,9 +750,11 @@ static void cmd_motor(uint8_t argc, char **argv)
         {
             bool zero_flag = false;
             UNS16 nodeId = DEFAULT_NODE;
+            int16_t speed = 60;
+
             if(argc <= 2) 
             {
-                rt_kprintf("Usage: motor hm_move [zero] <nodeId> --homing move zero:1,run zero postion\n");
+                rt_kprintf("Usage: motor hm_move [zero] <nodeId> <speed> --homing move zero:1,run zero postion and speed\n");
                 return;
             }
             zero_flag = atoi(argv[2]);
@@ -753,7 +762,11 @@ static void cmd_motor(uint8_t argc, char **argv)
             {
                 nodeId = atoi(argv[3]);
             }
-            motor_homing_mode(zero_flag,nodeId);
+            if(argc > 4) 
+            {
+                speed = atoi(argv[4]);
+            }
+            motor_homing_mode(zero_flag,speed,nodeId);
         }
         else if (!strcmp(operator, "pv_move"))
         {
