@@ -17,14 +17,12 @@ Forked from the CanFestival-3 project https://bitbucket.org/Mongo/canfestival-3-
   3. Master402中进行修改大量修改
 
      - 单个支持SDO命令，源代码仅支持switch循环执行
-
      - 对不需要频繁读写变量改用pdo传输
-
      - 添加DS402支持的运动模式，PP,PV,HM
      - 增加CMD命令支持节点NMT状态查看，电机运动控制及反馈
      - 对节点掉线、掉电、总线断线、短路等通信异常情况进行处理。保证通信系统稳定、节点可重新恢复通信
-     - 添加doxygen生成API手册 路径：\DOXYGEN\CanFestival RTT\html\index.html
-
+     - 添加doxygen生成API手册
+     
      
 
 - 源代码介绍 https://github.com/gbcwbz/canfestival-rtt
