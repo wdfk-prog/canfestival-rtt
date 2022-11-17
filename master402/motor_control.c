@@ -1,62 +1,15 @@
-#include <stdint.h>
-/* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : 
-  * @brief          : 
-  * @date           :
-  ******************************************************************************
-  * @attention
-1  Profile Position Mode (位置规划模式) 
-  1. 设定模式，OD 6060h = 01h，为位置控制模式。 
-  2. 设定目标位置，OD 607Ah (单位：PUU)。 
-  PUU(Pulse of User Unit),此单位为经过电子齿轮比例缩放的量
-  3. 设定速度命令，OD 6081h (单位：PUU/sec)。 //有默认值
-  4. 设定加速度时间斜率，OD 6083h (单位：ms)。//有默认值
-  5. 设定减速度时间斜率，OD 6084h (单位：ms)。//有默认值
-  6. 设定控制指令，OD 6040h，请依照以下步骤操作。步骤 6.1与 6.2是为了使驱动器 
-  的状态机 (state machine) 进入准备状态。状态机说明请详见章节 12.4的 OD 6040h
-  说明。 
-  步骤  说明 
-  6.1  Shutdown (关闭) 
-  6.2  Switch on (伺服 Servo On准备) 
-  6.3  Enable Operation (伺服 Servo On) 
-  6.4  命令触发 (正缘触发) 1 1 1 1 1【bit0~bit4】
-  bit位  名称          值   说明
-  4      新设定点      0     没有承担目标位置
-                       1     假设目标位置
-  5      立即更改设定  0     完成实际定位，然后开始下一个定位
-                       1     中断实际定位，开始下一个定位
-  6      abs / rel     0     目标位置是一个绝对值
-                       1     目标位置是一个相对值
-  7      停止          0     执行定位
-                       1     带轮廓减速的停止轴(如果没有轮廓加速支持)
-  7. 在完成第一段运动命令后，若需要执行下一段运动命令需再设定目标位置、速度等 
-  条件。 
-  8. 设定控制指令，OD 6040h。由于命令触发是正缘触发，因此必须先将 Bit 4切为 off
-  再切至 on。 
-  步骤  说明 
-  8.1   Enable Operation (伺服 Servo On) 
-  8.2   命令触发 (正缘触发) 
-  读取驱动器信息： 
-  1. 读取 OD 6064h取得目前电机回授位置。 
-  2. 读取 OD 6041h取得驱动器的状态，包括 following error (追随误差)、set-point 
-  acknowledge (收到命令通知) 与 target reached (到达目标通知)
-  * @author
-  台达A3电机设置为CANOPEN模式
-  1.恢复出厂设置
-  用户可依下列步骤连接 CANopen上位机与 ASDA-A3伺服驱动器： 
-  1. 设定 CANopen模式：将参数 P1.001设为 0x0C。 
-  2. 设定节点 ID，将 P3.000范围设为 01h ~ 7Fh。 
-  3. 将参数 P3.001设为 0403h，P3.001.Z设定鲍率 1 Mbps (0：125 Kbps； 
-  1：250 Kbps；2：500 Kbps；3：750 Kbps；4：1 Mbps)。 
-  4. 建议将 P3.012设定为0x0100，以实现将下表参数断电保持的功能。 
-  在驱动器重新上下电或是进行通讯重置后，下表的 P参数会维持本来的设定，
-  不会加载 CANopen / DMCNET / EtherCAT参数的数值。
-  5. 建议开启动态抱闸功能，P1.032 = 0x0000。
-  6. 重新设置电子齿轮比 16777216 / 100000
-  ******************************************************************************
-  */
+ * @file motor_control.c
+ * @brief 
+ * @author HLY (1425075683@qq.com)
+ * @version 1.0
+ * @date 2022-11-17
+ * @copyright Copyright (c) 2022
+ * @attention 
+ * @par 修改日志:
+ * Date       Version Author  Description
+ * 2022-11-17 1.0     HLY     first version
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "motor_control.h"
@@ -65,6 +18,7 @@
 #include <math.h>
 #include <rtthread.h>
 #include <rtdevice.h>
+#include <stdint.h>
 #ifdef RT_USING_FINSH
 #include <finsh.h>
 #endif

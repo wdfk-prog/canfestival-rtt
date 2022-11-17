@@ -1,15 +1,15 @@
-/* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : 
-  * @brief          : 
-  * @date           :
-  ******************************************************************************
-  * @attention
-  * @author
-  ******************************************************************************
-  */
-/* USER CODE END Header */
+ * @file timer_rtthread.c
+ * @brief 
+ * @author HLY (1425075683@qq.com)
+ * @version 1.0
+ * @date 2022-11-17
+ * @copyright Copyright (c) 2022
+ * @attention 
+ * @par –ﬁ∏ƒ»’÷æ:
+ * Date       Version Author  Description
+ * 2022-11-17 1.0     HLY     first version
+ */
 /* Includes ------------------------------------------------------------------*/
 #include "canfestival.h"
 #include "canopen_timer.h"

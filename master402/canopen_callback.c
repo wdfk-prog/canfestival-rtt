@@ -19,24 +19,21 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-/* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : 
-  * @brief          : 
-  * @date           :
-  ******************************************************************************
-  * @attention
-  * 异常处理
-  * 
+ * @file master402_canopen.h
+ * @brief 
+ * @author HLY (1425075683@qq.com)
+ * @version 1.0
+ * @date 2022-11-17
+ * @copyright Copyright (c) 2022
+ * @attention 异常处理
   * CAN线短路，阻塞当前线程，等待短路恢复
-  *
   * MCU 初始化时:CAN总线断开[已处理] 单节点掉线[已处理] 多节点掉线[已处理] 单节点掉电[暂时无法测试] 多节点掉电[已处理]
   * MCU 操作态时:CAN总线断开[已处理] 单节点掉线[已处理] 多节点掉线[已处理] 单节点掉电[暂时无法测试] 多节点掉电[已处理]
-  * @author
-  ******************************************************************************
-  */
-/* USER CODE END Header */
+ * @par 修改日志:
+ * Date       Version Author  Description
+ * 2022-11-17 1.0     HLY     first version
+ */
 /* Includes ------------------------------------------------------------------*/
 #include "canopen_callback.h"
 /* Private includes ----------------------------------------------------------*/
