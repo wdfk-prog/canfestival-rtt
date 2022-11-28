@@ -21,7 +21,7 @@
 #include <stdint.h>
 #ifdef RT_USING_FINSH
 #include <finsh.h>
-#endif
+#endif /*RT_USING_FINSH*/
 
 #include "canfestival.h"
 #include "timers_driver.h"
@@ -132,7 +132,7 @@ UNS8 motor_on_profile_position(UNS8 nodeId)
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SHUTDOWN | FAULT_RESET));
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SWITCH_ON));
 	FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION));
-
+  SYNC_DELAY;//延时给驱动器响应时间，以免太快发送触发命令导致驱动器未响应
   return 0x00;
 }
 /**
@@ -153,14 +153,15 @@ UNS8 motor_on_interpolated_position(UNS8 nodeId)
   Event: Enter in the state OPERATION ENABLE with controlword and select ip 
   mode with modes of operation*/
 //  FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION));
+  SYNC_DELAY;//延时给驱动器响应时间，以免太快发送触发命令导致驱动器未响应
   return 0X00;
 }
 /**
   * @brief  控制电机使能并选择原点复位模式
   * @param  offest:原点偏移值 单位:PUU [注意:只是把原点偏移值点当为0坐标点，并不会运动到0坐标点处]
   * @param  method:回原方式   范围:0 ~ 35
-  * @param  switch_speed:寻找原点开关速度 设定范围 0.1 ~ 200 默认值 10  单位rpm 精度:小数点后一位
-  * @param  zero_speed:寻找 Z脉冲速度     设定范围 0.1 ~ 50  默认值 2   单位rpm 精度:小数点后一位
+  * @param  switch_speed:寻找原点开关速度 设定范围 0.1 ~ 200 默认值 100  单位rpm 精度:小数点后一位
+  * @param  zero_speed:寻找 Z脉冲速度     设定范围 0.1 ~ 50  默认值 20   单位rpm 精度:小数点后一位
   * @param  nodeId:节点ID
   * @retval 成功返回0X00,失败返回0XFF
   * @note   None
@@ -202,7 +203,7 @@ UNS8 motor_on_profile_velocity(UNS8 nodeId)
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SHUTDOWN | FAULT_RESET));
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_SWITCH_ON));
 	FAILED_EXIT(Write_SLAVE_control_word(nodeId,CONTROL_WORD_ENABLE_OPERATION));
-  
+  SYNC_DELAY;//延时给驱动器响应时间，以免太快发送触发命令导致驱动器未响应
   return 0x00;
 }
 /******************************运动模式操作函数******************************************************************/
@@ -232,7 +233,7 @@ UNS8 motor_on_profile_velocity(UNS8 nodeId)
   当位置误差 (60F4h) 超过此设定范围时，伺服即跳异警 AL009位置误差过大。 
   位置误差警告条件  6065h:默认值50331648PUU //50331648 / 16777216 = 3
   */
-UNS8 motor_profile_position(int32_t position,int16_t speed,bool abs_rel,bool immediately,UNS8 nodeId)
+UNS8 motor_profile_position(int32_t position,float speed,bool abs_rel,bool immediately,UNS8 nodeId)
 {
   NODE_DECISION;
   UNS16 value = 0;
@@ -268,17 +269,21 @@ UNS8 motor_profile_position(int32_t position,int16_t speed,bool abs_rel,bool imm
 
   FAILED_EXIT(Write_SLAVE_control_word(nodeId,value));
 
-  *Statusword_Node[nodeId - 2].map_val = 0;//清除本地数据
-  if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,TARGET_REACHED,MAX_WAIT_TIME,1) != 0x00)
+  if(immediately == false)
   {
-    LOG_W("Motor runing time out");
-    return 0XFE;
+    *Statusword_Node[nodeId - 2].map_val = 0;//清除本地数据
+    if(block_query_BIT_change(Statusword_Node[nodeId - 2].map_val,TARGET_REACHED,MAX_WAIT_TIME,1) != 0x00)
+    {
+      LOG_W("Motor runing time out");
+      return 0XFE;
+    }
+    else
+    {
+      LOG_D("Completion of motor movement");
+      return 0X00;
+    }
   }
-  else
-  {
-    LOG_I("Completion of motor movement");
-    return 0X00;
-  }
+  return 0X00;
 }
 /**
   * @brief  控制电机以插补位置模式运动
@@ -750,4 +755,4 @@ static void cmd_motor(uint8_t argc, char **argv)
     }
 }
 MSH_CMD_EXPORT_ALIAS(cmd_motor,motor,motor command.);
-#endif
+#endif /*RT_USING_MSH*/
