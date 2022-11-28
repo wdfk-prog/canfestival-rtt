@@ -341,6 +341,11 @@ static void master402_fix_config_err_thread_entry(void* parameter)
       LOG_I("nodeID:%d,Restart the node after the node is shut down",nodeId);
       return; //删除线程
     }
+    else if(now == Operational)//节点上电较慢
+    {
+      LOG_I("nodeID:%d,The node is powered on slowly. Therefore, no operation is required to exit the thread",nodeId);
+      return; //删除线程
+    }
     else
     {
       masterRequestNodeState(OD_Data,nodeId);//发送Node Guarding Request命令查询节点状态
