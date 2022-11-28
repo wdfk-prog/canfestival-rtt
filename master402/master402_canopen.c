@@ -34,6 +34,16 @@ typedef struct
 {
   uint8_t nodeID;
   char name[RT_NAME_MAX];
+  /**
+   * @brief 电机配置结构体
+   * @note  numerator:  运动一圈所需脉冲数
+   *        denominator:电机编码器分辨率
+   */
+  struct
+  {
+    uint32_t numerator;   //电子齿轮比分子 
+    uint32_t denominator; //电子齿轮比分母
+  }config;                //电机配置      
   e_nodeState *nmt_state;
 }node_list;
 /* 
@@ -71,8 +81,9 @@ CO_Data *OD_Data = &master402_Data;
 static node_list can_node[MAX_NODE_COUNT - 1] = 
 {
   {MASTER_NODEID,   "master",},
-  {SERVO_NODEID_1,    "walk",},
-  {SERVO_NODEID_2,    "turn",},
+  //节点ID          节点名字  电机运动一圈脉冲数  电机编码器分辨率
+  {SERVO_NODEID_1,    "walk",     100000,        16777216},
+  {SERVO_NODEID_2,    "turn",     100000,        16777216},
 };
 
 static s_BOARD agv_board  = {CANFESTIVAL_CAN_DEVICE_NAME,"1M"};//没用,兼容CANFESTIVAL
@@ -97,7 +108,7 @@ static void InitNodes(CO_Data* d, UNS32 id)
   * @retval None
   * @note   
 */
-static int canopen_init(void)
+int canopen_init(void)
 {
   OD_Data->heartbeatError = master402_heartbeatError;
 	OD_Data->initialisation = master402_initialisation;
@@ -125,9 +136,11 @@ static int canopen_init(void)
   }
   can_node[0].nmt_state = &OD_Data->nodeState;
 
+  
+
 	return RT_EOK;
 }
-INIT_APP_EXPORT(canopen_init);
+
 /**
   * @brief  None
   * @param  None
@@ -262,6 +275,30 @@ char* nodeID_get_errSpec(char* des,uint8_t nodeID)
     }
   }
 }
+/**
+ * @brief   获取节点配置信息
+ * @param  nodeID           
+ * @retval motor_config* 
+ */
+motor_config* nodeID_get_config(motor_config* des,uint8_t nodeID)
+{
+  motor_config *p = des;
+
+  if(des == NULL)
+    return RT_NULL;
+
+  if(nodeID == MASTER_NODEID || nodeID > MAX_NODE_COUNT || nodeID == 0)
+  {
+    return RT_NULL;
+  }
+  else
+  {
+    p->denominator =  slave_conf[nodeID - 2].list->config.denominator;
+    p->numerator = slave_conf[nodeID - 2].list->config.numerator;
+  }
+
+  return p;
+}
 #ifdef RT_USING_MSH
 /**
   * @brief  打印节点状态
@@ -273,27 +310,27 @@ static void printf_state(e_nodeState state)
 {
   switch(state)
   {
-    case Initialisation:
-      rt_kprintf("Initialisation");
-      break;
-    case Stopped:
-      rt_kprintf("Stopped");
-      break;
-    case Operational:
-      rt_kprintf("Operational");
-      break;
-    case Pre_operational:
-      rt_kprintf("Pre_operational");
-      break;
-    case Disconnected:
-      rt_kprintf("Disconnected");
-      break;   
-    case Unknown_state:
-      rt_kprintf("Unknown_state");
-      break;
-    default:
-      rt_kprintf("%d",state);
-      break;
+  case Initialisation:
+    rt_kprintf("Initialisation");
+    break;
+  case Stopped:
+    rt_kprintf("Stopped");
+    break;
+  case Operational:
+    rt_kprintf("Operational");
+    break;
+  case Pre_operational:
+    rt_kprintf("Pre_operational");
+    break;
+  case Disconnected:
+    rt_kprintf("Disconnected");
+    break;   
+  case Unknown_state:
+    rt_kprintf("Unknown_state");
+    break;
+  default:
+    rt_kprintf("%d",state);
+    break;
   }
 }
 /**
@@ -448,7 +485,7 @@ static void cmd_canopen_nmt(uint8_t argc, char **argv)
     }
 }
 MSH_CMD_EXPORT_ALIAS(cmd_canopen_nmt,canopen_nmt,canoepn nmt cmd.);
-#endif
+#endif /*RT_USING_MSH*/
 /***********************预操作状态函数**************************************************/
 /**
   * @brief  配置参数完成回调
@@ -929,12 +966,12 @@ UNS8 Write_SLAVE_control_word(UNS8 nodeId,UNS16 value)
   * @retval 成功返回0X00,失败返回0XFF
   * @note   Profile_velocity 单位PUU/s 设定范围 UNSIGNED32 默认值 10000
 */
-UNS8 Write_SLAVE_profile_position_speed_set(UNS8 nodeId,UNS32 speed)
+UNS8 Write_SLAVE_profile_position_speed_set(UNS8 nodeId,float speed)
 {
   UNS8 errcode = 0;
   //参数写入本地字典
   if(0 <= speed && speed <= 3000)
-    Profile_velocity = speed * ELECTRONIC_GEAR_RATIO_NUMERATOR / 60;//
+    Profile_velocity = speed * slave_conf[nodeId - 2].list->config.numerator / 60;//RPM单位转换为PUU/s
   else
   {
     LOG_E("The Profile_velocity is out of range. Select a value from 0 to 3000");
