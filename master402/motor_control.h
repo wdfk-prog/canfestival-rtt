@@ -154,7 +154,7 @@ extern UNS8 motor_on_interpolated_position(UNS8 nodeId);
 extern UNS8 motor_on_homing_mode(int32_t offset,uint8_t method,float switch_speed,float zero_speed,UNS8 nodeId);
 extern UNS8 motor_on_profile_velocity(UNS8 nodeId);
 /******************************运动模式操作函数******************************************************************/
-extern UNS8 motor_profile_position(int32_t position,int16_t speed,bool abs_rel,bool immediately,UNS8 nodeId);
+extern UNS8 motor_profile_position(int32_t position,float speed,bool abs_rel,bool immediately,UNS8 nodeId);
 extern UNS8 motor_interpolation_position (UNS8 nodeId);
 extern UNS8 motor_homing_mode (bool zero_flag,int16_t speed,UNS8 nodeId);
 extern UNS8 motor_profile_velocity(int16_t speed,UNS8 nodeId);
