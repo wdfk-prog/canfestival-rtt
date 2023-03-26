@@ -90,6 +90,20 @@ static s_BOARD agv_board  = {CANFESTIVAL_CAN_DEVICE_NAME,"1M"};//没用,兼容CANFES
 static node_config_state slave_conf[MAX_NODE_COUNT - 2];//配置状态
 /* Private function prototypes -----------------------------------------------*/
 static void config_node_param(uint8_t nodeId, node_config_state *conf);
+/**
+  * @brief  判断整数的位数
+  * @param  long n:数字
+  * @retval 位数.
+  * @note   https://blog.csdn.net/qq_40757240/article/details/85727578
+*/
+int Bit_Int_2(long n)
+{
+	if(n==0)
+		return 1;
+	else
+		return log10(abs(n))+1;//求整数的位数
+	//例如  1234  lgx+1;
+}
 /***********************初始化操作状态函数**************************************************/
 /**
   * @brief  初始节点

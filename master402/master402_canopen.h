@@ -40,7 +40,16 @@ typedef enum
   NODEID_CONFIG_NO_RESPOND,   //配置回复未响应，节点字典出错
   NODEID_CONFIG_NO_SEND,      //配置未发送,本地字典出错
 }NODEID_ERRCODE;
-
+/**
+ * @brief 电机配置结构体
+ * @note  numerator:  运动一圈所需脉冲数
+ *        denominator:电机编码器分辨率
+ */
+typedef struct
+{
+  uint32_t numerator;   //电子齿轮比分子 
+  uint32_t denominator; //电子齿轮比分母
+}motor_config;
 /* Exported constants --------------------------------------------------------*/
 #define MASTER_NODEID 	  1//控制器ID
 #define PDO_TRANSMISSION_TYPE 1//PDO传输类型
