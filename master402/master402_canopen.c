@@ -27,37 +27,7 @@
 
 #include "motor_control.h"
 /* Private typedef -----------------------------------------------------------*/
-/* 
- * 节点链表
-*/
-typedef struct
-{
-  uint8_t nodeID;
-  char name[RT_NAME_MAX];
-  /**
-   * @brief 电机配置结构体
-   * @note  numerator:  运动一圈所需脉冲数
-   *        denominator:电机编码器分辨率
-   */
-  struct
-  {
-    uint32_t numerator;   //电子齿轮比分子 
-    uint32_t denominator; //电子齿轮比分母
-  }config;                //电机配置      
-  e_nodeState *nmt_state;
-}node_list;
-/* 
- * 节点配置状态结构体
-*/
-typedef struct 
-{
-  node_list *list;
-	uint8_t state;
-	uint8_t try_cnt;
-  uint16_t err_code;
-  uint8_t errSpec[5];
-  struct rt_semaphore finish_sem;
-}node_config_state;
+
 /* Private define ------------------------------------------------------------*/
 
 /* Private macro -------------------------------------------------------------*/
@@ -290,28 +260,14 @@ char* nodeID_get_errSpec(char* des,uint8_t nodeID)
   }
 }
 /**
- * @brief   获取节点配置信息
- * @param  nodeID           
- * @retval motor_config* 
+ * @brief  
+ * @note   
+ * @param  num: 
+ * @retval 
  */
-motor_config* nodeID_get_config(motor_config* des,uint8_t nodeID)
+node_config_state *slave_conf_get(NODEID_NUM num)
 {
-  motor_config *p = des;
-
-  if(des == NULL)
-    return RT_NULL;
-
-  if(nodeID == MASTER_NODEID || nodeID > MAX_NODE_COUNT || nodeID == 0)
-  {
-    return RT_NULL;
-  }
-  else
-  {
-    p->denominator =  slave_conf[nodeID - 2].list->config.denominator;
-    p->numerator = slave_conf[nodeID - 2].list->config.numerator;
-  }
-
-  return p;
+  return &slave_conf[num];
 }
 #ifdef RT_USING_MSH
 /**

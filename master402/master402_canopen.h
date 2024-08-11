@@ -6,7 +6,7 @@
  * @date 2022-11-17
  * @copyright Copyright (c) 2022
  * @attention 
- * @par ĞŞ¸ÄÈÕÖ¾:
+ * @par ä¿®æ”¹æ—¥å¿—:
  * Date       Version Author  Description
  * 2022-11-17 1.0     HLY     first version
  */
@@ -19,44 +19,64 @@ extern "C" {
 #endif
 /* Includes ------------------------------------------------------------------*/
 #include "master402_od.h"
-#include "motor.h"
 /* Exported types ------------------------------------------------------------*/  
 /** 
-  * @brief  ½ÚµãID
+  * @brief  èŠ‚ç‚¹ID
   */  
 typedef enum
 {
   SERVO_NODEID_1 = 0x02,
   SERVO_NODEID_2,
-  MAX_NODE_COUNT,         //×î´ó½ÚµãÊıÁ¿
+  MAX_NODE_COUNT,         //æœ€å¤§èŠ‚ç‚¹æ•°é‡
 }NODEID_NUM;
 /** 
-  * @brief  ½Úµã´íÎó´úÂë
+  * @brief  èŠ‚ç‚¹é”™è¯¯ä»£ç 
   */  
 typedef enum
 {
-  NODEID_CONFIG_SUCCESS,      //½ÚµãÅäÖÃ³É¹¦
-  NODEID_BACK_ONLINE,         //½ÚµãÖØĞÂÉÏÏß
-  NODEID_CONFIG_NO_RESPOND,   //ÅäÖÃ»Ø¸´Î´ÏìÓ¦£¬½Úµã×Öµä³ö´í
-  NODEID_CONFIG_NO_SEND,      //ÅäÖÃÎ´·¢ËÍ,±¾µØ×Öµä³ö´í
+  NODEID_CONFIG_SUCCESS,      //èŠ‚ç‚¹é…ç½®æˆåŠŸ
+  NODEID_BACK_ONLINE,         //èŠ‚ç‚¹é‡æ–°ä¸Šçº¿
+  NODEID_CONFIG_NO_RESPOND,   //é…ç½®å›å¤æœªå“åº”ï¼ŒèŠ‚ç‚¹å­—å…¸å‡ºé”™
+  NODEID_CONFIG_NO_SEND,      //é…ç½®æœªå‘é€,æœ¬åœ°å­—å…¸å‡ºé”™
 }NODEID_ERRCODE;
-/**
- * @brief µç»úÅäÖÃ½á¹¹Ìå
- * @note  numerator:  ÔË¶¯Ò»È¦ËùĞèÂö³åÊı
- *        denominator:µç»ú±àÂëÆ÷·Ö±æÂÊ
- */
+/* 
+ * èŠ‚ç‚¹é“¾è¡¨
+*/
 typedef struct
 {
-  uint32_t numerator;   //µç×Ó³İÂÖ±È·Ö×Ó 
-  uint32_t denominator; //µç×Ó³İÂÖ±È·ÖÄ¸
-}motor_config;
+  uint8_t nodeID;
+  char name[RT_NAME_MAX];
+  /**
+   * @brief ç”µæœºé…ç½®ç»“æ„ä½“
+   * @note  numerator:  è¿åŠ¨ä¸€åœˆæ‰€éœ€è„‰å†²æ•°
+   *        denominator:ç”µæœºç¼–ç å™¨åˆ†è¾¨ç‡
+   */
+  struct
+  {
+    uint32_t numerator;   //ç”µå­é½¿è½®æ¯”åˆ†å­ 
+    uint32_t denominator; //ç”µå­é½¿è½®æ¯”åˆ†æ¯
+  }config;                //ç”µæœºé…ç½®
+  e_nodeState *nmt_state;
+}node_list;
+/* 
+ * èŠ‚ç‚¹é…ç½®çŠ¶æ€ç»“æ„ä½“
+*/
+typedef struct 
+{
+  node_list *list;
+  uint8_t state;
+  uint8_t try_cnt;
+  uint16_t err_code;
+  uint8_t errSpec[5];
+  struct rt_semaphore finish_sem;
+}node_config_state;
 /* Exported constants --------------------------------------------------------*/
-#define MASTER_NODEID 	  1//¿ØÖÆÆ÷ID
-#define PDO_TRANSMISSION_TYPE 1//PDO´«ÊäÀàĞÍ
+#define MASTER_NODEID 	  1//æ§åˆ¶å™¨ID
+#define PDO_TRANSMISSION_TYPE 1//PDOä¼ è¾“ç±»å‹
 
-#define SDO_REPLY_TIMEOUT     50//50msµÈ´ı³¬Ê±
-#define PRODUCER_HEARTBEAT_TIME 500 //Éú²úÕßĞÄÌø¼ä¸ô
-#define CONSUMER_HEARTBEAT_TIME 1000//Ïû·ÑÕßĞÄÌø¼ä¸ô
+#define SDO_REPLY_TIMEOUT     50//50msç­‰å¾…è¶…æ—¶
+#define PRODUCER_HEARTBEAT_TIME 500 //ç”Ÿäº§è€…å¿ƒè·³é—´éš”
+#define CONSUMER_HEARTBEAT_TIME 1000//æ¶ˆè´¹è€…å¿ƒè·³é—´éš”
 /* Exported macro ------------------------------------------------------------*/
 
 /* Exported variables ---------------------------------------------------------*/
@@ -69,14 +89,14 @@ extern UNS8 Write_SLAVE_Modes_of_operation(UNS8 nodeId,INTEGER8 mode);
 extern UNS8 Write_SLAVE_profile_position_speed_set(UNS8 nodeId,float speed);
 extern UNS8 Write_SLAVE_Interpolation_time_period(UNS8 nodeId);
 extern UNS8 Write_SLAVE_Homing_set(UNS8 nodeId,UNS32 offset,UNS8 method,float switch_speed,float zero_speed);
-/********************½ÚµãĞÅÏ¢²éÑ¯Óë²Ù×÷****************************************/
+/********************èŠ‚ç‚¹ä¿¡æ¯æŸ¥è¯¢ä¸æ“ä½œ****************************************/
 extern char *nodeID_get_name(char* des,uint8_t nodeid);
 extern e_nodeState nodeID_get_nmt(uint8_t nodeid);
 extern UNS8 nodeID_set_errcode(uint8_t nodeid,uint16_t errcode);
 extern uint16_t nodeID_get_errcode(uint8_t nodeid);
 extern UNS8 nodeID_set_errSpec(uint8_t nodeID,const uint8_t errSpec[5]);
 extern char* nodeID_get_errSpec(char* des,uint8_t nodeID);
-extern motor_config* nodeID_get_config(motor_config* des,uint8_t nodeID);
+extern node_config_state *slave_conf_get(NODEID_NUM num);
 
 #ifdef __cplusplus
 }
